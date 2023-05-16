@@ -1,35 +1,56 @@
 console.log("js working!");
 
+
+
 //APIS THING (DATA)
 
-let PCs = {
-    "Desconocido": ["Modelo 1", "Modelo 2", "Modelo 3"],
-    "EXO": ["Modelo A", "Modelo B", "Modelo C"],
-    "HP": ["Modelo X", "Modelo Y", "Modelo Z"],
-    "LETOS": ["Modelo P", "Modelo Q", "Modelo R"],
-    "LENOVO": ["Modelo M", "Modelo N", "Modelo O"],
-    "DELL": ["Modelo D", "Modelo E", "Modelo F"],
-    "CX": ["Modelo G", "Modelo H", "Modelo I"],
-    "CORADIR": ["Modelo J", "Modelo K", "Modelo L"],
-    "RICOH": ["Modelo S", "Modelo T", "Modelo U"],
-    "BANGHO": ["Modelo V", "Modelo W"],
-    "SAMSUNG": ["Modelo AA", "Modelo BB"],
-    "LEXMARK": ["Modelo CC", "Modelo DD"],
-    "EPSON": ["Modelo EE", "Modelo FF"],
-    "TOSHIBA": ["Modelo GG", "Modelo HH"],
-    "BROTHER": ["Modelo II", "Modelo JJ"]
+const equipos = {
+    Desktop: {
+        HP: ["Modelo 1", "Modelo 2", "Modelo 3"],
+        Dell: ["Modelo 4", "Modelo 5"],
+        Lenovo: ["Modelo 6", "Modelo 7"],
+        Exo: ["modelo 8", "Modelo 9"],
+    },
+    Notebook: {
+        HP: ["Modelo 8", "Modelo 9"],
+        Dell: ["Modelo 10", "Modelo 11", "Modelo 12"],
+        Lenovo: ["Modelo 13"],
+    },
+    Impresora: {
+        HP: ["Modelo 14", "Modelo 15"],
+        Epson: ["Modelo 16", "Modelo 17", "Modelo 18"],
+        Canon: ["Modelo 19"],
+    },
+    Escaner: {
+        Epson: ["Modelo 20", "Modelo 21"],
+        Canon: ["Modelo 22"],
+    },
 };
 
-// let marcasPC = ["Desconocido", "EXO", "HP", "LETOS", "LENOVO", "DELL", "CX", "CORADIR", "RICOH", "BANGHO", "DELL", "SAMSUNG", "LEXMARK", "EPSON", "TOSHIBA", "BROTHER"];
-// let marcasIMP
-// let marcasSCN
-let marcasNTB = ["Lenovo", "EXO", "HP"];
+//SELECCION DE TIPO
 
-// let modelosPC = ["mod1", "mod2", "mod3"];
-// let modelosIMP
-// let modelosSCN
-let modelosNTB = ["mod1", "mod2", "mod3"];
+const tipoEquipoSelect = document.getElementById('tipoEquipo');
 
+// Función para cargar las opciones del objeto equipos en el selector de tipo de equipo
+function cargarOpcionesTipoEquipo() {
+    // Eliminar las opciones anteriores
+    tipoEquipoSelect.innerHTML = '';
+    // Crear opción por defecto
+    const defaultOption = document.createElement('option');
+    defaultOption.text = 'Seleccione una opción';
+    defaultOption.value = '';
+    tipoEquipoSelect.appendChild(defaultOption);
+    // Crear opciones para cada tipo de equipo
+    for (const tipoEquipo in equipos) {
+        const option = document.createElement('option');
+        option.text = tipoEquipo;
+        option.value = tipoEquipo;
+        tipoEquipoSelect.appendChild(option);
+    }
+}
+
+// Llamar a la función para cargar las opciones al cargar la página o formulario
+cargarOpcionesTipoEquipo();
 
 // SELECCIONAR MARCA / MODELO X TIPO
 const tipoEquipo = document.getElementById("tipoEquipo");
@@ -41,48 +62,28 @@ equipoMarca.addEventListener("change", actualizarListaModelos);
 
 function actualizarListaMarcas() {
     const tipoSeleccionado = tipoEquipo.value;
-    let marcas = Object.keys(PCs);
+    let marcas = equipos[tipoSeleccionado];
     let opcionesMarcas = "";
 
-    switch (tipoSeleccionado) {
-        case "PcCompleta":
-            for (let i = 0; i < marcas.length; i++) {
-                opcionesMarcas += `<option value='${marcas[i]}'>${marcas[i]}</option>`;
-            }
-            break;
-        case "Impresora":
-            opcionesMarcas += "<option value='Marca4'>Marca4</option>";
-            opcionesMarcas += "<option value='Marca5'>Marca5</option>";
-            opcionesMarcas += "<option value='Marca6'>Marca6</option>";
-            break;
-        case "Notebook":
-            for (let i = 0; i < marcasNTB.length; i++) {
-                opcionesMarcas += `<option value='${marcasNTB[i]}'>${marcasNTB[i]}</option>`;
-            }
-            break;
-        case "Escaner":
-            opcionesMarcas += "<option value='Marca10'>Marca10</option>";
-            opcionesMarcas += "<option value='Marca11'>Marca11</option>";
-            opcionesMarcas += "<option value='Marca12'>Marca12</option>";
-            break;
-        default:
-            opcionesMarcas = "<option value=''>Seleccione...</option>";
+
+    for (let marca in marcas) {
+        opcionesMarcas += `<option value="${marca}">${marca}</option>`;
     }
 
     equipoMarca.innerHTML = opcionesMarcas;
 
 }
 
-
 function actualizarListaModelos() {
-
+    const tipoSeleccionado = tipoEquipo.value;
     const marcaSeleccionada = equipoMarca.value;
-    let modelos = PCs[marcaSeleccionada];
+    const modelos = equipos[tipoSeleccionado][marcaSeleccionada];
     let opcionesModelos = "";
 
-    for (let i = 0; i < modelos.length; i++) {
-        opcionesModelos += `<option value='${modelos[i]}'>${modelos[i]}</option>`;
+    for (let modelo of modelos) {
+        opcionesModelos += `<option value="${modelo}">${modelo}</option>`;
     }
+
     modeloEquipo.innerHTML = opcionesModelos;
 }
 
@@ -114,6 +115,7 @@ function mostrarCamposMonitor() {
 
 
 // CONNECTION THING
+
 window.addEventListener("load", function () {
     const form = document.getElementById('pedido');
     form.addEventListener("submit", function (e) {

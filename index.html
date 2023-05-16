@@ -44,14 +44,21 @@
 
         <!-- FORM  -->
         <div class="container-fluid">
-            <form method="POST" action="https://script.google.com/macros/s/AKfycbzqRpWeSkUGSrN3_XVjKVJntX4gy5EyGJmM3k3k6xONJrYEzMdY8dFWNqOLzziVjUr5/exec" id="pedido">
-                <label for="tipoEquipo">Tipo de equipo:</label>
+            <form method="POST"
+                action="https://script.google.com/macros/s/AKfycbzqRpWeSkUGSrN3_XVjKVJntX4gy5EyGJmM3k3k6xONJrYEzMdY8dFWNqOLzziVjUr5/exec"
+                id="pedido">
+                <!-- <label for="tipoEquipo">Tipo de equipo:</label>
                 <select id="tipoEquipo" name="tipoEquipo" onchange="mostrarCampoMonitor()" required>
                     <option value="">Seleccione una opción</option>
                     <option value="PcCompleta">Pc Completa</option>
                     <option value="Impresora">Impresora</option>
                     <option value="Notebook">Notebook</option>
                     <option value="Escaner">Escaner</option>
+                </select><br><br> -->
+
+                <label for="tipoEquipo">Tipo de equipo:</label>
+                <select id="tipoEquipo" name="tipoEquipo" onchange="mostrarCampoMonitor()" required>
+                    <option value="">Seleccione una opción</option>
                 </select><br><br>
 
                 <!-- EL NOMBRE DEL EQUIPO SE OBTIENE DE G.SHEET -->
