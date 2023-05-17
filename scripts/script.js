@@ -136,38 +136,16 @@ window.addEventListener("load", function () {
     });
 });
 
-const url = "https://script.google.com/macros/s/AKfycbzqRpWeSkUGSrN3_XVjKVJntX4gy5EyGJmM3k3k6xONJrYEzMdY8dFWNqOLzziVjUr5/exec";
+const url = "https://script.google.com/macros/s/AKfycbzxM_ARCNu_TABMpwPZrzjfJQiNrziIFaUoQ42pEhyQjB-uT9CXGdoTWUfgI6v6LxUW/exec";
 
 function get() {
-  fetch(url)
-    .then((res) => {
-      console.log(res.status);
-      return res.text();
-    })
-    .then((res) => console.log(res));
-}
+  
+    fetch(url)
+      .then((res) => {
+        console.log(res.status);
+        return res.text();
+      })
+      .then((res) => console.log(res));
+  }
 
-// $.ajax({
-//     url: 'https://script.google.com/macros/s/AKfycbzqRpWeSkUGSrN3_XVjKVJntX4gy5EyGJmM3k3k6xONJrYEzMdY8dFWNqOLzziVjUr5/exec',
-//     type: 'GET',
-//     dataType: 'json',
-//     success: function(response) {
-//       // Aquí puedes trabajar con los valores obtenidos
-//       var valorA = response.valorA;
-//       var valorB = response.valorB;
-//       var valorC = response.valorC;
-  
-//       // Realiza las operaciones que necesites con los valores obtenidos
-//       // ...
-  
-//       // Ejemplo de cómo imprimir los valores en la consola
-//       console.log('Valor A:', valorA);
-//       console.log('Valor B:', valorB);
-//       console.log('Valor C:', valorC);
-//     },
-//     error: function(error) {
-//       console.error('Error:', error);
-//     }
-//   });
-  
-get();
+  get();
