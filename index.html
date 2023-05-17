@@ -17,11 +17,11 @@
 
 <body class="container-fluid">
 
-    <header class="">
-        <h2>
+    <header class="text-center my-2 py-2">
+        <h1>
             Pedidos MT
-        </h2>
-        <nav class="border-bottom mb-5">
+        </h1>
+        <nav class="border-bottom mb-5" style="display: none;">
             <ul class="nav justify-content-center">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Active</a>
@@ -40,15 +40,17 @@
     </header>
 
     <main class="container">
-        <h1> Formulario para pedido de MT's de equipos informaticos.</h1>
+        <h2> Formulario para pedido de MT's de equipos informaticos.</h2>
         <p> Completá el formulario a continuacion para poder generar el objeto en el inventario.</p>
 
-        <div class="spinner-border m-5" role="status" id="spinner"> 
-            <span class="visually-hidden">Loading...</span>
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border m-5" role="status" id="spinner">
+                <span class="visually-hidden">Loading...</span>
+            </div>
         </div>
 
         <!-- FORM  -->
-        <div class="container-fluid">
+        <div class="container-fluid text-center">
             <form method="POST" class="mb-5" id="pedido">
                 <label for="tipoEquipo">Tipo de equipo:</label>
                 <select id="tipoEquipo" name="tipoEquipo" required>
@@ -94,7 +96,8 @@
                     value="Desconocido"><br><br>
 
                 <label for="observaciones">Observaciones:</label>
-                <textarea id="observaciones" name="observaciones">Sin observaciones</textarea><br><br>
+                <textarea id="observaciones" name="observaciones" placeholder="Sin observaciones"
+                    required></textarea><br><br>
 
                 <label for="fechaEntregado">Fecha de entrega:</label>
                 <input type="date" id="fechaEntregado" name="fechaEntregado"><br><br>
@@ -105,7 +108,7 @@
         </div>
     </main>
 
-    <footer class="">
+    <footer class="text-center mt-5">
         Inventario MT02023 - Todos Los Derechos Y Torcidos RESERVADOS
     </footer>
     <script src="scripts/script.js"></script>
