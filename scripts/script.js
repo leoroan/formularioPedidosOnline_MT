@@ -37,7 +37,7 @@ function cargarOpcionesTipoEquipo() {
     tipoEquipoSelect.innerHTML = '';
     // Crear opción por defecto
     const defaultOption = document.createElement('option');
-    defaultOption.text = 'Seleccione una opción';
+    defaultOption.text = 'Seleccione un tipo de equipo';
     defaultOption.value = '';
     tipoEquipoSelect.appendChild(defaultOption);
     // Crear opciones para cada tipo de equipo
@@ -64,7 +64,7 @@ function actualizarListaMarcas() {
     const tipoSeleccionado = tipoEquipo.value;
     let marcas = equipos[tipoSeleccionado];
     let opcionesMarcas = "";
-
+    opcionesMarcas += `<option>seleccione</option>`;
 
     for (let marca in marcas) {
         opcionesMarcas += `<option value="${marca}">${marca}</option>`;
@@ -79,9 +79,12 @@ function actualizarListaModelos() {
     const marcaSeleccionada = equipoMarca.value;
     const modelos = equipos[tipoSeleccionado][marcaSeleccionada];
     let opcionesModelos = "";
+    opcionesModelos += `<option>seleccione una marca</option>`;
 
-    for (let modelo of modelos) {
-        opcionesModelos += `<option value="${modelo}">${modelo}</option>`;
+    if (marcaSeleccionada != "seleccione") {
+        for (let modelo of modelos) {
+            opcionesModelos += `<option value="${modelo}">${modelo}</option>`;
+        }
     }
 
     modeloEquipo.innerHTML = opcionesModelos;
@@ -94,7 +97,7 @@ function actualizarListaModelos() {
 
 function mostrarCampoMonitor() {
     var tipoEquipo = document.getElementById("tipoEquipo").value;
-    if (tipoEquipo == "PcCompleta") {
+    if (tipoEquipo == "Desktop") {
         document.getElementById("campoMonitor").style.display = "block";
         document.getElementById("monitorModelo").value = "Desconocido";
         document.getElementById("monitorNroSerie").value = "Desconocido";
@@ -132,3 +135,39 @@ window.addEventListener("load", function () {
             })
     });
 });
+
+const url = "https://script.google.com/macros/s/AKfycbzqRpWeSkUGSrN3_XVjKVJntX4gy5EyGJmM3k3k6xONJrYEzMdY8dFWNqOLzziVjUr5/exec";
+
+function get() {
+  fetch(url)
+    .then((res) => {
+      console.log(res.status);
+      return res.text();
+    })
+    .then((res) => console.log(res));
+}
+
+// $.ajax({
+//     url: 'https://script.google.com/macros/s/AKfycbzqRpWeSkUGSrN3_XVjKVJntX4gy5EyGJmM3k3k6xONJrYEzMdY8dFWNqOLzziVjUr5/exec',
+//     type: 'GET',
+//     dataType: 'json',
+//     success: function(response) {
+//       // Aquí puedes trabajar con los valores obtenidos
+//       var valorA = response.valorA;
+//       var valorB = response.valorB;
+//       var valorC = response.valorC;
+  
+//       // Realiza las operaciones que necesites con los valores obtenidos
+//       // ...
+  
+//       // Ejemplo de cómo imprimir los valores en la consola
+//       console.log('Valor A:', valorA);
+//       console.log('Valor B:', valorB);
+//       console.log('Valor C:', valorC);
+//     },
+//     error: function(error) {
+//       console.error('Error:', error);
+//     }
+//   });
+  
+get();
