@@ -328,6 +328,10 @@ footer {
   width: 100%;
 }
 
+#spinner {
+  display: none;
+}
+
 body {
   height: 100vh;
 }/*# sourceMappingURL=style.css.map */

@@ -54,6 +54,7 @@ cargarOpcionesTipoEquipo();
 
 // SELECCIONAR MARCA / MODELO X TIPO
 const tipoEquipo = document.getElementById("tipoEquipo");
+const tipoCheck = document.getElementById("poseeMonitor");
 const equipoMarca = document.getElementById("equipoMarca");
 const modeloEquipo = document.getElementById("equipoModelo");
 
@@ -64,14 +65,12 @@ function actualizarListaMarcas() {
     const tipoSeleccionado = tipoEquipo.value;
     let marcas = equipos[tipoSeleccionado];
     let opcionesMarcas = "";
-    opcionesMarcas += `<option>seleccione</option>`;
+    opcionesMarcas += `<option >seleccione una marca</option>`;
 
     for (let marca in marcas) {
-        opcionesMarcas += `<option value="${marca}">${marca}</option>`;
+        opcionesMarcas += `<option value="${marca}" >${marca}</option>`;
     }
-
     equipoMarca.innerHTML = opcionesMarcas;
-
 }
 
 function actualizarListaModelos() {
@@ -79,21 +78,21 @@ function actualizarListaModelos() {
     const marcaSeleccionada = equipoMarca.value;
     const modelos = equipos[tipoSeleccionado][marcaSeleccionada];
     let opcionesModelos = "";
-    opcionesModelos += `<option>seleccione una marca</option>`;
+    opcionesModelos += `<option >seleccione un modelo</option>`;
 
-    if (marcaSeleccionada != "seleccione") {
+    if (marcaSeleccionada != "seleccione una marca") {
         for (let modelo of modelos) {
-            opcionesModelos += `<option value="${modelo}">${modelo}</option>`;
+            opcionesModelos += `<option value="${modelo}" >${modelo}</option>`;
         }
     }
-
     modeloEquipo.innerHTML = opcionesModelos;
 }
 
 
 
 // MOSTRAR MONITOR
-/* aca muestra el campo si es tipoEquipo = PCcompleta*/
+tipoEquipo.addEventListener("change", mostrarCampoMonitor);
+tipoCheck.addEventListener("change", mostrarCamposMonitor);
 
 function mostrarCampoMonitor() {
     var tipoEquipo = document.getElementById("tipoEquipo").value;
@@ -118,13 +117,19 @@ function mostrarCamposMonitor() {
 
 
 // CONNECTION THING
+const url = "https://script.google.com/macros/s/AKfycbzxM_ARCNu_TABMpwPZrzjfJQiNrziIFaUoQ42pEhyQjB-uT9CXGdoTWUfgI6v6LxUW/exec";
+
+const form = document.getElementById('pedido');
+const spinner = document.getElementById('spinner');
+form.action = url;
 
 window.addEventListener("load", function () {
-    const form = document.getElementById('pedido');
     form.addEventListener("submit", function (e) {
         e.preventDefault();
+        form.style.display = 'none';
         const data = new FormData(form);
         const action = e.target.action;
+        spinner.style.display = 'block';
         fetch(action, {
             method: 'POST',
             body: data,
@@ -133,19 +138,36 @@ window.addEventListener("load", function () {
                 form.reset();
                 alert("Grabado correctamente");
             })
+            .finally(() => {
+                // Ocultar el spinner cuando la solicitud se complete (ya sea éxito o error)
+                spinner.style.display = 'none';
+                form.style.display = 'block';
+            });
     });
 });
 
-const url = "https://script.google.com/macros/s/AKfycbzxM_ARCNu_TABMpwPZrzjfJQiNrziIFaUoQ42pEhyQjB-uT9CXGdoTWUfgI6v6LxUW/exec";
+// function get() {
+// fetch(url)
+//     .then((res) => {
+//         // console.log(res.status);
+//         return res.text();
+//     })
+//     .then((res) => console.log(JSON.parse(res)));
+// }
 
-function get() {
-  
-    fetch(url)
-      .then((res) => {
-        console.log(res.status);
-        return res.text();
-      })
-      .then((res) => console.log(res));
-  }
+async function get() {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error('Error en la solicitud');
+        }
+        const data = await response.json();
+        console.log(data);
+        // Resto del código para trabajar con la respuesta
+    } catch (error) {
+        console.error(error);
+        // Resto del código para manejar el error
+    }
+}
 
-  get();
+get();
