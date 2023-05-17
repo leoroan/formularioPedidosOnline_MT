@@ -27,6 +27,8 @@ const equipos = {
     },
 };
 
+let miVariableParaMTs;
+
 //SELECCION DE TIPO
 
 const tipoEquipoSelect = document.getElementById('tipoEquipo');
@@ -156,18 +158,32 @@ window.addEventListener("load", function () {
 // }
 
 async function get() {
+    form.style.display = 'none';
+    spinner.style.display = 'block';
     try {
         const response = await fetch(url);
         if (!response.ok) {
             throw new Error('Error en la solicitud');
         }
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         // Resto del código para trabajar con la respuesta
+        miVariableParaMTs = data;
     } catch (error) {
         console.error(error);
         // Resto del código para manejar el error
     }
 }
 
-get();
+// Utilizar async/await para esperar a que la función get se complete
+async function obtenerDatos() {
+    await get();
+    console.log("miVar :", miVariableParaMTs.valorA);    
+    form.style.display = 'block';
+    spinner.style.display = 'none';
+    document.getElementById('nombreEquipo').value = miVariableParaMTs.valorA;
+}
+
+// Llamar a la función obtenerDatos para obtener los datos
+obtenerDatos();
+

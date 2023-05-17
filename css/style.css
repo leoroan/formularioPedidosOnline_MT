@@ -345,6 +345,8 @@ footer {
 #pedido {
   background-color: rgb(250, 239, 224) !important;
   height: 100%;
+  width: 100%;
+  padding: 25px 0 25px 0;
 }
 
 body {
