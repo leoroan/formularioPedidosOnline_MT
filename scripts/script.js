@@ -133,5 +133,5 @@ for (var subse in subsecretarias) {
 
 // SELECCIONAR OFI/DIRE
 
-var direccionesSubsecretariaTransporteTerrestre = MinisterioDeTransporte.subsecretarias.subsecretariaTecnicaAdministrativaLegal.direcciones.direccionGeneralAdministracion.direcciones.direccionTecnologiaInformacion;
+var direccionesSubsecretariaTransporteTerrestre = MinisterioDeTransporte["subsecretarias"]["subsecretariaTecnicaAdministrativaLegal"]["direcciones"];
 console.log(direccionesSubsecretariaTransporteTerrestre);
