@@ -348,6 +348,10 @@ footer {
   width: 100%;
   padding: 25px 0 25px 0;
 }
+#pedido select {
+  position: relative;
+  width: 50%;
+}
 
 body {
   height: 100vh;

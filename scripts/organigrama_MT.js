@@ -2,10 +2,23 @@ let MinisterioDeTransporte = {
 
   subsecretarias: {
 
+    unidadMonitoreo: {
+      nombre: "Unidad de monitoreo y registro general de datos del transporte",
+      oficinaPrivada: {
+        nombre: "Oficina Privada de Unidad de monitoreo y registro general de datos del transporte"
+      }
+    },
+
+    direccionComunicacion: {
+      nombre: "Dirección de comunicación y relación institucionales",
+      oficinaPrivada: {
+        nombre: "Oficina Privada de Dirección de comunicación y relación institucionales"
+      }
+    },
+
     subsecretariaTransporteTerrestre: {
       nombre: "Subsecretaría de transporte terrestre",
       direcciones: {
-
         oficinaPrivada: {
           nombre: "Oficina Privada de la Subsecretaría de transporte terrestre"
         },
@@ -62,7 +75,10 @@ let MinisterioDeTransporte = {
         },
 
         direccionAptitudConductores: {
-          nombre: "Direccion provincial de aptitud psicofisica para conductores del transporte publico"
+          nombre: "Direccion provincial de aptitud psicofisica para conductores del transporte publico",
+          oficinaPrivada: {
+            nombre: "Oficina Privada de Direccion provincial de aptitud psicofisica para conductores del transporte publico"
+          }
         },
 
         direccionPoliticasTransporteSostenible: {
@@ -97,7 +113,6 @@ let MinisterioDeTransporte = {
             }
           }
         }
-
       }
     },
 
@@ -172,221 +187,207 @@ let MinisterioDeTransporte = {
           }
         }
       }
-    }
-  },
+    },
 
-  subsecretariaTecnicaAdministrativaLegal: {
-    nombre: "Subsecretaría técnica administrativa y legal",
-    direcciones: {
-      oficinaPrivada: {
-        nombre: "Oficina Privada de Subsecretaría técnica administrativa y legal"
-      },
-      direccionGeneralAdministracion: {
-        nombre: "Dirección general de administración",
-        direcciones: {
-          direccionGeneralAdministracion: {
-            nombre: "Oficina privada de la misma dirección"
-          },
-          direccionContabilidad: {
-            nombre: "Dirección de contabilidad"
-          },
-          direccionPresupuesto: {
-            nombre: "Dirección de presupuesto"
-          },
-          direccionComprasContratacionesSuministros: {
-            nombre: "Dirección de compras, contrataciones y suministros"
-          },
-          direccionTesoreria: {
-            nombre: "Dirección de tesorería"
-          },
-          direccionDelegadaPersonal: {
-            nombre: "Dirección delegada de la dirección provincial de personal"
-          },
-          direccionTecnologiaInformacion: {
-            nombre: "Dirección de tecnología de la información"
-          },
-          direccionServiciosAuxiliares: {
-            nombre: "Dirección de servicios auxiliares"
-          },
-          direccionServiciosTecnicos: {
-            nombre: "Dirección de servicios técnicos"
+    subsecretariaTecnicaAdministrativaLegal: {
+      nombre: "Subsecretaría técnica administrativa y legal",
+      direcciones: {
+        oficinaPrivada: {
+          nombre: "Oficina Privada de Subsecretaría técnica administrativa y legal"
+        },
+        direccionGeneralAdministracion: {
+          nombre: "Dirección general de administración",
+          direcciones: {
+            direccionGeneralAdministracion: {
+              nombre: "Oficina privada de la misma dirección"
+            },
+            direccionContabilidad: {
+              nombre: "Dirección de contabilidad"
+            },
+            direccionPresupuesto: {
+              nombre: "Dirección de presupuesto"
+            },
+            direccionComprasContratacionesSuministros: {
+              nombre: "Dirección de compras, contrataciones y suministros"
+            },
+            direccionTesoreria: {
+              nombre: "Dirección de tesorería"
+            },
+            direccionDelegadaPersonal: {
+              nombre: "Dirección delegada de la dirección provincial de personal"
+            },
+            direccionTecnologiaInformacion: {
+              nombre: "Dirección de tecnología de la información"
+            },
+            direccionServiciosAuxiliares: {
+              nombre: "Dirección de servicios auxiliares"
+            },
+            direccionServiciosTecnicos: {
+              nombre: "Dirección de servicios técnicos"
+            }
           }
-        }
-      },
+        },
 
-      direccionGeneralTecnicaLegal: {
-        nombre: "Dirección general Técnica y legal",
-        direcciones: {
-          direccionGeneralTecnicaLegal: {
-            nombre: "Oficina privada de la misma dirección"
-          },
-          direccionTecnicoAdministrativa: {
-            nombre: "Dirección técnico administrativa"
-          },
-          direccionCoordinacionJuridica: {
-            nombre: "Dirección de coordinación jurídica"
-          },
-          direccionGestionMultas: {
-            nombre: "Dirección de gestión de multas por infracciones de tránsito y transporte"
-          }
-        }
-      }
-    }
-  },
-
-  subsecretariaTransporteAereoFluvial: {
-    nombre: "Subsecretaría de transporte aéreo y fluvial",
-    direcciones: {
-      oficinaPrivada: {
-        nombre: "Oficina Privada de Subsecretaría de transporte aéreo y fluvial",
-      },
-
-      direccionContralorTransporteFluvial: {
-        nombre: "Dirección provincial de contralor del transporte fluvial de pasajeros",
-        direcciones: {
-          direccionContralorTransporteFluvial: {
-            nombre: "Oficina privada de la misma dirección"
-          },
-          direccionOperacionesTransporteFluvial: {
-            nombre: "Dirección de operaciones de transporte fluvial de pasajeros"
-          },
-          direccionFiscalizacionTransporteFluvial: {
-            nombre: "Dirección de fiscalización del transporte fluvial de pasajeros"
-          }
-        }
-      },
-
-      direccionContralorTransporteAereo: {
-        nombre: "Dirección provincial de contralor del transporte aéreo",
-        direcciones: {
-          direccionContralorTransporteAereo: {
-            nombre: "Oficina privada de la misma dirección"
-          },
-          direccionOperacionesTransporteAereo: {
-            nombre: "Dirección de operaciones del transporte aéreo"
-          },
-          direccionFiscalizacionAeroportuaria: {
-            nombre: "Dirección de fiscalización aeroportuaria"
-          }
-        }
-      },
-
-      direccionPromocionCoordinacionTransporteAereoFluvial: {
-        nombre: "Dirección provincial de promoción y coordinación del transporte aéreo y fluvial",
-        direcciones: {
-          direccionPromocionCoordinacionTransporteAereoFluvial: {
-            nombre: "Oficina privada de la misma dirección"
-          },
-          direccionEstrategiasPortuariasAeroportuarias: {
-            nombre: "Dirección de estrategias portuarias y aeroportuarias"
-          },
-          direccionPromocionDesarrolloTransporteFluvial: {
-            nombre: "Dirección de promoción y desarrollo de transporte fluvial de pasajeros"
+        direccionGeneralTecnicaLegal: {
+          nombre: "Dirección general Técnica y legal",
+          direcciones: {
+            direccionGeneralTecnicaLegal: {
+              nombre: "Oficina privada de la misma dirección"
+            },
+            direccionTecnicoAdministrativa: {
+              nombre: "Dirección técnico administrativa"
+            },
+            direccionCoordinacionJuridica: {
+              nombre: "Dirección de coordinación jurídica"
+            },
+            direccionGestionMultas: {
+              nombre: "Dirección de gestión de multas por infracciones de tránsito y transporte"
+            }
           }
         }
       }
+    },
 
-    }
-  },
+    subsecretariaTransporteAereoFluvial: {
+      nombre: "Subsecretaría de transporte aéreo y fluvial",
+      direcciones: {
+        oficinaPrivada: {
+          nombre: "Oficina Privada de Subsecretaría de transporte aéreo y fluvial",
+        },
 
-  subsecretariaArticulacionInterjurisdiccional: {
-    nombre: "Subsecretaría de articulación interjurisdiccional del transporte",
-    direcciones: {
-      oficinaPrivada: {
-        nombre: "Oficina Privada de Subsecretaría de Articulación Interjurisdiccional"
-      },
+        direccionContralorTransporteFluvial: {
+          nombre: "Dirección provincial de contralor del transporte fluvial de pasajeros",
+          direcciones: {
+            direccionContralorTransporteFluvial: {
+              nombre: "Oficina privada de la misma dirección"
+            },
+            direccionOperacionesTransporteFluvial: {
+              nombre: "Dirección de operaciones de transporte fluvial de pasajeros"
+            },
+            direccionFiscalizacionTransporteFluvial: {
+              nombre: "Dirección de fiscalización del transporte fluvial de pasajeros"
+            }
+          }
+        },
 
-      direccionCompensacionesTransporte: {
-        nombre: "Dirección provincial de compensaciones al transporte",
-        direcciones: {
-          direccionCompensacionesTransporte: {
-            nombre: "Oficina privada de la misma dirección"
-          },
-          direccionLiquidacionPago: {
-            nombre: "Dirección de liquidación y pago"
-          },
-          direccionControlVerificacion: {
-            nombre: "Dirección de control y verificación"
+        direccionContralorTransporteAereo: {
+          nombre: "Dirección provincial de contralor del transporte aéreo",
+          direcciones: {
+            direccionContralorTransporteAereo: {
+              nombre: "Oficina privada de la misma dirección"
+            },
+            direccionOperacionesTransporteAereo: {
+              nombre: "Dirección de operaciones del transporte aéreo"
+            },
+            direccionFiscalizacionAeroportuaria: {
+              nombre: "Dirección de fiscalización aeroportuaria"
+            }
+          }
+        },
+
+        direccionPromocionCoordinacionTransporteAereoFluvial: {
+          nombre: "Dirección provincial de promoción y coordinación del transporte aéreo y fluvial",
+          direcciones: {
+            direccionPromocionCoordinacionTransporteAereoFluvial: {
+              nombre: "Oficina privada de la misma dirección"
+            },
+            direccionEstrategiasPortuariasAeroportuarias: {
+              nombre: "Dirección de estrategias portuarias y aeroportuarias"
+            },
+            direccionPromocionDesarrolloTransporteFluvial: {
+              nombre: "Dirección de promoción y desarrollo de transporte fluvial de pasajeros"
+            }
           }
         }
-      },
 
-      direccionCoordinacionTransporte: {
-        nombre: "Dirección provincial de coordinación del transporte",
-        direcciones: {
-          direccionCoordinacionTransporte: {
-            nombre: "Oficina privada de la misma dirección"
-          },
-          direccionCoordinacionPublico: {
-            nombre: "Dirección de coordinación del transporte con el sector público"
-          },
-          direccionCoordinacionPrivado: {
-            nombre: "Dirección de coordinación del transporte con el sector privado"
+      }
+    },
+
+    subsecretariaArticulacionInterjurisdiccional: {
+      nombre: "Subsecretaría de articulación interjurisdiccional del transporte",
+      direcciones: {
+        oficinaPrivada: {
+          nombre: "Oficina Privada de Subsecretaría de Articulación Interjurisdiccional"
+        },
+
+        direccionCompensacionesTransporte: {
+          nombre: "Dirección provincial de compensaciones al transporte",
+          direcciones: {
+            direccionCompensacionesTransporte: {
+              nombre: "Oficina privada de la misma dirección"
+            },
+            direccionLiquidacionPago: {
+              nombre: "Dirección de liquidación y pago"
+            },
+            direccionControlVerificacion: {
+              nombre: "Dirección de control y verificación"
+            }
           }
-        }
-      },
+        },
 
-      direccionPlanificacionPoliticaEconomica: {
-        nombre: "Dirección provincial de planificación y política económica del transporte",
-        direcciones: {
-          direccionPlanificacionPoliticaEconomica: {
-            nombre: "Oficina privada de la misma dirección"
-          },
-          direccionPlanificacionTransporte: {
-            nombre: "Dirección de planificación del transporte"
-          },
-          direccionAnalisisTransporte: {
-            nombre: "Dirección de análisis eficiente del transporte"
-          },
-          direccionGestionSubsidios: {
-            nombre: "Dirección de gestión de subsidios al transporte"
+        direccionCoordinacionTransporte: {
+          nombre: "Dirección provincial de coordinación del transporte",
+          direcciones: {
+            direccionCoordinacionTransporte: {
+              nombre: "Oficina privada de la misma dirección"
+            },
+            direccionCoordinacionPublico: {
+              nombre: "Dirección de coordinación del transporte con el sector público"
+            },
+            direccionCoordinacionPrivado: {
+              nombre: "Dirección de coordinación del transporte con el sector privado"
+            }
           }
-        }
-      },
+        },
 
-      direccionPoliticasGeneroInclusivas: {
-        nombre: "Dirección provincial de políticas de género y estrategias inclusivas",
-        direcciones: {
-          direccionPoliticasGeneroInclusivas: {
-            nombre: "Oficina privada de la misma dirección"
-          },
-          direccionAccesibilidadTransporte: {
-            nombre: "Dirección de accesibilidad del transporte"
-          },
-          direccionInclusionDiversidad: {
-            nombre: "Dirección de inclusión y diversidad"
+        direccionPlanificacionPoliticaEconomica: {
+          nombre: "Dirección provincial de planificación y política económica del transporte",
+          direcciones: {
+            direccionPlanificacionPoliticaEconomica: {
+              nombre: "Oficina privada de la misma dirección"
+            },
+            direccionPlanificacionTransporte: {
+              nombre: "Dirección de planificación del transporte"
+            },
+            direccionAnalisisTransporte: {
+              nombre: "Dirección de análisis eficiente del transporte"
+            },
+            direccionGestionSubsidios: {
+              nombre: "Dirección de gestión de subsidios al transporte"
+            }
           }
-        }
-      },
+        },
 
-      direccionPoliticasEducativasPrevencion: {
-        nombre: "Dirección provincial de políticas educativas de prevención",
-        direcciones: {
-          direccionPoliticasEducativasPrevencion: {
-            nombre: "Oficina privada de la misma dirección"
-          },
-          direccionPromocionNormasConvivencia: {
-            nombre: "Dirección de promoción de normas de convivencia ciudadana"
-          },
-          direccionGestionInterministerial: {
-            nombre: "Dirección de gestión interministerial de prevención y concientización en el transporte"
+        direccionPoliticasGeneroInclusivas: {
+          nombre: "Dirección provincial de políticas de género y estrategias inclusivas",
+          direcciones: {
+            direccionPoliticasGeneroInclusivas: {
+              nombre: "Oficina privada de la misma dirección"
+            },
+            direccionAccesibilidadTransporte: {
+              nombre: "Dirección de accesibilidad del transporte"
+            },
+            direccionInclusionDiversidad: {
+              nombre: "Dirección de inclusión y diversidad"
+            }
+          }
+        },
+
+        direccionPoliticasEducativasPrevencion: {
+          nombre: "Dirección provincial de políticas educativas de prevención",
+          direcciones: {
+            direccionPoliticasEducativasPrevencion: {
+              nombre: "Oficina privada de la misma dirección"
+            },
+            direccionPromocionNormasConvivencia: {
+              nombre: "Dirección de promoción de normas de convivencia ciudadana"
+            },
+            direccionGestionInterministerial: {
+              nombre: "Dirección de gestión interministerial de prevención y concientización en el transporte"
+            }
           }
         }
       }
-    }
-  },
-  unidadMonitoreo: {
-    nombre: "Unidad de monitoreo y registro general de datos del transporte",
-    oficinaPrivada: {
-      nombre: "Oficina Privada de Unidad de monitoreo y registro general de datos del transporte"
-    }
-  },
-  direccionComunicacion: {
-    nombre: "Dirección de comunicación y relación institucionales",
-    oficinaPrivada: {
-      nombre: "Oficina Privada de Dirección de comunicación y relación institucionales"
     }
   }
 };
-
-
