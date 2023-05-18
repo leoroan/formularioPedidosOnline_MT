@@ -1,6 +1,7 @@
 console.log("js working!");
 
-
+let miObj = MinisterioDeTransporte;
+console.log(miObj);
 
 //APIS THING (DATA)
 
