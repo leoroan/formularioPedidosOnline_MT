@@ -1,6 +1,5 @@
 
-let ministerioEstructura = MinisterioDeTransporte;
-
+let ministerioEstructura = data;
 
 //APIS THING (DATA)
 
@@ -126,8 +125,9 @@ var subsecretarias = ministerioEstructura["subsecretarias"];
 function agregarOpciones() {
     for (var subse in subsecretarias) {
         var option = document.createElement("option");
-        option.value = subse;
-        option.text = subsecretarias[subse].nombre;
+        option.id = subse;
+        option.value = subsecretarias[subse].nombre; // va a la bdd/gsheet
+        option.text = subsecretarias[subse].nombre; // a display
         select_subse.appendChild(option);
     }
 }
@@ -142,7 +142,9 @@ select_subse.addEventListener("change", susbsecretariaSeleccionada);
 
 function susbsecretariaSeleccionada() {
     // Obtener el valor seleccionado
-    var seleccionado = select_subse.value;
+    var seleccionado = select_subse;
+
+    console.log(seleccionado);
 
     // si tiene la propiedad "oficinaPrivada"
     if (subsecretarias.hasOwnProperty(seleccionado) && subsecretarias[seleccionado].hasOwnProperty("oficinaPrivada")) {
@@ -151,6 +153,7 @@ function susbsecretariaSeleccionada() {
         const input = document.createElement("input");
         input.id = "inputPrivada";
         input.type = "text";
+        input.name = "Direccion";
         input.value = oficinaPrivada.nombre;
         contenedor.innerHTML = ""; // Limpiar el contenido previo
         contenedor.appendChild(input);
@@ -165,16 +168,19 @@ function susbsecretariaSeleccionada() {
     }
     // si la subse tiene la propiedad "direcciones"
     else if (subsecretarias.hasOwnProperty(seleccionado) && subsecretarias[seleccionado].hasOwnProperty("direcciones")) {
-        var direcciones = subsecretarias[seleccionado].direcciones;
-        console.log(direcciones);
-        
+        const direcciones = subsecretarias[seleccionado].direcciones;
+        // console.log(direcciones);
+        // console.log(direcciones[i]);
+
         // Crear un select y agregar las opciones de direcciones
         const select_direcciones = document.createElement("select");
-        for (let i = 0; i < direcciones.length; i++) {
+        for (let ofi in direcciones) {
             const option = document.createElement("option");
-            option.value = direcciones[i];
-            option.text = direcciones[i];
+            option.value = direcciones[ofi];
+            option.name = "Direccion";
+            option.text = direcciones[ofi].nombre;
             select_direcciones.appendChild(option);
+            // console.log(ofi);
         }
         contenedor.innerHTML = ""; // Limpiar el contenido previo
         contenedor.appendChild(select_direcciones);
@@ -186,4 +192,4 @@ function susbsecretariaSeleccionada() {
 
 };
 
-console.log(subsecretarias);
+// console.log(subsecretarias);
