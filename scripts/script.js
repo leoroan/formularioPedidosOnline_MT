@@ -1,4 +1,3 @@
-console.log("js working!");
 
 let ministerioEstructura = MinisterioDeTransporte;
 
@@ -122,16 +121,69 @@ function mostrarCamposMonitor() {
 // SELECCIONAR SUBSE
 
 const select_subse = document.getElementById("lugarSubse");
-var subsecretarias = ministerioEstructura.subsecretarias;
+var subsecretarias = ministerioEstructura["subsecretarias"];
 
-for (var subse in subsecretarias) {
-    var option = document.createElement("option");
-    option.value = subsecretarias[subse].nombre;
-    option.text = subsecretarias[subse].nombre;
-    select_subse.appendChild(option);
+function agregarOpciones() {
+    for (var subse in subsecretarias) {
+        var option = document.createElement("option");
+        option.value = subse;
+        option.text = subsecretarias[subse].nombre;
+        select_subse.appendChild(option);
+    }
 }
+agregarOpciones();
+
 
 // SELECCIONAR OFI/DIRE
+const contenedor = document.getElementById("masLugares");
 
-var direccionesSubsecretariaTransporteTerrestre = MinisterioDeTransporte["subsecretarias"]["subsecretariaTecnicaAdministrativaLegal"]["direcciones"];
-console.log(direccionesSubsecretariaTransporteTerrestre);
+// Agregar event listener al cambio de selección
+select_subse.addEventListener("change", susbsecretariaSeleccionada);
+
+function susbsecretariaSeleccionada() {
+    // Obtener el valor seleccionado
+    var seleccionado = select_subse.value;
+
+    // si tiene la propiedad "oficinaPrivada"
+    if (subsecretarias.hasOwnProperty(seleccionado) && subsecretarias[seleccionado].hasOwnProperty("oficinaPrivada")) {
+        const oficinaPrivada = subsecretarias[seleccionado].oficinaPrivada;
+        // Crear un input
+        const input = document.createElement("input");
+        input.id = "inputPrivada";
+        input.type = "text";
+        input.value = oficinaPrivada.nombre;
+        contenedor.innerHTML = ""; // Limpiar el contenido previo
+        contenedor.appendChild(input);
+
+        // Ajustar input-lenght x DOM
+        var inputElement = document.getElementById("inputPrivada");
+        // Obtener el ancho del contenido del <input>
+        var anchoContenido = inputElement.scrollWidth;
+        // Establecer el ancho del <input> según el contenido
+        inputElement.style.width = anchoContenido + 10 + "px";
+
+    }
+    // si la subse tiene la propiedad "direcciones"
+    else if (subsecretarias.hasOwnProperty(seleccionado) && subsecretarias[seleccionado].hasOwnProperty("direcciones")) {
+        var direcciones = subsecretarias[seleccionado].direcciones;
+        console.log(direcciones);
+        
+        // Crear un select y agregar las opciones de direcciones
+        const select_direcciones = document.createElement("select");
+        for (let i = 0; i < direcciones.length; i++) {
+            const option = document.createElement("option");
+            option.value = direcciones[i];
+            option.text = direcciones[i];
+            select_direcciones.appendChild(option);
+        }
+        contenedor.innerHTML = ""; // Limpiar el contenido previo
+        contenedor.appendChild(select_direcciones);
+    }
+    else {
+        // Limpiar el contenido si no se cumple ninguna condición
+        contenedor.innerHTML = "";
+    }
+
+};
+
+console.log(subsecretarias);
