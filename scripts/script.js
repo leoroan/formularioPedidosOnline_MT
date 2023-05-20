@@ -129,6 +129,7 @@ function agregarOpciones() {
         option.value = subsecretarias[subse].nombre; // va a la bdd/gsheet
         option.text = subsecretarias[subse].nombre; // a display
         select_subse.appendChild(option);
+        option.dataset.subseValue = subse;
     }
 }
 agregarOpciones();
@@ -142,8 +143,9 @@ select_subse.addEventListener("change", susbsecretariaSeleccionada);
 
 function susbsecretariaSeleccionada() {
     // Obtener el valor seleccionado
-    var seleccionado = select_subse;
-
+    var selec = select_subse.options[select_subse.selectedIndex];
+    var seleccionado = selec.id;
+    console.log(selec);
     console.log(seleccionado);
 
     // si tiene la propiedad "oficinaPrivada"
