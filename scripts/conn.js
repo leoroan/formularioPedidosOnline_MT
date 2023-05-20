@@ -18,6 +18,7 @@ window.addEventListener("load", function () {
         })
             .then(() => {
                 form.reset();
+                obtenerDatos();
                 alert("Grabado correctamente");
             })
             .finally(() => {
