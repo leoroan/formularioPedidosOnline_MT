@@ -4,27 +4,36 @@ let ministerioEstructura = data;
 //APIS THING (DATA)
 
 const equipos = {
-    Desktop: {
-        HP: ["Modelo 1", "Modelo 2", "Modelo 3"],
-        Dell: ["Modelo 4", "Modelo 5"],
-        Lenovo: ["Modelo 6", "Modelo 7"],
-        Exo: ["modelo 8", "Modelo 9"],
+    "Desktop": {
+        "EXO": ["H7-V5488P", "PC READY D1 RTX", "PC READY H7", "AIO"],
+        "Letos": ["Sin modelo"],
+        "CX": ["5835", "9217"],
+        "Coradir": ["AMD A"],
+        "Bangho": ["7168", "4168"],
+        "Lenovo": ["ThinkCentre neo"],
+        "HP": ["Pro 3000 SFF"],
+        "BANGHO": ["CLON"]
     },
-    Notebook: {
-        HP: ["Modelo 8", "Modelo 9"],
-        Dell: ["Modelo 10", "Modelo 11", "Modelo 12"],
-        Lenovo: ["Modelo 13"],
+    "Notebook": {
+        "Dell": ["Latitude 3510", "Vostro 14 3000"],
+        "HP": ["Elitebook 840 G7", "HP ProBook 450 G4", "HP 14-FQ0013DX"],
+        "Lenovo": ["ThinkBook V14 G2 ARE", "IdeaPad", "Lenovo E41-55", "ThinkBook V15 G2", "IdeaPad 330", "B50-80", "E41-55"],
+        "Banghó": ["Sin modelo"]
     },
-    Impresora: {
-        HP: ["Modelo 14", "Modelo 15"],
-        Epson: ["Modelo 16", "Modelo 17", "Modelo 18"],
-        Canon: ["Modelo 19"],
+
+    "Impresora": {
+        "HP": ["Modelo 14", "Modelo 15", "LaserJet Pro MFP M428FWD", "LaserJet Pro P2035N", "LaserJet Pro 400 M401DN", "LaserJet P2055DN", "P2015d", "LaserJet P1102w", "LaserJet P1505", "LaserJet P1606DN", "LaserJet 428fdw", "LaserJet Pro M102W", "LaserJet Pro MFP M130FW", "LaserJet P3005D", "LaserJet Pro M201DW", "LaserJet P3015"],
+        "Epson": ["Modelo 16", "Modelo 17", "Modelo 18", "EcoTank L220", "EcoTank L8180", "EcoTank L3250", "EcoTank L380"],
+        "Brother": ["HL-1200"],
+        "Lexmark": ["MX522", "M2880DFW", "MS315dn", "MX317DN"],
+        "Ricoh": ["C 307"],
+        "Samsung": ["ProXpress M4020ND", "ML4050N", "Xpress M2020W", "ML2165W"],
+        "Toshiba": ["e-studio 409p/409s"]
     },
-    Escaner: {
-        Epson: ["Modelo 20", "Modelo 21"],
-        Canon: ["Modelo 22"],
-    },
-};
+    "Escáner": {
+        "Epson": ["DS-530 II", "Ds770 II"]
+    }
+}
 
 let miVariableParaMTs;
 
@@ -145,53 +154,96 @@ function susbsecretariaSeleccionada() {
     // Obtener el valor seleccionado
     var selec = select_subse.options[select_subse.selectedIndex];
     var seleccionado = selec.id;
-    console.log(selec);
-    console.log(seleccionado);
 
-    // si tiene la propiedad "oficinaPrivada"
+    // Limpiar el contenido previo
+    contenedor.innerHTML = "";
+
+    // Función auxiliar para crear y configurar un elemento de selección
+    function crearSelect(direcciones) {
+        const select_direcciones = document.createElement("select");
+
+        for (let key in direcciones) {
+            const option = document.createElement("option");
+            option.value = key; // Set the value as the "key" of direcciones
+            option.name = "Direccion";
+            option.text = direcciones[key].nombre;
+            select_direcciones.appendChild(option);
+        }
+
+        contenedor.appendChild(select_direcciones);
+        return select_direcciones;
+    }
+
+
+    // Verificar si la opción seleccionada tiene la propiedad "oficinaPrivada"
     if (subsecretarias.hasOwnProperty(seleccionado) && subsecretarias[seleccionado].hasOwnProperty("oficinaPrivada")) {
-        const oficinaPrivada = subsecretarias[seleccionado].oficinaPrivada;
-        // Crear un input
+        let oficinaPrivada = subsecretarias[seleccionado].oficinaPrivada;
+
+        // Crear un input y configurarlo
         const input = document.createElement("input");
         input.id = "inputPrivada";
         input.type = "text";
         input.name = "Direccion";
         input.value = oficinaPrivada.nombre;
-        contenedor.innerHTML = ""; // Limpiar el contenido previo
         contenedor.appendChild(input);
 
-        // Ajustar input-lenght x DOM
+        // Ajustar el ancho del input según el contenido
         var inputElement = document.getElementById("inputPrivada");
-        // Obtener el ancho del contenido del <input>
         var anchoContenido = inputElement.scrollWidth;
-        // Establecer el ancho del <input> según el contenido
         inputElement.style.width = anchoContenido + 10 + "px";
-
     }
-    // si la subse tiene la propiedad "direcciones"
-    else if (subsecretarias.hasOwnProperty(seleccionado) && subsecretarias[seleccionado].hasOwnProperty("direcciones")) {
-        const direcciones = subsecretarias[seleccionado].direcciones;
-        // console.log(direcciones);
-        // console.log(direcciones[i]);
 
-        // Crear un select y agregar las opciones de direcciones
-        const select_direcciones = document.createElement("select");
-        for (let ofi in direcciones) {
-            const option = document.createElement("option");
-            option.value = direcciones[ofi];
-            option.name = "Direccion";
-            option.text = direcciones[ofi].nombre;
-            select_direcciones.appendChild(option);
-            // console.log(ofi);
+    // Verificar si la opción seleccionada tiene la propiedad "direcciones"
+    function mostrarNombre(subsecretaria) {
+        if (subsecretaria.hasOwnProperty("direcciones")) {
+            let direcciones = subsecretaria.direcciones;
+
+            console.log("crea direcciones: ");
+            let select = crearSelect(direcciones);
+
+            select.addEventListener("change", function () {
+                let selectedIndex = this.selectedIndex;
+                let direccionSeleccionada = this.options[selectedIndex].value;
+
+                if (subsecretaria.direcciones[direccionSeleccionada].hasOwnProperty("direcciones")) {
+                    contenedor.innerHTML = "";
+                    let nuevasDirecciones = subsecretaria.direcciones[direccionSeleccionada].direcciones;
+                    
+                    console.log("crea mas direcciones: ");
+                    let nuevoSelect = crearSelect(nuevasDirecciones);
+
+                    nuevoSelect.addEventListener("change", function () {
+                        let selectedIndex = this.selectedIndex;
+                        let direccionSeleccionada = this.options[selectedIndex].value;
+
+                        console.log(direccionSeleccionada);
+
+                        // console.log(subsecretaria.direcciones[direccionSeleccionada]);
+
+                        // if (subsecretaria.direcciones[direccionSeleccionada].hasOwnProperty("direcciones")) {
+                        //     mostrarNombre(subsecretaria.direcciones[direccionSeleccionada]);
+                        // } else {
+                        //     console.log("no tiene direccion: ");
+                        //     let nombre = subsecretaria.direcciones[direccionSeleccionada].nombre;
+                        //     console.log("Nombre:", nombre);
+                        // }
+                    });
+
+                    contenedor.appendChild(nuevoSelect);
+                } else {
+                    let nombre = subsecretaria.direcciones[direccionSeleccionada].nombre;
+                    console.log("Nombre:", nombre);
+                }
+            });
+
+            contenedor.appendChild(select);
         }
-        contenedor.innerHTML = ""; // Limpiar el contenido previo
-        contenedor.appendChild(select_direcciones);
-    }
-    else {
-        // Limpiar el contenido si no se cumple ninguna condición
-        contenedor.innerHTML = "";
     }
 
-};
+    // Usage:
+    mostrarNombre(subsecretarias[seleccionado]);
+
+}
+
 
 // console.log(subsecretarias);

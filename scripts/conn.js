@@ -62,7 +62,7 @@ async function obtenerDatos() {
     console.log("miVar :", miVariableParaMTs.valorA);    
     form.style.display = 'block';
     spinner.style.display = 'none';
-    document.getElementById('nombreEquipo').value = miVariableParaMTs.valorA;
+    document.getElementById('mtEquipo').value = miVariableParaMTs.valorA;
 }
 
 // Llamar a la función obtenerDatos para obtener los datos

@@ -200,7 +200,7 @@ var data = {
               "nombre": "Dirección delegada de la dirección provincial de personal"
             },
             "direccionTecnologiaInformacion": {
-              "nombre": "Dirección de tecnología de la información"
+              "nombre": "Dirección de tecnología de la información",
             },
             "direccionServiciosAuxiliares": {
               "nombre": "Dirección de servicios auxiliares"
