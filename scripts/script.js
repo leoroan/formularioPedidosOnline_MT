@@ -128,129 +128,70 @@ function mostrarCamposMonitor() {
 
 // SELECCIONAR SUBSE
 
-const select_subse = document.getElementById("selectSubse");
-var subsecretarias = ministerioEstructura.subsecretarias;
-
-function agregarOpciones() {
-    for (var subse in subsecretarias) {
-        var option = document.createElement("option");
-        option.id = subse;
-        option.value = subsecretarias[subse].nombre; // va a la bdd/gsheet
-        option.text = subsecretarias[subse].nombre; // a display
-        // option.dataset.subseValue = subse;
-        select_subse.appendChild(option);
-    }
-}
-agregarOpciones();
-// console.log(Object.keys(subsecretarias['unidadMonitoreo']));
-
-// Agregar event listener al cambio de selección
-select_subse.addEventListener("change", susbsecretariaSeleccionada);
-const select_direc = document.getElementById("selectDirecc");
-
-// SELECCIONAR OFI/DIRE
-function susbsecretariaSeleccionada() {
-    // Obtener el valor seleccionado
-    var selec = select_subse.options[select_subse.selectedIndex];
-    var seleccionado = selec.id;
-    // var propiedades = ministerioEstructura.subsecretarias[seleccionado];
-
-    // console.log(seleccionado);
-    // console.log("prop: ", propiedades);
-
-    if (ministerioEstructura.subsecretarias[seleccionado].hasOwnProperty("oficinaPrivada")) {
-
-        // Limpiar el contenido previo
-        select_direc.innerHTML = "";
-
-        // mostrar el nombre de la privada
-        // console.log("tiene privada");
-        // console.log(ministerioEstructura.subsecretarias[seleccionado].oficinaPrivada.nombre);
-
-        var option = document.createElement("option");
-        option.id = seleccionado;
-        option.value = ministerioEstructura.subsecretarias[seleccionado].oficinaPrivada.nombre; // va a la bdd/gsheet
-        option.text = ministerioEstructura.subsecretarias[seleccionado].oficinaPrivada.nombre; // a display
-        // option.dataset.subseValue = seleccionado;
-        select_direc.appendChild(option);
-
-    } else {
-
-        if (ministerioEstructura.subsecretarias[seleccionado].hasOwnProperty("direcciones")) {
-            // console.log("tiene direcciones");
-            //mostrar las direcciones
-            var direcciones = ministerioEstructura.subsecretarias[seleccionado].direcciones;
-
-            // Limpiar el contenido previo
-            select_direc.innerHTML = "";
-
-            for (var direccion in direcciones) {
-                // console.log("dir ", direccion);
-                // console.log("direccion: ", ministerioEstructura.subsecretarias[seleccionado].direcciones[direccion]);
-
-                var option = document.createElement("option");
-                option.id = direccion;
-                option.value = ministerioEstructura.subsecretarias[seleccionado].direcciones[direccion].nombre; // va a la bdd/gsheet
-                option.text = ministerioEstructura.subsecretarias[seleccionado].direcciones[direccion].nombre; // a display
-                // option.dataset.subseValue = direccion;
-                select_direc.appendChild(option);
-            }
-
-        }
-
-    }
-
-}
-
-// Agregar event listener al cambio de selección
-select_direc.addEventListener("change", direccionSeleccionada);
-
-var contenedor = document.getElementById("masLugares");
-var selectElement = document.createElement("select");
+const selectSubse = document.getElementById("selectSubse");
+const selectDirec = document.getElementById("selectDirecc");
+const contenedor = document.getElementById("masLugares");
+const selectElement = document.createElement("select");
 selectElement.name = "DireccionII";
 
-// SELECCIONAR OFI/DIRE
-function direccionSeleccionada() {
-    contenedor.style.display = "block";
+// Popular los select con las opciones
+function populateSubseOptions() {
+    for (const subse in ministerioEstructura.subsecretarias) {
+        const option = document.createElement("option");
+        option.value = subse;
+        option.textContent = ministerioEstructura.subsecretarias[subse].nombre;
+        option.dataset.subseValue = subse;
+        selectSubse.appendChild(option);
+    }
+}
 
-    // Obtener la subse seleccionada
-    var selec = select_subse.options[select_subse.selectedIndex];
-    var sub_selected = selec.id;
+// Populates the selectDirec dropdown based on the selected sub-secretary
+function populateDirecOptions() {
+    const selectedSubse = selectSubse.value;
+    const subseData = ministerioEstructura.subsecretarias[selectedSubse];
 
-    // Obtener la direccion seleccionada
-    var selec = select_direc.options[select_direc.selectedIndex];
-    var dir_selected = selec.id;
+    selectDirec.innerHTML = "";
 
-    // console.log(dir_selected);
-    // console.log(ministerioEstructura.subsecretarias[sub_selected].direcciones[dir_selected].hasOwnProperty("direcciones"));
-
-
-    if (ministerioEstructura.subsecretarias[sub_selected].direcciones[dir_selected].hasOwnProperty("direcciones")) {
-        console.log("Tiene direccion");
-
-        var direcciones = ministerioEstructura.subsecretarias[sub_selected].direcciones[dir_selected].direcciones;
-
-        // console.log(ministerioEstructura.subsecretarias[sub_selected].direcciones[dir_selected].direcciones.direccionComprasContratacionesSuministros);
-
-        // Limpiar el contenido previo
-        selectElement.innerHTML = "";
-
-        for (var direccion in direcciones) {
-            // console.log("esta dir: ", direccion);
-            var option = document.createElement("option");
-            option.id = direccion;
-            option.value = ministerioEstructura.subsecretarias[sub_selected].direcciones[dir_selected].direcciones[direccion].nombre; // va a la bdd/gsheet
-            option.text = ministerioEstructura.subsecretarias[sub_selected].direcciones[dir_selected].direcciones[direccion].nombre; // a display
-            // option.dataset.subseValue = direccion;
-            selectElement.appendChild(option);
+    if (subseData.hasOwnProperty("oficinaPrivada")) {
+        const option = document.createElement("option");
+        option.value = "privada";
+        option.textContent = subseData.oficinaPrivada.nombre;
+        selectDirec.appendChild(option);
+    } else if (subseData.hasOwnProperty("direcciones")) {
+        for (const direccion in subseData.direcciones) {
+            const option = document.createElement("option");
+            option.value = direccion;
+            option.textContent = subseData.direcciones[direccion].nombre;
+            selectDirec.appendChild(option);
         }
+    }
+}
 
-        contenedor.appendChild(selectElement);
+// Populates the selectElement dropdown based on the selected sub-secretary and direction
+function populateDireccionOptions() {
+    const selectedSubse = selectSubse.value;
+    const selectedDirec = selectDirec.value;
+    const direcciones = ministerioEstructura.subsecretarias[selectedSubse].direcciones[selectedDirec].direcciones;
 
+    selectElement.innerHTML = "";
+
+    for (const direccion in direcciones) {
+        const option = document.createElement("option");
+        option.value = direccion;
+        option.textContent = direcciones[direccion].nombre;
+        selectElement.appendChild(option);
     }
 
-
-
+    contenedor.style.display = "block";
+    contenedor.appendChild(selectElement);
 }
+
+// Event listeners for selectSubse and selectDirec
+selectSubse.addEventListener("change", populateDirecOptions);
+selectDirec.addEventListener("change", populateDireccionOptions);
+
+// Initialize the dropdown options
+populateSubseOptions();
+
 
 

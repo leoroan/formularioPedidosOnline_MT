@@ -23,7 +23,7 @@ window.addEventListener("load", function () {
                 location.reload();
             })
             .finally(() => {
-                // Ocultar el spinner cuando la solicitud se complete (ya sea éxito o error)
+                // Ocultar el spinner cuando la solicitud se complete (ya sea éxitoso o dé error)
                 spinner.style.display = 'none';
                 form.style.display = 'block';
 
