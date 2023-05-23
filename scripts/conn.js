@@ -25,6 +25,7 @@ window.addEventListener("load", function () {
                 // Ocultar el spinner cuando la solicitud se complete (ya sea éxito o error)
                 spinner.style.display = 'none';
                 form.style.display = 'block';
+                
             });
     });
 });
