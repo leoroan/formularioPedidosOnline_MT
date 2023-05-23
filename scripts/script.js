@@ -151,6 +151,7 @@ const contenedor = document.getElementById("masLugares");
 select_subse.addEventListener("change", susbsecretariaSeleccionada);
 
 function susbsecretariaSeleccionada() {
+
     // Obtener el valor seleccionado
     var selec = select_subse.options[select_subse.selectedIndex];
     var seleccionado = selec.id;
@@ -158,92 +159,60 @@ function susbsecretariaSeleccionada() {
     // Limpiar el contenido previo
     contenedor.innerHTML = "";
 
-    // Función auxiliar para crear y configurar un elemento de selección
-    function crearSelect(direcciones) {
-        const select_direcciones = document.createElement("select");
+    console.log(seleccionado);
 
-        for (let key in direcciones) {
-            const option = document.createElement("option");
-            option.value = key; // Set the value as the "key" of direcciones
-            option.name = "Direccion";
-            option.text = direcciones[key].nombre;
-            select_direcciones.appendChild(option);
-        }
-
-        contenedor.appendChild(select_direcciones);
-        return select_direcciones;
-    }
-
-
-    // Verificar si la opción seleccionada tiene la propiedad "oficinaPrivada"
     if (subsecretarias.hasOwnProperty(seleccionado) && subsecretarias[seleccionado].hasOwnProperty("oficinaPrivada")) {
-        let oficinaPrivada = subsecretarias[seleccionado].oficinaPrivada;
+
+        // La propiedad existe en el objeto
+        console.log("tiene privada");
+        console.log(subsecretarias[seleccionado].oficinaPrivada.nombre);
 
         // Crear un input y configurarlo
         const input = document.createElement("input");
         input.id = "inputPrivada";
         input.type = "text";
         input.name = "Direccion";
-        input.value = oficinaPrivada.nombre;
+        input.value = subsecretarias[seleccionado].oficinaPrivada.nombre;
         contenedor.appendChild(input);
 
         // Ajustar el ancho del input según el contenido
         var inputElement = document.getElementById("inputPrivada");
         var anchoContenido = inputElement.scrollWidth;
-        inputElement.style.width = anchoContenido + 10 + "px";
-    }
+        inputElement.style.width = anchoContenido + 10 + "px"
 
-    // Verificar si la opción seleccionada tiene la propiedad "direcciones"
-    function mostrarNombre(subsecretaria) {
-        if (subsecretaria.hasOwnProperty("direcciones")) {
-            let direcciones = subsecretaria.direcciones;
+    } else {
+        // La propiedad no existe en el objeto
+        console.log("no tiene privada");
+        console.log(subsecretarias[seleccionado].direcciones);
 
-            console.log("crea direcciones: ");
-            let select = crearSelect(direcciones);
+        var select_direcciones = document.createElement("select");
 
-            select.addEventListener("change", function () {
-                let selectedIndex = this.selectedIndex;
-                let direccionSeleccionada = this.options[selectedIndex].value;
-
-                if (subsecretaria.direcciones[direccionSeleccionada].hasOwnProperty("direcciones")) {
-                    contenedor.innerHTML = "";
-                    let nuevasDirecciones = subsecretaria.direcciones[direccionSeleccionada].direcciones;
-                    
-                    console.log("crea mas direcciones: ");
-                    let nuevoSelect = crearSelect(nuevasDirecciones);
-
-                    nuevoSelect.addEventListener("change", function () {
-                        let selectedIndex = this.selectedIndex;
-                        let direccionSeleccionada = this.options[selectedIndex].value;
-
-                        console.log(direccionSeleccionada);
-
-                        // console.log(subsecretaria.direcciones[direccionSeleccionada]);
-
-                        // if (subsecretaria.direcciones[direccionSeleccionada].hasOwnProperty("direcciones")) {
-                        //     mostrarNombre(subsecretaria.direcciones[direccionSeleccionada]);
-                        // } else {
-                        //     console.log("no tiene direccion: ");
-                        //     let nombre = subsecretaria.direcciones[direccionSeleccionada].nombre;
-                        //     console.log("Nombre:", nombre);
-                        // }
-                    });
-
-                    contenedor.appendChild(nuevoSelect);
-                } else {
-                    let nombre = subsecretaria.direcciones[direccionSeleccionada].nombre;
-                    console.log("Nombre:", nombre);
-                }
-            });
-
-            contenedor.appendChild(select);
+        for (var subse in subsecretarias[seleccionado].direcciones) {
+            var option = document.createElement("option");
+            option.id = subse;
+            option.value = subsecretarias[seleccionado].direcciones[subse].nombre; // va a la bdd/gsheet
+            option.name = "Direccion";
+            option.text = subsecretarias[seleccionado].direcciones[subse].nombre; // a display
+            select_direcciones.appendChild(option);
+            // option.dataset.subseValue = subse;
         }
-    }
 
-    // Usage:
-    mostrarNombre(subsecretarias[seleccionado]);
+        contenedor.appendChild(select_direcciones);
+    }
 
 }
 
+// Agregar event listener al cambio de selección
+select_direcciones.addEventListener("change", direccionSeleccionada);
 
-// console.log(subsecretarias);
+function direccionSeleccionada() {
+    var selec = select_direcciones.options[select_direcciones.selectedIndex];
+    var seleccionado = selec.id;
+
+    // Limpiar el contenido previo
+    contenedor.innerHTML = "";
+
+    console.log(seleccionado);
+
+    
+}
