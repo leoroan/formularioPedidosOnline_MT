@@ -20,12 +20,13 @@ window.addEventListener("load", function () {
                 form.reset();
                 obtenerDatos();
                 alert("Grabado correctamente");
+                location.reload();
             })
             .finally(() => {
                 // Ocultar el spinner cuando la solicitud se complete (ya sea éxito o error)
                 spinner.style.display = 'none';
                 form.style.display = 'block';
-                
+
             });
     });
 });
