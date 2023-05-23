@@ -253,32 +253,4 @@ function direccionSeleccionada() {
 
 }
 
-    // const select_direc = document.getElementById("selectDirecc");
-    // var direcciones = ministerioEstructura.subsecretarias[seleccionado];
-    // console.log(ministerioEstructura.subsecretarias[seleccionado]);
-    // console.log(Object.keys(ministerioEstructura.subsecretarias[seleccionado]));
-
-    // function agregarOpciones() {
-    //     for (var key in Object.keys(ministerioEstructura.subsecretarias[seleccionado])) {
-    //         var dir = Object.keys(ministerioEstructura.subsecretarias[seleccionado])[key];
-
-    //         var option = document.createElement("option");
-    //         option.id = seleccionado;
-    //         option.value = dir; // va a la bdd/gsheet
-    //         option.text = ministerioEstructura.subsecretarias[seleccionado][dir]; // a display
-    //         // option.dataset.subseValue = dire;
-    //         select_direc.appendChild(option);
-
-    //         console.log("dir: ",dir);
-    //         console.log(ministerioEstructura.subsecretarias[seleccionado][dir]);
-    //     }
-    // }
-    // agregarOpciones();
-
-    // Limpiar el contenido previo
-    // contenedor.innerHTML = "";
-
-    // console.log(seleccionado);
-
-
 
