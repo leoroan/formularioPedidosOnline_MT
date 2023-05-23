@@ -31,7 +31,7 @@ const equipos = {
         "Toshiba": ["e-studio 409p/409s"]
     },
     "Escáner": {
-        "Epson": ["DS-530 II", "Ds770 II"]
+        "Epson": ["DS-530 II", "DS-770 II"]
     }
 }
 
@@ -137,7 +137,7 @@ function agregarOpciones() {
         option.id = subse;
         option.value = subsecretarias[subse].nombre; // va a la bdd/gsheet
         option.text = subsecretarias[subse].nombre; // a display
-        option.dataset.subseValue = subse;
+        // option.dataset.subseValue = subse;
         select_subse.appendChild(option);
     }
 }
@@ -146,17 +146,17 @@ agregarOpciones();
 
 // Agregar event listener al cambio de selección
 select_subse.addEventListener("change", susbsecretariaSeleccionada);
+const select_direc = document.getElementById("selectDirecc");
 
 // SELECCIONAR OFI/DIRE
 function susbsecretariaSeleccionada() {
     // Obtener el valor seleccionado
     var selec = select_subse.options[select_subse.selectedIndex];
     var seleccionado = selec.id;
-    const select_direc = document.getElementById("selectDirecc");
-    var propiedades = ministerioEstructura.subsecretarias[seleccionado];
+    // var propiedades = ministerioEstructura.subsecretarias[seleccionado];
 
-    console.log(seleccionado);
-    console.log("prop: ", propiedades);
+    // console.log(seleccionado);
+    // console.log("prop: ", propiedades);
 
     if (ministerioEstructura.subsecretarias[seleccionado].hasOwnProperty("oficinaPrivada")) {
 
@@ -164,42 +164,92 @@ function susbsecretariaSeleccionada() {
         select_direc.innerHTML = "";
 
         // mostrar el nombre de la privada
-        console.log("tiene privada");
-        console.log(ministerioEstructura.subsecretarias[seleccionado].oficinaPrivada.nombre);
+        // console.log("tiene privada");
+        // console.log(ministerioEstructura.subsecretarias[seleccionado].oficinaPrivada.nombre);
 
         var option = document.createElement("option");
         option.id = seleccionado;
         option.value = ministerioEstructura.subsecretarias[seleccionado].oficinaPrivada.nombre; // va a la bdd/gsheet
         option.text = ministerioEstructura.subsecretarias[seleccionado].oficinaPrivada.nombre; // a display
-        // option.dataset.subseValue = dire;
+        // option.dataset.subseValue = seleccionado;
         select_direc.appendChild(option);
 
     } else {
 
         if (ministerioEstructura.subsecretarias[seleccionado].hasOwnProperty("direcciones")) {
-            console.log("tiene direcciones");
+            // console.log("tiene direcciones");
             //mostrar las direcciones
-            // console.log(ministerioEstructura.subsecretarias[seleccionado].direcciones);
             var direcciones = ministerioEstructura.subsecretarias[seleccionado].direcciones;
 
             // Limpiar el contenido previo
             select_direc.innerHTML = "";
 
             for (var direccion in direcciones) {
-                console.log("dir ", direccion);
-                console.log("direccion: ", ministerioEstructura.subsecretarias[seleccionado].direcciones[direccion]);
+                // console.log("dir ", direccion);
+                // console.log("direccion: ", ministerioEstructura.subsecretarias[seleccionado].direcciones[direccion]);
 
                 var option = document.createElement("option");
                 option.id = direccion;
                 option.value = ministerioEstructura.subsecretarias[seleccionado].direcciones[direccion].nombre; // va a la bdd/gsheet
                 option.text = ministerioEstructura.subsecretarias[seleccionado].direcciones[direccion].nombre; // a display
-                option.dataset.subseValue = direccion;
+                // option.dataset.subseValue = direccion;
                 select_direc.appendChild(option);
             }
 
         }
 
     }
+
+}
+
+// Agregar event listener al cambio de selección
+select_direc.addEventListener("change", direccionSeleccionada);
+
+var contenedor = document.getElementById("masLugares");
+var selectElement = document.createElement("select");
+selectElement.name = "DireccionII";
+
+// SELECCIONAR OFI/DIRE
+function direccionSeleccionada() {
+    contenedor.style.display = "block";
+
+    // Obtener la subse seleccionada
+    var selec = select_subse.options[select_subse.selectedIndex];
+    var sub_selected = selec.id;
+
+    // Obtener la direccion seleccionada
+    var selec = select_direc.options[select_direc.selectedIndex];
+    var dir_selected = selec.id;
+
+    // console.log(dir_selected);
+    // console.log(ministerioEstructura.subsecretarias[sub_selected].direcciones[dir_selected].hasOwnProperty("direcciones"));
+
+
+    if (ministerioEstructura.subsecretarias[sub_selected].direcciones[dir_selected].hasOwnProperty("direcciones")) {
+        console.log("Tiene direccion");
+
+        var direcciones = ministerioEstructura.subsecretarias[sub_selected].direcciones[dir_selected].direcciones;
+
+        // console.log(ministerioEstructura.subsecretarias[sub_selected].direcciones[dir_selected].direcciones.direccionComprasContratacionesSuministros);
+
+        // Limpiar el contenido previo
+        selectElement.innerHTML = "";
+
+        for (var direccion in direcciones) {
+            // console.log("esta dir: ", direccion);
+            var option = document.createElement("option");
+            option.id = direccion;
+            option.value = ministerioEstructura.subsecretarias[sub_selected].direcciones[dir_selected].direcciones[direccion].nombre; // va a la bdd/gsheet
+            option.text = ministerioEstructura.subsecretarias[sub_selected].direcciones[dir_selected].direcciones[direccion].nombre; // a display
+            // option.dataset.subseValue = direccion;
+            selectElement.appendChild(option);
+        }
+
+        contenedor.appendChild(selectElement);
+
+    }
+
+
 
 }
 
