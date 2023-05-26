@@ -143,6 +143,7 @@ function populateSubseOptions() {
         option.dataset.subseValue = subse;
         selectSubse.appendChild(option);
     }
+
 }
 
 // Populates the selectDirec dropdown based on the selected sub-secretary
@@ -169,17 +170,26 @@ function populateDirecOptions() {
 
 // Populates the selectElement dropdown based on the selected sub-secretary and direction
 function populateDireccionOptions() {
+
     const selectedSubse = selectSubse.value;
     const selectedDirec = selectDirec.value;
     const direcciones = ministerioEstructura.subsecretarias[selectedSubse].direcciones[selectedDirec].direcciones;
 
     selectElement.innerHTML = "";
 
-    for (const direccion in direcciones) {
+    if (ministerioEstructura.subsecretarias[selectedSubse].direcciones[selectedDirec].hasOwnProperty("oficinaPrivada")) {
         const option = document.createElement("option");
-        option.value = direccion;
-        option.textContent = direcciones[direccion].nombre;
+        option.value = ministerioEstructura.subsecretarias[selectedSubse].direcciones[selectedDirec].oficinaPrivada;
+        option.textContent = ministerioEstructura.subsecretarias[selectedSubse].direcciones[selectedDirec].oficinaPrivada.nombre;
         selectElement.appendChild(option);
+
+    } else {
+        for (const direccion in direcciones) {
+            const option = document.createElement("option");
+            option.value = direccion;
+            option.textContent = direcciones[direccion].nombre;
+            selectElement.appendChild(option);
+        }
     }
 
     contenedor.style.display = "block";
