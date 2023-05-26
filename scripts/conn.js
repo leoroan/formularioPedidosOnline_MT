@@ -1,8 +1,9 @@
 // CONNECTION THING
-const url = "https://script.google.com/macros/s/AKfycbzxM_ARCNu_TABMpwPZrzjfJQiNrziIFaUoQ42pEhyQjB-uT9CXGdoTWUfgI6v6LxUW/exec";
+const url = "https://script.google.com/macros/s/AKfycbwDSNV4tQGyjM1iLR3llE0w-Oh7Hj0gYBchlP71ZvrpmxrCL2zfQfGieDtSyS-onzqc/exec";
 
 const form = document.getElementById('pedido');
 const spinner = document.getElementById('spinner');
+const equiSelect = document.getElementById("tipoEquipo");
 form.action = url;
 
 window.addEventListener("load", function () {
@@ -31,27 +32,32 @@ window.addEventListener("load", function () {
     });
 });
 
-// function get() {
-// fetch(url)
-//     .then((res) => {
-//         // console.log(res.status);
-//         return res.text();
-//     })
-//     .then((res) => console.log(JSON.parse(res)));
-// }
+// Acá escucho el evento una vez seleccionado el tipo de  equipo
+// para enviar x parametro
+equiSelect.addEventListener("change", () => {
+    // console.log(equiSelect.value);
+    obtenerDatos();
+});
+
+
 
 async function get() {
-    form.style.display = 'none';
-    spinner.style.display = 'block';
     try {
-        const response = await fetch(url);
+        const params = {
+            tipo: equiSelect.value
+        };
+        const queryParams = new URLSearchParams(params);
+        const urlWithParams = `${url}?${queryParams}`;
+        const response = await fetch(urlWithParams);
+
         if (!response.ok) {
             throw new Error('Error en la solicitud');
         }
+
         const data = await response.json();
-        // console.log(data);
-        // Resto del código para trabajar con la respuesta
+        console.log(data);
         miVariableParaMTs = data;
+
     } catch (error) {
         console.error(error);
         // Resto del código para manejar el error
@@ -60,12 +66,15 @@ async function get() {
 
 // Utilizar async/await para esperar a que la función get se complete
 async function obtenerDatos() {
+    form.style.display = 'none';
+    spinner.style.display = 'block';
     await get();
-    console.log("miVar :", miVariableParaMTs.valorA);    
     form.style.display = 'block';
     spinner.style.display = 'none';
-    document.getElementById('mtEquipo').value = miVariableParaMTs.valorA;
+
+    // console.log("miVar :", miVariableParaMTs.valorA);
+    document.getElementById('mtEquipo').value = miVariableParaMTs.value;
 }
 
 // Llamar a la función obtenerDatos para obtener los datos
-obtenerDatos();
+// obtenerDatos();

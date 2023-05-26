@@ -30,7 +30,7 @@ const equipos = {
         "Samsung": ["ProXpress M4020ND", "ML4050N", "Xpress M2020W", "ML2165W"],
         "Toshiba": ["e-studio 409p/409s"]
     },
-    "Escáner": {
+    "Escaner": {
         "Epson": ["DS-530 II", "DS-770 II"]
     }
 }
