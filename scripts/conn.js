@@ -18,10 +18,13 @@ window.addEventListener("load", function () {
             body: data,
         })
             .then(() => {
-                form.reset();
                 obtenerDatos();
-                alert("Grabado correctamente");
-                location.reload();
+                // alert("Grabado correctamente");                
+                // location.reload();
+                //calling the modal
+                mostrarDatosEnModal(data);
+                const button = document.getElementById("successModalButton");
+                button.click();
             })
             .finally(() => {
                 // Ocultar el spinner cuando la solicitud se complete (ya sea éxitoso o dé error)

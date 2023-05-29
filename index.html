@@ -44,9 +44,33 @@
             </div>
         </div>
 
+        <!-- MODAL -->
+        <!-- tiene estilo en linea -->
+        <button type="button" id="successModalButton" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#successModal" style="display: none;">
+            este boton no deberia ser visto...
+        </button>
+
+        <div class="modal fade" id="successModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="successModal">Nuevo MT</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Grabado correctamente.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="modalCloseButton" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- FORM  -->
         <form method="POST" id="pedido" class="row g-3">
-            
+
             <div class="col-6">
                 <label for="tipoEquipo" class="form-label">Tipo de equipo</label><br>
                 <select id="tipoEquipo" name="tipoEquipo" required>
@@ -62,7 +86,7 @@
                 <label for="usuarioResponsable" class="form-label">Usuario Responsable:</label><br>
                 <input type="text" id="usuarioResponsable" name="usuarioResponsable" required>
             </div>
-            
+
 
             <div class="col-6">
                 <label for="usuarioAsignado" class="form-label">Usuario Asignado:</label><br>

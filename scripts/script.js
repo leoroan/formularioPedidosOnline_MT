@@ -217,5 +217,24 @@ selectDirec.addEventListener("change", populateDireccionOptions);
 // Initialize the dropdown options
 populateSubseOptions();
 
+//MODAL BUTTON
 
+const modalButton = document.getElementById("modalCloseButton");
 
+modalButton.addEventListener("click", function () {
+    location.reload();
+});
+
+//MODAL DATOS
+
+function mostrarDatosEnModal(data) {
+    // Ejemplo de cómo mostrar los datos en tu modal
+    const modal = document.getElementById('miModal');
+    const contenidoModal = document.getElementById('contenidoModal');
+
+    // Actualiza el contenido del modal con los datos recibidos
+    contenidoModal.innerText = data.nombre;
+
+    // Muestra el modal
+    modal.style.display = 'block';
+}
