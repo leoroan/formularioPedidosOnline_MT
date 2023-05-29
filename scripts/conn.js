@@ -69,7 +69,7 @@ async function obtenerDatos() {
     form.style.display = 'none';
     spinner.style.display = 'block';
     await get();
-    form.style.display = 'block';
+    form.style.display = 'flex';
     spinner.style.display = 'none';
 
     // console.log("miVar :", miVariableParaMTs.valorA);
