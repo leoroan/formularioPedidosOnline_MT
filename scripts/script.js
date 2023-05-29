@@ -138,9 +138,10 @@ selectElement.name = "DireccionII";
 function populateSubseOptions() {
     for (const subse in ministerioEstructura.subsecretarias) {
         const option = document.createElement("option");
-        option.value = subse;
+        option.value = ministerioEstructura.subsecretarias[subse].nombre;
         option.textContent = ministerioEstructura.subsecretarias[subse].nombre;
         option.dataset.subseValue = subse;
+        option.setAttribute("data-value", subse); // Custom attribute to store "subse" value
         selectSubse.appendChild(option);
     }
 
@@ -148,21 +149,29 @@ function populateSubseOptions() {
 
 // Populates the selectDirec dropdown based on the selected sub-secretary
 function populateDirecOptions() {
-    const selectedSubse = selectSubse.value;
-    const subseData = ministerioEstructura.subsecretarias[selectedSubse];
+
+    var selectedOption = selectSubse.options[selectSubse.selectedIndex];
+    var storedValue = selectedOption.getAttribute("data-value");
+    // const selectedSubse = selectSubse.value;
+    const subseData = ministerioEstructura.subsecretarias[storedValue];
 
     selectDirec.innerHTML = "";
 
     if (subseData.hasOwnProperty("oficinaPrivada")) {
         const option = document.createElement("option");
-        option.value = "privada";
+        option.value = subseData.oficinaPrivada.nombre;
+        // option.value = "privada";
         option.textContent = subseData.oficinaPrivada.nombre;
+        option.setAttribute("data-value", subseData);
         selectDirec.appendChild(option);
+
     } else if (subseData.hasOwnProperty("direcciones")) {
         for (const direccion in subseData.direcciones) {
             const option = document.createElement("option");
-            option.value = direccion;
+            option.value = subseData.direcciones[direccion].nombre;
+            // option.value = direccion;
             option.textContent = subseData.direcciones[direccion].nombre;
+            option.setAttribute("data-value", direccion);
             selectDirec.appendChild(option);
         }
     }
@@ -171,8 +180,11 @@ function populateDirecOptions() {
 // Populates the selectElement dropdown based on the selected sub-secretary and direction
 function populateDireccionOptions() {
 
-    const selectedSubse = selectSubse.value;
-    const selectedDirec = selectDirec.value;
+    const selectedSubse = selectSubse.options[selectSubse.selectedIndex].getAttribute("data-value");
+    // const selectedSubse = selectSubse.value;
+    const selectedDirec = selectDirec.options[selectDirec.selectedIndex].getAttribute("data-value");
+    // const selectedDirec = selectDirec.value;
+
     const direcciones = ministerioEstructura.subsecretarias[selectedSubse].direcciones[selectedDirec].direcciones;
 
     selectElement.innerHTML = "";
@@ -181,13 +193,15 @@ function populateDireccionOptions() {
         const option = document.createElement("option");
         option.value = ministerioEstructura.subsecretarias[selectedSubse].direcciones[selectedDirec].oficinaPrivada;
         option.textContent = ministerioEstructura.subsecretarias[selectedSubse].direcciones[selectedDirec].oficinaPrivada.nombre;
+        option.setAttribute("data-value", ministerioEstructura.subsecretarias[selectedSubse].direcciones[selectedDirec]);
         selectElement.appendChild(option);
 
     } else {
         for (const direccion in direcciones) {
             const option = document.createElement("option");
-            option.value = direccion;
+            option.value = direcciones[direccion].nombre;
             option.textContent = direcciones[direccion].nombre;
+            option.setAttribute("data-value", direccion);
             selectElement.appendChild(option);
         }
     }
