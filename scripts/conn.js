@@ -18,27 +18,18 @@ window.addEventListener("load", function () {
             body: data,
         })
             .then(() => {
-                obtenerDatos();
-                // alert("Grabado correctamente");                
-                // location.reload();
-                //calling the modal
-                mostrarDatosEnModal(data);
                 const button = document.getElementById("successModalButton");
                 button.click();
             })
             .finally(() => {
-                // Ocultar el spinner cuando la solicitud se complete (ya sea éxitoso o dé error)
                 spinner.style.display = 'none';
                 form.style.display = 'block';
-
+                mostrarDatosEnModal(data);
             });
     });
 });
 
-// Acá escucho el evento una vez seleccionado el tipo de  equipo
-// para enviar x parametro
 equiSelect.addEventListener("change", () => {
-    // console.log(equiSelect.value);
     obtenerDatos();
 });
 
@@ -75,9 +66,5 @@ async function obtenerDatos() {
     form.style.display = 'flex';
     spinner.style.display = 'none';
 
-    // console.log("miVar :", miVariableParaMTs.valorA);
     document.getElementById('mtEquipo').value = miVariableParaMTs.value;
 }
-
-// Llamar a la función obtenerDatos para obtener los datos
-// obtenerDatos();

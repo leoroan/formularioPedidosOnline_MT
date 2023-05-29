@@ -228,13 +228,18 @@ modalButton.addEventListener("click", function () {
 //MODAL DATOS
 
 function mostrarDatosEnModal(data) {
-    // Ejemplo de cómo mostrar los datos en tu modal
-    const modal = document.getElementById('miModal');
-    const contenidoModal = document.getElementById('contenidoModal');
+    const contenidoModal = document.querySelector('.contenidoModal');
+    contenidoModal.innerHTML = '';
 
-    // Actualiza el contenido del modal con los datos recibidos
-    contenidoModal.innerText = data.nombre;
+    for (const [name, value] of data.entries()) {
+        const label = document.createElement('label');
+        label.innerText = name;
+        const input = document.createElement('input');
+        input.value = value;
+        input.setAttribute('readonly', true);
 
-    // Muestra el modal
-    modal.style.display = 'block';
+        contenidoModal.appendChild(label);
+        contenidoModal.appendChild(input);
+    }
+
 }
