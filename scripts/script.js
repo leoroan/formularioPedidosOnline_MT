@@ -218,15 +218,12 @@ selectDirec.addEventListener("change", populateDireccionOptions);
 populateSubseOptions();
 
 //MODAL BUTTON
-
 const modalButton = document.getElementById("modalCloseButton");
-
 modalButton.addEventListener("click", function () {
     location.reload();
 });
 
 //MODAL DATOS
-
 function mostrarDatosEnModal(data) {
     const contenidoModal = document.querySelector('.contenidoModal');
     contenidoModal.innerHTML = '';
@@ -241,5 +238,4 @@ function mostrarDatosEnModal(data) {
         contenidoModal.appendChild(label);
         contenidoModal.appendChild(input);
     }
-
 }
