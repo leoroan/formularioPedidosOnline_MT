@@ -225,37 +225,114 @@ modalButton.addEventListener("click", function () {
     location.reload();
 });
 
-
-// LIMPIA GABI!
-
 //MODAL DATOS  
 function mostrarDatosEnModal(data) {
     const contenidoModal = document.querySelector('.contenidoModal');
     contenidoModal.innerHTML = '';
 
     let texto = '';
+    let textoImprimir = '';
+
+    const descripciones = {
+        tipoEquipo: 'El equipo es tipo:',
+        mtEquipo: 'Número de MT:',
+        usuarioResponsable: 'El usuario responsable es:',
+        usuarioAsignado: 'El usuario asignado es:',
+        equipoMarca: 'La marca del equipo es:',
+        equipoModelo: 'El modelo del equipo es:',
+        equipoNroSerie: 'El número de serie del equipo es:',
+        monitorModelo: 'El modelo del monitor es:',
+        monitorNroSerie: 'El número de serie del monitor es:',
+        nroInventarioPatrimonio: 'El número de inventario o patrimonio es:',
+        Subsecretaría: 'La subsecretaría es:',
+        Direccion: 'La dirección es:',
+        observaciones: 'Observaciones:',
+        fechaEntregado: 'Fecha de entrega:',
+    };
 
     for (const [name, value] of data.entries()) {
         console.log("nom: ", name, " val: ", value);
         texto += `${name}: ${value}\n`;
+        textoImprimir += `${descripciones[name]} ${value}<br><br>`;
     }
-    // imprimirEtiqueta(texto);
 
     const textoElement = document.createElement('textarea');
     textoElement.value = texto;
     textoElement.setAttribute('readonly', true);
 
     contenidoModal.appendChild(textoElement);
-}
 
-// printButton.addEventListener("click", function () {
-//     imprimirEtiqueta('contentModal');
-// });
+    printButton.addEventListener("click", function () {
+        imprimirEtiqueta(textoImprimir);
+    });
+}
 
 function imprimirEtiqueta(unTexto) {
-        var ventanaImpresion = window.open('', '_blank');
-        ventanaImpresion.document.write('<html><head><title>Impresión</title></head><body>' + unTexto + '</body></html>');
-        ventanaImpresion.document.close();
-        ventanaImpresion.print();
-        ventanaImpresion.close();
+    // hay q hacer la pagina afuera y llamarla con esto
+    var ventanaImpresion = window.open('', '_blank');
+    ventanaImpresion.document.write(`
+    <html>
+        <head>
+            <title>Remito</title>
+            <style>
+                body {
+                    font-family: 'Roboto', sans-serif;
+                }
+                h1 {
+                    color: #333;
+                    font-size: 24px;
+                    margin-bottom: 20px;
+                    text-align: center;
+                }
+                h2 {
+                    color: #555;
+                    font-size: 18px;
+                    margin-bottom: 10px;
+                    text-align: center;
+                }
+                p {
+                    color: #777;
+                    font-size: 14px;
+                    margin-bottom: 10px;
+                }
+                .campo-firma {
+                    margin-top: 60px;
+                }
+                .campo-firma label {
+                    display: block;
+                    font-size: 14px;
+                    margin-bottom: 50px;
+                }
+                .campo-firma input {
+                    width: 100%;
+                    padding: 5px;
+                    font-size: 14px;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>MINISTERIO DE TRANSPORTE</h1>
+            <h2>Gobierno de la Provincia de Buenos Aires</h2>
+            <p>En el día de la fecha, he recibido del MINISTERIO DE TRANSPORTE de la Provincia de Buenos Aires el/los siguiente/s material/es para su uso exclusivo y excluyente en mis actividades laborales, comprometiéndome a utilizarlo/s estrictamente de acuerdo con el propósito indicado, y no para comunicaciones personales, ya que no es para beneficio personal. Asimismo, me comprometo a devolverlo/s a la primera solicitud o al término de mi relación jurídica con la misma.</p>
+            <br>
+            ${unTexto}
+            <div class="campo-firma">
+                <label>Firma:</label>
+            </div>
+            <div class="campo-firma">
+                <label>Aclaración:</label>
+            </div>
+            <div class="campo-firma">
+                <label>DNI:</label>
+            </div>
+        </body>
+    </html>
+`);
+    ventanaImpresion.document.close();
+    ventanaImpresion.print();
+    ventanaImpresion.close();
 }
+
+
+
+
