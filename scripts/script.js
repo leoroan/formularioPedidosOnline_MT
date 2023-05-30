@@ -219,23 +219,43 @@ populateSubseOptions();
 
 //MODAL BUTTON
 const modalButton = document.getElementById("modalCloseButton");
+const printButton = document.getElementById("printButton");
+
 modalButton.addEventListener("click", function () {
     location.reload();
 });
 
-//MODAL DATOS
+
+// LIMPIA GABI!
+
+//MODAL DATOS  
 function mostrarDatosEnModal(data) {
     const contenidoModal = document.querySelector('.contenidoModal');
     contenidoModal.innerHTML = '';
 
-    for (const [name, value] of data.entries()) {
-        const label = document.createElement('label');
-        label.innerText = name;
-        const input = document.createElement('input');
-        input.value = value;
-        input.setAttribute('readonly', true);
+    let texto = '';
 
-        contenidoModal.appendChild(label);
-        contenidoModal.appendChild(input);
+    for (const [name, value] of data.entries()) {
+        console.log("nom: ", name, " val: ", value);
+        texto += `${name}: ${value}\n`;
     }
+    // imprimirEtiqueta(texto);
+
+    const textoElement = document.createElement('textarea');
+    textoElement.value = texto;
+    textoElement.setAttribute('readonly', true);
+
+    contenidoModal.appendChild(textoElement);
+}
+
+// printButton.addEventListener("click", function () {
+//     imprimirEtiqueta('contentModal');
+// });
+
+function imprimirEtiqueta(unTexto) {
+        var ventanaImpresion = window.open('', '_blank');
+        ventanaImpresion.document.write('<html><head><title>Impresión</title></head><body>' + unTexto + '</body></html>');
+        ventanaImpresion.document.close();
+        ventanaImpresion.print();
+        ventanaImpresion.close();
 }
