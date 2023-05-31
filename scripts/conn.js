@@ -1,5 +1,5 @@
 // CONNECTION THING
-const url = "https://script.google.com/macros/s/AKfycbwDSNV4tQGyjM1iLR3llE0w-Oh7Hj0gYBchlP71ZvrpmxrCL2zfQfGieDtSyS-onzqc/exec";
+const url = "https://script.google.com/macros/s/AKfycby8146giUls3Cmu8GeSpSroqNDuoSXC7IrEI-f0McdzV8BTTxoP1MW1btg4WnWyl8H3/exec";
 
 const form = document.getElementById('pedido');
 const spinner = document.getElementById('spinner');
@@ -18,24 +18,18 @@ window.addEventListener("load", function () {
             body: data,
         })
             .then(() => {
-                form.reset();
-                obtenerDatos();
-                alert("Grabado correctamente");
-                location.reload();
+                const button = document.getElementById("successModalButton");
+                button.click();
             })
             .finally(() => {
-                // Ocultar el spinner cuando la solicitud se complete (ya sea éxitoso o dé error)
                 spinner.style.display = 'none';
                 form.style.display = 'block';
-
+                mostrarDatosEnModal(data);
             });
     });
 });
 
-// Acá escucho el evento una vez seleccionado el tipo de  equipo
-// para enviar x parametro
 equiSelect.addEventListener("change", () => {
-    // console.log(equiSelect.value);
     obtenerDatos();
 });
 
@@ -69,12 +63,8 @@ async function obtenerDatos() {
     form.style.display = 'none';
     spinner.style.display = 'block';
     await get();
-    form.style.display = 'block';
+    form.style.display = 'flex';
     spinner.style.display = 'none';
 
-    // console.log("miVar :", miVariableParaMTs.valorA);
     document.getElementById('mtEquipo').value = miVariableParaMTs.value;
 }
-
-// Llamar a la función obtenerDatos para obtener los datos
-// obtenerDatos();

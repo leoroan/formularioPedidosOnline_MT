@@ -138,9 +138,10 @@ selectElement.name = "DireccionII";
 function populateSubseOptions() {
     for (const subse in ministerioEstructura.subsecretarias) {
         const option = document.createElement("option");
-        option.value = subse;
+        option.value = ministerioEstructura.subsecretarias[subse].nombre;
         option.textContent = ministerioEstructura.subsecretarias[subse].nombre;
         option.dataset.subseValue = subse;
+        option.setAttribute("data-value", subse); // Custom attribute to store "subse" value
         selectSubse.appendChild(option);
     }
 
@@ -148,21 +149,29 @@ function populateSubseOptions() {
 
 // Populates the selectDirec dropdown based on the selected sub-secretary
 function populateDirecOptions() {
-    const selectedSubse = selectSubse.value;
-    const subseData = ministerioEstructura.subsecretarias[selectedSubse];
+
+    var selectedOption = selectSubse.options[selectSubse.selectedIndex];
+    var storedValue = selectedOption.getAttribute("data-value");
+    // const selectedSubse = selectSubse.value;
+    const subseData = ministerioEstructura.subsecretarias[storedValue];
 
     selectDirec.innerHTML = "";
 
     if (subseData.hasOwnProperty("oficinaPrivada")) {
         const option = document.createElement("option");
-        option.value = "privada";
+        option.value = subseData.oficinaPrivada.nombre;
+        // option.value = "privada";
         option.textContent = subseData.oficinaPrivada.nombre;
+        option.setAttribute("data-value", subseData);
         selectDirec.appendChild(option);
+
     } else if (subseData.hasOwnProperty("direcciones")) {
         for (const direccion in subseData.direcciones) {
             const option = document.createElement("option");
-            option.value = direccion;
+            option.value = subseData.direcciones[direccion].nombre;
+            // option.value = direccion;
             option.textContent = subseData.direcciones[direccion].nombre;
+            option.setAttribute("data-value", direccion);
             selectDirec.appendChild(option);
         }
     }
@@ -171,8 +180,11 @@ function populateDirecOptions() {
 // Populates the selectElement dropdown based on the selected sub-secretary and direction
 function populateDireccionOptions() {
 
-    const selectedSubse = selectSubse.value;
-    const selectedDirec = selectDirec.value;
+    const selectedSubse = selectSubse.options[selectSubse.selectedIndex].getAttribute("data-value");
+    // const selectedSubse = selectSubse.value;
+    const selectedDirec = selectDirec.options[selectDirec.selectedIndex].getAttribute("data-value");
+    // const selectedDirec = selectDirec.value;
+
     const direcciones = ministerioEstructura.subsecretarias[selectedSubse].direcciones[selectedDirec].direcciones;
 
     selectElement.innerHTML = "";
@@ -181,13 +193,15 @@ function populateDireccionOptions() {
         const option = document.createElement("option");
         option.value = ministerioEstructura.subsecretarias[selectedSubse].direcciones[selectedDirec].oficinaPrivada;
         option.textContent = ministerioEstructura.subsecretarias[selectedSubse].direcciones[selectedDirec].oficinaPrivada.nombre;
+        option.setAttribute("data-value", ministerioEstructura.subsecretarias[selectedSubse].direcciones[selectedDirec]);
         selectElement.appendChild(option);
 
     } else {
         for (const direccion in direcciones) {
             const option = document.createElement("option");
-            option.value = direccion;
+            option.value = direcciones[direccion].nombre;
             option.textContent = direcciones[direccion].nombre;
+            option.setAttribute("data-value", direccion);
             selectElement.appendChild(option);
         }
     }
@@ -202,6 +216,123 @@ selectDirec.addEventListener("change", populateDireccionOptions);
 
 // Initialize the dropdown options
 populateSubseOptions();
+
+//MODAL BUTTON
+const modalButton = document.getElementById("modalCloseButton");
+const printButton = document.getElementById("printButton");
+
+modalButton.addEventListener("click", function () {
+    location.reload();
+});
+
+//MODAL DATOS  
+function mostrarDatosEnModal(data) {
+    const contenidoModal = document.querySelector('.contenidoModal');
+    contenidoModal.innerHTML = '';
+
+    let texto = '';
+    let textoImprimir = '';
+
+    const descripciones = {
+        tipoEquipo: 'El equipo es tipo:',
+        mtEquipo: 'Número de MT:',
+        usuarioResponsable: 'El usuario responsable es:',
+        usuarioAsignado: 'El usuario asignado es:',
+        equipoMarca: 'La marca del equipo es:',
+        equipoModelo: 'El modelo del equipo es:',
+        equipoNroSerie: 'El número de serie del equipo es:',
+        monitorModelo: 'El modelo del monitor es:',
+        monitorNroSerie: 'El número de serie del monitor es:',
+        nroInventarioPatrimonio: 'El número de patrimonio es:',
+        Subsecretaría: 'La subsecretaría es:',
+        Direccion: 'La dirección es:',
+        DireccionII: 'La dirección II es:',
+        observaciones: 'Observaciones:',
+        fechaEntregado: 'Fecha de entrega:',
+    };
+
+    for (const [name, value] of data.entries()) {
+        console.log("nom: ", name, " val: ", value);
+        texto += `${name}: ${value}\n`;
+        textoImprimir += `${descripciones[name]} ${value}<br><br>`;
+    }
+
+    const textoElement = document.createElement('textarea');
+    textoElement.value = texto;
+    textoElement.setAttribute('readonly', true);
+    contenidoModal.appendChild(textoElement);
+
+    printButton.addEventListener("click", function () {
+        imprimirEtiqueta(textoImprimir);
+    });
+}
+
+function imprimirEtiqueta(unTexto) {
+    // hay q hacer la pagina afuera y llamarla con esto
+    var ventanaImpresion = window.open('', '_blank');
+    ventanaImpresion.document.write(`
+    <html>
+        <head>
+            <title>Remito</title>
+            <style>
+                body {
+                    font-family: 'Roboto', sans-serif;
+                }
+                h1 {
+                    color: #333;
+                    font-size: 24px;
+                    margin-bottom: 20px;
+                    text-align: center;
+                }
+                h2 {
+                    color: #555;
+                    font-size: 18px;
+                    margin-bottom: 10px;
+                    text-align: center;
+                }
+                p {
+                    color: #777;
+                    font-size: 14px;
+                    margin-bottom: 10px;
+                }
+                .campo-firma {
+                    margin-top: 60px;
+                }
+                .campo-firma label {
+                    display: block;
+                    font-size: 14px;
+                    margin-bottom: 50px;
+                }
+                .campo-firma input {
+                    width: 100%;
+                    padding: 5px;
+                    font-size: 14px;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>MINISTERIO DE TRANSPORTE</h1>
+            <h2>Gobierno de la Provincia de Buenos Aires</h2>
+            <p>En el día de la fecha, he recibido del MINISTERIO DE TRANSPORTE de la Provincia de Buenos Aires el/los siguiente/s material/es para su uso exclusivo y excluyente en mis actividades laborales, comprometiéndome a utilizarlo/s estrictamente de acuerdo con el propósito indicado, y no para comunicaciones personales, ya que no es para beneficio personal. Asimismo, me comprometo a devolverlo/s a la primera solicitud o al término de mi relación jurídica con la misma.</p>
+            <br>
+            ${unTexto}
+            <div class="campo-firma">
+                <label>Firma:</label>
+            </div>
+            <div class="campo-firma">
+                <label>Aclaración:</label>
+            </div>
+            <div class="campo-firma">
+                <label>DNI:</label>
+            </div>
+        </body>
+    </html>
+`);
+    ventanaImpresion.document.close();
+    ventanaImpresion.print();
+    ventanaImpresion.close();
+}
+
 
 
 
