@@ -243,9 +243,10 @@ function mostrarDatosEnModal(data) {
         equipoNroSerie: 'El número de serie del equipo es:',
         monitorModelo: 'El modelo del monitor es:',
         monitorNroSerie: 'El número de serie del monitor es:',
-        nroInventarioPatrimonio: 'El número de inventario o patrimonio es:',
+        nroInventarioPatrimonio: 'El número de patrimonio es:',
         Subsecretaría: 'La subsecretaría es:',
         Direccion: 'La dirección es:',
+        DireccionII: 'La dirección II es:',
         observaciones: 'Observaciones:',
         fechaEntregado: 'Fecha de entrega:',
     };
@@ -259,7 +260,6 @@ function mostrarDatosEnModal(data) {
     const textoElement = document.createElement('textarea');
     textoElement.value = texto;
     textoElement.setAttribute('readonly', true);
-
     contenidoModal.appendChild(textoElement);
 
     printButton.addEventListener("click", function () {
