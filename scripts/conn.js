@@ -41,6 +41,7 @@ window.addEventListener("load", function () {
 
 // lo uso para devolverle el numero NO usado de MT
 function sendDataToWebApp(data) {
+    console.log("a mandar ", data);
     fetch(url, {
         method: "POST",
         mode: "no-cors",

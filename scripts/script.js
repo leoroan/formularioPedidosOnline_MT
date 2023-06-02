@@ -46,6 +46,7 @@ console.log("tengo mt: ", tengoMt);
 
 //escucho cuando se refresca la página
 window.addEventListener("beforeunload", function (event) {
+    
     event.preventDefault();
     //here do something
     if (tengoMt && !envieForm) {
@@ -53,6 +54,7 @@ window.addEventListener("beforeunload", function (event) {
         resetPage();
     }
     event.returnValue = "";
+    
 });
 
 function resetPage() {
@@ -61,10 +63,12 @@ function resetPage() {
     if (cambieMt) {
         console.log("cambie!");
     }
-    
-    console.log("anterio mt enviado xq cambie: ",anteriorMT);
-    sendDataToWebApp(anteriorMT);
 
+    var dataToSent = {
+        [equiSelect.value]: anteriorMT
+      };
+
+    sendDataToWebApp(dataToSent);
 }
 
 
