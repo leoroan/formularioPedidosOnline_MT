@@ -7,12 +7,21 @@ const equiSelect = document.getElementById("tipoEquipo");
 form.action = url;
 
 window.addEventListener("load", function () {
+
+    setTimeout(function () {
+        // Your code here
+        resetPage();
+        console.log("Timer finished! - page RESETED");
+    }, 60000);
+
     form.addEventListener("submit", function (e) {
         e.preventDefault();
+
         form.style.display = 'none';
         const data = new FormData(form);
         const action = e.target.action;
         spinner.style.display = 'block';
+
         fetch(action, {
             method: 'POST',
             body: data,
@@ -20,6 +29,7 @@ window.addEventListener("load", function () {
             .then(() => {
                 const button = document.getElementById("successModalButton");
                 button.click();
+                envieForm = true;
             })
             .finally(() => {
                 spinner.style.display = 'none';
@@ -29,7 +39,35 @@ window.addEventListener("load", function () {
     });
 });
 
+// lo uso para devolverle el numero NO usado de MT
+function sendDataToWebApp(data) {
+    fetch(url, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+        .then(function (response) {
+            console.log("Data sent successfully!");
+        })
+        .catch(function (error) {
+            console.error("Error sending data:", error);
+        });
+}
+
+
 equiSelect.addEventListener("change", () => {
+    // comprobar si se seleccionó otro tipo de equipo
+    if (equipoActual != null) {
+        resetPage();
+        console.log("son distintos los tipos");
+        cambieMt = true;
+    }
+    equipoActual = equiSelect.value;
+    console.log("equipo actual ", equipoActual);
+
     obtenerDatos();
 });
 
@@ -51,6 +89,8 @@ async function get() {
         const data = await response.json();
         console.log(data);
         miVariableParaMTs = data;
+        tengoMt = true;
+        console.log("tengo mt: ", tengoMt);
 
     } catch (error) {
         console.error(error);
@@ -67,4 +107,6 @@ async function obtenerDatos() {
     spinner.style.display = 'none';
 
     document.getElementById('mtEquipo').value = miVariableParaMTs.value;
+    anteriorMT = miVariableParaMTs.value;
+
 }

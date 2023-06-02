@@ -35,7 +35,38 @@ const equipos = {
     }
 }
 
-let miVariableParaMTs;
+var miVariableParaMTs;
+var anteriorMT;
+var tengoMt = false;
+var cambieMt = false;
+var equipoActual = null;
+var envieForm = false;
+
+console.log("tengo mt: ", tengoMt);
+
+//escucho cuando se refresca la página
+window.addEventListener("beforeunload", function (event) {
+    event.preventDefault();
+    //here do something
+    if (tengoMt && !envieForm) {
+        // this.alert("tenes mt!");
+        resetPage();
+    }
+    event.returnValue = "";
+});
+
+function resetPage() {
+    console.log("do something when reset occurs");
+
+    if (cambieMt) {
+        console.log("cambie!");
+    }
+    
+    console.log("anterio mt enviado xq cambie: ",anteriorMT);
+    sendDataToWebApp(anteriorMT);
+
+}
+
 
 //SELECCION DE TIPO
 
