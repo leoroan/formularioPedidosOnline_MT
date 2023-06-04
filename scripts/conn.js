@@ -1,5 +1,5 @@
 // CONNECTION THING
-const url = "https://script.google.com/macros/s/AKfycbwm1JCPu26esyOIfTZ98IgIAtWRLeYkQFtCRmiP_WrBSnVuzT7fVvl-GwdlblqRdnRY/exec";
+const url = "https://script.google.com/macros/s/AKfycbzqJKHxWPUsNYEst3ReNcULY-NOsSxER6VNmY_v56aDPViADQrInOE3Sky_6stG1_GC/exec";
 
 const form = document.getElementById('pedido');
 const spinner = document.getElementById('spinner');
@@ -83,15 +83,17 @@ async function get() {
         const urlWithParams = `${url}?${queryParams}`;
         const response = await fetch(urlWithParams);
 
-        if (!response.ok) {
-            throw new Error('Error en la solicitud');
-        }
-
         const data = await response.json();
         console.log(data);
         miVariableParaMTs = data;
         tengoMt = true;
         console.log("tengo mt: ", tengoMt);
+        console.log(miVariableParaMTs.value);
+
+        if (!response.ok || miVariableParaMTs.value == "") {
+            alert('Error en la solicitud, posiblemente otro usuario esta pidiendo un MT para el mismo equipo. Aguardá un instante y volve a intentarlo...');
+            throw new Error('Error en la solicitud');
+        }
 
     } catch (error) {
         console.error(error);
