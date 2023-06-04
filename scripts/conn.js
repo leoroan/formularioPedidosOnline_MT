@@ -1,5 +1,5 @@
 // CONNECTION THING
-const url = "https://script.google.com/macros/s/AKfycbzqJKHxWPUsNYEst3ReNcULY-NOsSxER6VNmY_v56aDPViADQrInOE3Sky_6stG1_GC/exec";
+const url = "https://script.google.com/macros/s/AKfycbzz-P7x3M43Ncpl0FZvk2fchR5XX5lnZlnAsoveWK09uYPxZxgMGsdkGZFsGBCkoTsG/exec";
 
 const form = document.getElementById('pedido');
 const spinner = document.getElementById('spinner');
@@ -11,6 +11,7 @@ window.addEventListener("load", function () {
     setTimeout(function () {
         // Your code here
         resetPage();
+        document.getElementById("pedido").reset();
         console.log("Timer finished! - page RESETED");
     }, 60000);
 
@@ -42,16 +43,17 @@ window.addEventListener("load", function () {
 // lo uso para devolverle el numero NO usado de MT
 function sendDataToWebApp(data) {
     console.log("a mandar ", data);
+
     fetch(url, {
         method: "POST",
-        mode: "no-cors",
-        headers: {
-            "Content-Type": "application/json"
-        },
+        // mode: "no-cors",
+        // headers: {
+        //     "Content-Type": "application/json"
+        // },
         body: JSON.stringify(data)
     })
         .then(function (response) {
-            console.log("Data sent successfully!");
+            console.log("Data sent successfully!", response);
         })
         .catch(function (error) {
             console.error("Error sending data:", error);
@@ -62,9 +64,9 @@ function sendDataToWebApp(data) {
 equiSelect.addEventListener("change", () => {
     // comprobar si se seleccionó otro tipo de equipo
     if (equipoActual != null) {
-        resetPage();
         console.log("son distintos los tipos");
         cambieMt = true;
+        resetPage();
     }
     equipoActual = equiSelect.value;
     console.log("equipo actual ", equipoActual);
@@ -92,6 +94,7 @@ async function get() {
 
         if (!response.ok || miVariableParaMTs.value == "") {
             alert('Error en la solicitud, posiblemente otro usuario esta pidiendo un MT para el mismo equipo. Aguardá un instante y volve a intentarlo...');
+            document.getElementById("pedido").reset();
             throw new Error('Error en la solicitud');
         }
 

@@ -46,7 +46,7 @@ console.log("tengo mt: ", tengoMt);
 
 //escucho cuando se refresca la página
 window.addEventListener("beforeunload", function (event) {
-    
+
     event.preventDefault();
     //here do something
     if (tengoMt && !envieForm) {
@@ -54,21 +54,21 @@ window.addEventListener("beforeunload", function (event) {
         resetPage();
     }
     event.returnValue = "";
-    
+
 });
 
 function resetPage() {
     console.log("do something when reset occurs");
 
-    if (cambieMt) {
+    if (cambieMt || tengoMt) {
+        var dataToSent = {
+            equipAnterior: equipoActual.toLowerCase(),
+            numAnterior: anteriorMT
+        };
         console.log("cambie!");
+        sendDataToWebApp(dataToSent);
     }
 
-    var dataToSent = {
-        [equiSelect.value]: anteriorMT
-      };
-
-    sendDataToWebApp(dataToSent);
 }
 
 
