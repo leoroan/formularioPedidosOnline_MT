@@ -62,7 +62,7 @@ function resetPage() {
 
     if (cambieMt || tengoMt) {
         var dataToSent = {
-            equipAnterior: equipoActual.toLowerCase(),
+            equipoAnterior: equipoActual.toLowerCase(),
             numAnterior: anteriorMT
         };
         console.log("cambie!");
