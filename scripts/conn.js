@@ -1,5 +1,5 @@
 // CONNECTION THING
-const url = "https://script.google.com/macros/s/AKfycbyft8waUqFTYrJnbk0bS90Cz5rgrzx1apceETW6Mb_B6gBhJllTN6c2nDdoX1X3MJxi/exec";
+const url = "https://script.google.com/macros/s/AKfycbxJnZDKSess7OlkA4IfKuaf8LpHExApOcKAfP1SKv3mr-Dg5NkL5n-fH0EMpninleuw/exec";
 
 const form = document.getElementById('pedido');
 const spinner = document.getElementById('spinner');
@@ -13,7 +13,7 @@ window.addEventListener("load", function () {
         resetPage();
         document.getElementById("pedido").reset();
         console.log("Timer finished! - page RESETED");
-    }, 60000);
+    }, 120000);
 
     form.addEventListener("submit", function (e) {
         e.preventDefault();
@@ -45,7 +45,7 @@ function sendDataToWebApp(data) {
     console.log("a mandar ", data);
 
     fetch(url, {
-        method: "POST",
+        method: 'POST',
         body: JSON.stringify(data)
     })
         .then(function (response) {
