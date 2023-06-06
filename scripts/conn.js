@@ -1,5 +1,5 @@
 // CONNECTION THING
-const url = "https://script.google.com/macros/s/AKfycbxJnZDKSess7OlkA4IfKuaf8LpHExApOcKAfP1SKv3mr-Dg5NkL5n-fH0EMpninleuw/exec";
+const url = "https://script.google.com/macros/s/AKfycbwlrBo_S7g3gTxssIDWlqEArj6YY2-U8owZPzNdFn81Mn7qMH47sPeuWlW5YHRXE0Fr/exec";
 
 const form = document.getElementById('pedido');
 const spinner = document.getElementById('spinner');
@@ -72,9 +72,10 @@ equiSelect.addEventListener("change", () => {
 
 
 
-async function get() {
+async function getMT() {
     try {
         const params = {
+            requestType: 'getMtEquipo', 
             tipo: equiSelect.value
         };
         const queryParams = new URLSearchParams(params);
@@ -85,8 +86,8 @@ async function get() {
         console.log(data);
         miVariableParaMTs = data;
         tengoMt = true;
-        console.log("tengo mt: ", tengoMt);
-        console.log(miVariableParaMTs.value);
+        // console.log("tengo mt: ", tengoMt);
+        // console.log(miVariableParaMTs.value);
 
         if (!response.ok || miVariableParaMTs.value == "") {
             alert('Error en la solicitud, posiblemente otro usuario esta pidiendo un MT para el mismo equipo. Aguardá un instante y volve a intentarlo...');
@@ -104,7 +105,7 @@ async function get() {
 async function obtenerDatos() {
     form.style.display = 'none';
     spinner.style.display = 'block';
-    await get();
+    await getMT();
     form.style.display = 'flex';
     spinner.style.display = 'none';
 
