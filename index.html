@@ -38,11 +38,20 @@
 
         </header>
 
-        <h1> Bienvenido al inventario del MT </h1>
+        <h1 class="mb-5"> Items que componen al inventario del MT </h1>
+
+        <!-- SPINNER START -->
+        <!-- tiene estilo en linea -->
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border m-5" role="status" id="spinner" style="display: none;">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+        <!-- SPINNER END -->
 
         <!-- TABLE START -->
         <div class="table-responsive">
-            <table class="table">
+            <table class="table" id="itemsTable">
                 <thead>
                     <tr>
                         <th scope="col">Date</th>
@@ -63,33 +72,26 @@
                         <th scope="col">DireccionII</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <!-- Add your table rows here -->
-                    <tr>
-                        <td>Sample Date</td>
-                        <td>Sample tipoEquipo</td>
-                        <td>Sample mtEquipo</td>
-                        <td>Sample usuarioResponsable</td>
-                        <td>Sample usuarioAsignado</td>
-                        <td>Sample equipoMarca</td>
-                        <td>Sample equipoModelo</td>
-                        <td>Sample equipoNroSerie</td>
-                        <td>Sample monitorModelo</td>
-                        <td>Sample monitorNroSerie</td>
-                        <td>Sample nroInventarioPatrimonio</td>
-                        <td>Sample observaciones</td>
-                        <td>Sample fechaEntregado</td>
-                        <td>Sample Subsecretaría</td>
-                        <td>Sample Direccion</td>
-                        <td>Sample DireccionII</td>
-                    </tr>
-                    <!-- Add more rows as needed -->
-                </tbody>
             </table>
         </div>
-
-
         <!-- TABLE END -->
+
+        <!-- NAV START -->
+        <nav aria-label="Page navigation example mt-5">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- NAV END -->
+
 
 
 

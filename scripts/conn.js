@@ -1,5 +1,5 @@
 // CONNECTION THING
-const url = "https://script.google.com/macros/s/AKfycbwlrBo_S7g3gTxssIDWlqEArj6YY2-U8owZPzNdFn81Mn7qMH47sPeuWlW5YHRXE0Fr/exec";
+const url = "https://script.google.com/macros/s/AKfycbz3c-AZs_bigEeFYJmNpZh4HwthscBARBFrls-3yYHLcjW7REL-TJPFDrOiC2r7Ct_0/exec";
 
 const form = document.getElementById('pedido');
 const spinner = document.getElementById('spinner');
