@@ -1,36 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-h1 {
-  color: #333;
-  font-size: 24px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-h2 {
-  color: #555;
-  font-size: 18px;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-p {
-  color: #777;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.campo-firma {
-  margin-top: 60px;
-}
-.campo-firma label {
-  display: block;
-  font-size: 14px;
-  margin-bottom: 50px;
-}
-.campo-firma input {
-  width: 100%;
-  padding: 5px;
-  font-size: 14px;
+#itemsTable {
+  white-space: nowrap;
 }
 
 body {

@@ -2,6 +2,7 @@ const url = "https://script.google.com/macros/s/AKfycbz3c-AZs_bigEeFYJmNpZh4Hwth
 
 let inventarioData = [];
 const table = document.getElementById('itemsTable');
+const tableBody = document.getElementById('tableBody');
 
 window.addEventListener("load", function () {
 
@@ -47,6 +48,10 @@ window.addEventListener("load", function () {
     for (let i = 0; i < datos.length; i++) {
       const row = datos[i];
       const tr = document.createElement('tr');
+      const th = document.createElement('th');
+      th.setAttribute('scope', 'row');
+      th.textContent = `${i}`;
+      tr.appendChild(th);
 
       // Iterate over each column in the row
       for (let j = 0; j < row.length; j++) {
@@ -56,7 +61,7 @@ window.addEventListener("load", function () {
         tr.appendChild(td);
       }
 
-      table.appendChild(tr);
+      tableBody.appendChild(tr);
     }
   }
 
