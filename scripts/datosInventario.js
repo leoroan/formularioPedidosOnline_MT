@@ -1,4 +1,4 @@
-const url = "https://script.google.com/macros/s/AKfycbz3c-AZs_bigEeFYJmNpZh4HwthscBARBFrls-3yYHLcjW7REL-TJPFDrOiC2r7Ct_0/exec";
+const url = "https://script.google.com/macros/s/AKfycbx18-WjBM8jl2qJGa34XygQG-9z2AjWqLpzQjhB00MS-cBGNXfQ0XrN3I--90z0y2T9/exec";
 
 let inventarioData = [];
 const table = document.getElementById('itemsTable');
@@ -10,8 +10,8 @@ window.addEventListener("load", function () {
     try {
       const params = {
         requestType: 'getItemsTable',
-        pagina: '1',
-        tamanioPagina: '10',
+        pagina: '2',
+        tamanioPagina: '25',
       };
       const queryParams = new URLSearchParams(params);
       const urlWithParams = `${url}?${queryParams}`;
@@ -50,7 +50,7 @@ window.addEventListener("load", function () {
       const tr = document.createElement('tr');
       const th = document.createElement('th');
       th.setAttribute('scope', 'row');
-      th.textContent = `${i}`;
+      th.textContent = `${i+1}`;
       tr.appendChild(th);
 
       // Iterate over each column in the row
