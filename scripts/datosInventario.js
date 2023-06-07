@@ -1,6 +1,8 @@
-const url = "https://script.google.com/macros/s/AKfycbx18-WjBM8jl2qJGa34XygQG-9z2AjWqLpzQjhB00MS-cBGNXfQ0XrN3I--90z0y2T9/exec";
+const url = "https://script.google.com/macros/s/AKfycbzOjvyIQThMIIUV0lkYvWh2HlqU7ltlmlgqtR01luBSCxqju2J07tKPARIhaZoF-Q6u/exec";
 
 let inventarioData = [];
+let tamanioPagina = '10';
+
 const table = document.getElementById('itemsTable');
 const tableBody = document.getElementById('tableBody');
 
@@ -10,15 +12,15 @@ window.addEventListener("load", function () {
     try {
       const params = {
         requestType: 'getItemsTable',
-        pagina: '2',
-        tamanioPagina: '25',
+        pagina: '1',
+        tamanioPagina: tamanioPagina,
       };
       const queryParams = new URLSearchParams(params);
       const urlWithParams = `${url}?${queryParams}`;
       const response = await fetch(urlWithParams);
 
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       inventarioData = data;
 
       if (!response.ok) {
@@ -44,13 +46,14 @@ window.addEventListener("load", function () {
   obtenerItems();
 
   function completarTabla(datos) {
+    tableBody.innerHTML = "";
     // Iterate over the response array
     for (let i = 0; i < datos.length; i++) {
       const row = datos[i];
       const tr = document.createElement('tr');
       const th = document.createElement('th');
       th.setAttribute('scope', 'row');
-      th.textContent = `${i+1}`;
+      th.textContent = `${i + 1}`;
       tr.appendChild(th);
 
       // Iterate over each column in the row
@@ -63,6 +66,32 @@ window.addEventListener("load", function () {
 
       tableBody.appendChild(tr);
     }
+  }
+
+
+
+  var cant25 = document.getElementById("cant25");
+  var cant50 = document.getElementById("cant50");
+  var cant100 = document.getElementById("cant100");
+
+  // Eventos de escucha al seleccionarlos
+  cant25.addEventListener("click", function () {
+    obtenerValorSeleccionado("25");
+  });
+
+  cant50.addEventListener("click", function () {
+    obtenerValorSeleccionado("50");
+  });
+
+  cant100.addEventListener("click", function () {
+    obtenerValorSeleccionado("100");
+  });
+
+  // Función para obtener el valor seleccionado
+  function obtenerValorSeleccionado(valor) {
+    tamanioPagina = valor;
+    console.log(tamanioPagina);
+    obtenerItems();
   }
 
 });

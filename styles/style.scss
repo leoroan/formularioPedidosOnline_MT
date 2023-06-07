@@ -1,3 +1,4 @@
+@import "_normalize.scss";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import "_tablaData.scss";
 
@@ -106,4 +107,12 @@ footer {
 
 form{
   display: flex;
+}
+
+ul {
+  list-style-type: none;
+
+  li {
+    display: inline !important;
+  }
 }
