@@ -1,7 +1,19 @@
-const url = "https://script.google.com/macros/s/AKfycbzOjvyIQThMIIUV0lkYvWh2HlqU7ltlmlgqtR01luBSCxqju2J07tKPARIhaZoF-Q6u/exec";
+const url = "https://script.google.com/macros/s/AKfycbxKe7kCT_1aqHWEJ5ZvM3gxrn9-zAcpFgyBraJ0SqIW-MZw0SYpJxadTyD-olXrx07a/exec";
 
 let inventarioData = [];
 let tamanioPagina = '10';
+
+var listaEncabezados = [ //encabezados a mostrar en la tabla
+  "Date",
+  "tipoEquipo",
+  "mtEquipo",
+  "usuarioAsignado",
+  "equipoMarca",
+  "equipoModelo",
+  "fechaEntregado",
+  "Subsecretaría",
+  "Direccion"
+];
 
 const table = document.getElementById('itemsTable');
 const tableBody = document.getElementById('tableBody');
@@ -14,6 +26,7 @@ window.addEventListener("load", function () {
         requestType: 'getItemsTable',
         pagina: '1',
         tamanioPagina: tamanioPagina,
+        encabezados: listaEncabezados,
       };
       const queryParams = new URLSearchParams(params);
       const urlWithParams = `${url}?${queryParams}`;
@@ -22,7 +35,7 @@ window.addEventListener("load", function () {
       const data = await response.json();
       // console.log(data);
       inventarioData = data;
-
+      // console.log(data.body);
       if (!response.ok) {
         alert('Error en la solicitud');
         throw new Error('Error en la solicitud');
@@ -38,33 +51,33 @@ window.addEventListener("load", function () {
     spinner.style.display = 'block';
     await getInventario();
     const responseArray = JSON.parse(inventarioData.body);
-    completarTabla(responseArray);
+    generarTabla(responseArray);
     table.style.display = 'block';
     spinner.style.display = 'none';
   }
 
   obtenerItems();
 
-  function completarTabla(datos) {
+  function generarTabla(datos) {
     tableBody.innerHTML = "";
-    // Iterate over the response array
+    // Iterate over the data array
     for (let i = 0; i < datos.length; i++) {
-      const row = datos[i];
-      const tr = document.createElement('tr');
-      const th = document.createElement('th');
+      const record = datos[i];
+      const row = document.createElement('tr'); // Create a table row element
+      const th = document.createElement('th'); // Create a table header cell element
       th.setAttribute('scope', 'row');
-      th.textContent = `${i + 1}`;
-      tr.appendChild(th);
+      th.textContent = `${i + 1}`; // Set the header cell content to the row number
+      row.appendChild(th); // Append the header cell to the row
 
-      // Iterate over each column in the row
-      for (let j = 0; j < row.length; j++) {
-        const value = row[j];
-        const td = document.createElement('td'); // Create a new table data (cell) element
-        td.textContent = value; // Set the text content of the cell to the value
-        tr.appendChild(td);
+      // Iterate over each property in the record
+      for (const prop in record) {
+        if (record.hasOwnProperty(prop)) {
+          const td = document.createElement('td'); // Create a table data cell element
+          td.textContent = record[prop]; // Set the cell content to the value of the property
+          row.appendChild(td); // Append the cell to the row
+        }
       }
-
-      tableBody.appendChild(tr);
+      tableBody.appendChild(row);
     }
   }
 
@@ -90,7 +103,7 @@ window.addEventListener("load", function () {
   // Función para obtener el valor seleccionado
   function obtenerValorSeleccionado(valor) {
     tamanioPagina = valor;
-    console.log(tamanioPagina);
+    // console.log(tamanioPagina);
     obtenerItems();
   }
 

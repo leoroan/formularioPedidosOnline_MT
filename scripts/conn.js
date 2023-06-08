@@ -1,5 +1,5 @@
 // CONNECTION THING
-const url = "https://script.google.com/macros/s/AKfycbzOjvyIQThMIIUV0lkYvWh2HlqU7ltlmlgqtR01luBSCxqju2J07tKPARIhaZoF-Q6u/exec";
+const url = "https://script.google.com/macros/s/AKfycbxKe7kCT_1aqHWEJ5ZvM3gxrn9-zAcpFgyBraJ0SqIW-MZw0SYpJxadTyD-olXrx07a/exec";
 
 const form = document.getElementById('pedido');
 const spinner = document.getElementById('spinner');
@@ -56,7 +56,6 @@ function sendDataToWebApp(data) {
         });
 }
 
-
 equiSelect.addEventListener("change", () => {
     // comprobar si se seleccionó otro tipo de equipo
     if (equipoActual != null) {
@@ -70,12 +69,10 @@ equiSelect.addEventListener("change", () => {
     obtenerDatos();
 });
 
-
-
 async function getMT() {
     try {
         const params = {
-            requestType: 'getMtEquipo', 
+            requestType: 'getMtEquipo',
             tipo: equiSelect.value
         };
         const queryParams = new URLSearchParams(params);
