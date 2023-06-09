@@ -3,17 +3,34 @@ const url = "https://script.google.com/macros/s/AKfycbxKe7kCT_1aqHWEJ5ZvM3gxrn9-
 let inventarioData = [];
 let tamanioPagina = '10';
 
-var listaEncabezados = [ //encabezados a mostrar en la tabla
-  "Date",
-  "tipoEquipo",
+//encabezados a mostrar en la tabla
+var listaEncabezados = [ 
   "mtEquipo",
+  "tipoEquipo",
+  "Date",
+  "equipoModelo", 
   "usuarioAsignado",
-  "equipoMarca",
-  "equipoModelo",
-  "fechaEntregado",
-  "Subsecretaría",
-  "Direccion"
+  "subsecretaría",
 ];
+
+const descripcionEncabezados = {
+  Date: 'FECHA',
+  tipoEquipo: 'TIPO DE EQUIPO',
+  mtEquipo: 'NUMERO DE MT:',
+  usuarioResponsable: 'RESPONSABLE',
+  usuarioAsignado: 'USUARIO',
+  equipoMarca: 'MARCA DEL EQUIPO',
+  equipoModelo: 'MODELO DEL EQUIPO',
+  equipoNroSerie: 'NRO. DE SERIE DEL EQUIPO',
+  monitorModelo: 'MODELO DEL MONITOR',
+  monitorNroSerie: 'NRO. SERIE DEL MONITOR',
+  nroInventarioPatrimonio: 'NRO. PATRIMONIO',
+  subsecretaría: 'SUBSECRETARÍA',
+  direccion: 'DIRECCIÓN',
+  direccionII: 'SUB DIRECCIÓN ',
+  observaciones: 'ORBSERVACIONES',
+  fechaEntregado: 'FECHA ENTREGADO',
+};
 
 const table = document.getElementById('itemsTable');
 const tableBody = document.getElementById('tableBody');
@@ -108,3 +125,27 @@ window.addEventListener("load", function () {
   }
 
 });
+
+// completar los headers de la tabla, dinamicamente
+
+// Get the 'tr' element
+var trElement = document.getElementById('headersPlace');
+
+// creo el indice del header
+trElement.innerHTML += `<th scope="col">#</th>`;
+
+// Crear un elemento 'th' para cada elemento en la lista
+for (var i = 0; i < listaEncabezados.length; i++) {
+  // Crear el elemento 'th'
+  var thElement = document.createElement('th');
+
+  // Establecer el contenido del 'th' como el valor actual de la lista
+  // thElement.textContent = listaEncabezados[i];
+  thElement.textContent = descripcionEncabezados[listaEncabezados[i]];
+
+  // Agregar el 'th' al elemento 'tr'
+  trElement.appendChild(thElement);
+}
+
+// Append the 'th' element to the 'tr' element
+trElement.appendChild(thElement);

@@ -167,7 +167,7 @@ const selectSubse = document.getElementById("selectSubse");
 const selectDirec = document.getElementById("selectDirecc");
 const contenedor = document.getElementById("masLugares");
 const selectElement = document.createElement("select");
-selectElement.name = "DireccionII";
+selectElement.name = "direccionII";
 
 // Popular los select con las opciones
 function populateSubseOptions() {
@@ -279,9 +279,9 @@ function mostrarDatosEnModal(data) {
         monitorModelo: 'El modelo del monitor es:',
         monitorNroSerie: 'El número de serie del monitor es:',
         nroInventarioPatrimonio: 'El número de patrimonio es:',
-        Subsecretaría: 'La subsecretaría es:',
-        Direccion: 'La dirección es:',
-        DireccionII: 'La dirección II es:',
+        subsecretaría: 'La subsecretaría es:',
+        direccion: 'La dirección es:',
+        direccionII: 'La dirección II es:',
         observaciones: 'Observaciones:',
         fechaEntregado: 'Fecha de entrega:',
     };
