@@ -1,0 +1,108 @@
+#mainInventario {
+    max-width: 90%;
+}
+
+#itemsTable {
+    white-space: nowrap;
+}
+
+/* Estilo de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+}
+
+/* Estilo de las celdas de encabezado */
+th {
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+
+/* Estilo de las celdas de datos */
+td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+/* Estilo de las filas impares */
+tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Estilo de la primera columna (números de fila) */
+th:first-child,
+td:first-child {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.mt-5 {
+    margin-top: 5px;
+}
+
+.justify-content-end {
+    justify-content: flex-end;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul a {
+    text-decoration: none;
+    color: #000;
+}
+
+ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+ul li button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+ul li button:hover {
+    background-color: #e0e0e0;
+}
+
+ul li button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+.next {
+    display: inline;
+    padding: 8px 16px;
+    background-color: #f2f2f2;
+    color: #00aec3;
+    border: 2px solid rgba(0, 0, 0, 0.496);
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .next:hover {
+    background-color: #00aec3;
+    color: #f2f2f2;
+  }
+
+  
+  

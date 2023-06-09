@@ -1,7 +1,8 @@
+@import "_variables.scss";
+@import "_medias.scss";
 @import "_normalize.scss";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-@import "_tablaData.scss";
-
+@import "_inventario.scss";
 body {
   display: flex;
   flex-direction: column;
@@ -29,6 +30,11 @@ img {
   display: block;
   margin: 0 auto;
 }
+nav{
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
 
 h2 {
   text-align: center;

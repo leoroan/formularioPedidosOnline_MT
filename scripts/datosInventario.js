@@ -1,4 +1,4 @@
-const url = "https://script.google.com/macros/s/AKfycbxKe7kCT_1aqHWEJ5ZvM3gxrn9-zAcpFgyBraJ0SqIW-MZw0SYpJxadTyD-olXrx07a/exec";
+const url = "https://script.google.com/macros/s/AKfycbyNZ7AZht71CBdXXuqr_er_zsrkPngYcoz1LX6R5gEEW5this3NH5026CIY2Aac7KiC/exec";
 
 let inventarioData = [];
 let tamanioPagina = '10';
@@ -73,7 +73,7 @@ window.addEventListener("load", function () {
     spinner.style.display = 'none';
   }
 
-  // obtenerItems();
+   obtenerItems();
 
   function generarTabla(datos) {
     tableBody.innerHTML = "";
@@ -173,6 +173,9 @@ window.addEventListener("load", function () {
       // Agregar el checkbox y el texto al contenedor
       checkboxesContainer.appendChild(checkboxElement);
       checkboxesContainer.appendChild(labelElement);
+     
+      // Agregar un salto de línea
+    checkboxesContainer.appendChild(document.createElement('br'));
     }
   }
 
@@ -196,6 +199,7 @@ window.addEventListener("load", function () {
       if (index > -1) {
         listaEncabezados.splice(index, 1);
         obtenerItems();
+        ponerHeaders();
       }
     }
   }

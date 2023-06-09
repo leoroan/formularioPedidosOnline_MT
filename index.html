@@ -18,7 +18,7 @@
 
 <body>
 
-    <main>
+    <main id="mainInventario">
         <!-- Imagen Logo -->
         <img src="assets/images/logo_gba_footer_blanco.svg">
 
@@ -27,7 +27,7 @@
             <nav class="border-bottom mb-5">
                 <ul class="nav nav-tabs justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link active" aria-current="page" href="index.html">Inventario</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="pedidos.html">Crear un MT</a>
@@ -39,24 +39,29 @@
 
         <h1 class="mb-5 text-center"> Items que componen al inventario del MT </h1>
 
-        <!-- CHECKBOX START -->
-        <div class="" id="checkboxesContainer">
-
-        </div>
-
-        <!-- CHECKBOX START -->
-
-        <!-- SPINNER START -->
-        <!-- tiene estilo en linea -->
-        <div class="d-flex justify-content-center">
-            <div class="spinner-border m-5" role="status" id="spinner" style="display: none;">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-        </div>
-        <!-- SPINNER END -->
-
         <!-- TABLE START -->
         <div class="table-responsive">
+
+            <!-- CHECKBOX START -->
+            <div class="filtros">
+            <div id="checkboxesContainer">
+                <!-- Aquí se agregarán los checkboxes dinámicamente -->
+            </div>
+        </div>
+
+            <!-- CHECKBOX END -->
+
+            <!-- SPINNER START -->
+            <!-- tiene estilo en linea -->
+            <div class="d-flex justify-content-center">
+                <div class="spinner-border m-5" role="status" id="spinner" style="display: none;">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+            <!-- SPINNER END -->
+
+
+
             <table class="table" id="itemsTable">
                 <thead>
                     <tr id="headersPlace" class="text-center">
@@ -79,20 +84,24 @@
         <!-- NAV END -->
 
         <div class="d-flex mt-5 justify-content-end">
-            <p>
-                Cantidad de elementos por pagina:
-            </p>
-            <ul>
-                <a href="#" id="cant25">
-                    <li>25</li>
-                </a>
-                <a href="#" id="cant50">
-                    <li>50</li>
-                </a>
-                <a href="#" id="cant100">
-                    <li>100</li>
-                </a>
-            </ul>
+            <div class="col-6">
+                <p>
+                    Cantidad de elementos por página:
+                </p>
+            </div>
+            <div class="col-6">
+                <ul class="list-inline d-flex justify-content-end">
+                    <li class="list-inline-item">
+                        <a href="#" class="next" id="cant25">25</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" class="next" id="cant50">50</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" class="next" id="cant100">100</a>
+                    </li>
+                </ul>
+            </div>
         </div>
 
     </main>
