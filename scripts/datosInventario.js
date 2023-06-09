@@ -4,11 +4,11 @@ let inventarioData = [];
 let tamanioPagina = '10';
 
 //encabezados a mostrar en la tabla
-var listaEncabezados = [ 
+var listaEncabezados = [
   "mtEquipo",
   "tipoEquipo",
   "Date",
-  "equipoModelo", 
+  "equipoModelo",
   "usuarioAsignado",
   "subsecretaría",
 ];
@@ -73,7 +73,7 @@ window.addEventListener("load", function () {
     spinner.style.display = 'none';
   }
 
-  obtenerItems();
+  // obtenerItems();
 
   function generarTabla(datos) {
     tableBody.innerHTML = "";
@@ -124,28 +124,80 @@ window.addEventListener("load", function () {
     obtenerItems();
   }
 
+  // completar los headers de la tabla, dinamicamente
+
+  function ponerHeaders() {
+    // Get the 'tr' element
+    var trElement = document.getElementById('headersPlace');
+    //inicio el elemento vacio
+    trElement.innerHTML = "";
+    
+    // creo el indice del header con "bootstrap incluido"
+    trElement.innerHTML += `<th scope="col">#</th>`;
+
+    // Crear un elemento 'th' para cada elemento en la lista
+    for (var i = 0; i < listaEncabezados.length; i++) {
+      var thElement = document.createElement('th');
+      thElement.textContent = descripcionEncabezados[listaEncabezados[i]];
+      // Agregar el 'th' al elemento 'tr'
+      trElement.appendChild(thElement);
+    }
+
+    // Append the 'th' element to the 'tr' element
+    trElement.appendChild(thElement);
+  }
+
+  ponerHeaders();
+
+  // CHECKBOXES - GENERARLOS!
+
+  // Obtener la referencia al contenedor
+  var checkboxesContainer = document.getElementById('checkboxesContainer');
+
+  // Recorrer los elementos (keys) de descripcionEncabezados
+  for (var key in descripcionEncabezados) {
+    // Verificar si el encabezado no está en listaEncabezados
+    if (!listaEncabezados.includes(key)) {
+      // Crear el checkbox para el encabezado
+      var checkboxElement = document.createElement('input');
+      checkboxElement.type = 'checkbox';
+
+      // Crear un elemento <label> para el texto del checkbox
+      var labelElement = document.createElement('label');
+      labelElement.textContent = descripcionEncabezados[key];
+      checkboxElement.value = key;
+
+      // Agregar el evento de cambio al checkbox
+      checkboxElement.addEventListener('change', handleChange);
+
+      // Agregar el checkbox y el texto al contenedor
+      checkboxesContainer.appendChild(checkboxElement);
+      checkboxesContainer.appendChild(labelElement);
+    }
+  }
+
+
+  // Función para manejar el evento de cambio en los checkboxes
+  function handleChange(event) {
+    var checkbox = event.target;
+    var encabezado = checkbox.value;
+
+    // Verificar si el checkbox está seleccionado
+    if (checkbox.checked) {
+      // Agregar el encabezado a listaEncabezados si no está presente
+      if (!listaEncabezados.includes(encabezado)) {
+        listaEncabezados.push(encabezado);
+        ponerHeaders();
+        obtenerItems();
+      }
+    } else {
+      // Eliminar el encabezado de listaEncabezados si está presente
+      var index = listaEncabezados.indexOf(encabezado);
+      if (index > -1) {
+        listaEncabezados.splice(index, 1);
+        obtenerItems();
+      }
+    }
+  }
+
 });
-
-// completar los headers de la tabla, dinamicamente
-
-// Get the 'tr' element
-var trElement = document.getElementById('headersPlace');
-
-// creo el indice del header
-trElement.innerHTML += `<th scope="col">#</th>`;
-
-// Crear un elemento 'th' para cada elemento en la lista
-for (var i = 0; i < listaEncabezados.length; i++) {
-  // Crear el elemento 'th'
-  var thElement = document.createElement('th');
-
-  // Establecer el contenido del 'th' como el valor actual de la lista
-  // thElement.textContent = listaEncabezados[i];
-  thElement.textContent = descripcionEncabezados[listaEncabezados[i]];
-
-  // Agregar el 'th' al elemento 'tr'
-  trElement.appendChild(thElement);
-}
-
-// Append the 'th' element to the 'tr' element
-trElement.appendChild(thElement);
