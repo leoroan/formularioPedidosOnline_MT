@@ -56,8 +56,18 @@ window.addEventListener("beforeunload", function (event) {
 
 });
 
+var isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+
+// if (isMobile) {
+//   // El usuario está accediendo desde un dispositivo móvil
+//   console.log("Acceso desde un dispositivo móvil");
+// } else {
+//   // El usuario está accediendo desde una PC
+//   console.log("Acceso desde una PC");
+// }
+
 document.addEventListener("visibilitychange", function () {
-    if (document.visibilityState === "hidden") {
+    if (document.visibilityState === "hidden" && isMobile) {
         // Aquí puedes ejecutar el código que deseas cuando la ventana se minimiza o se cierra
         console.log("La ventana se minimizó o se cerró");
         if (tengoMt && !envieForm) {

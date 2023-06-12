@@ -9,7 +9,6 @@ form.action = url;
 window.addEventListener("load", function () {
 
     setTimeout(function () {
-        // Your code here
         resetPage();
         document.getElementById("pedido").reset();
         console.log("Timer finished! - page RESETED");
