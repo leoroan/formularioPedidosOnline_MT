@@ -44,6 +44,23 @@ var envieForm = false;
 
 console.log("tengo mt: ", tengoMt);
 
+
+const errorMessage = document.getElementById('errorMessage');
+
+// Verificar si se accede desde un dispositivo móvil
+function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+// Mostrar un mensaje de error si se accede desde un dispositivo móvil
+if (isMobileDevice()) {
+    const form = document.getElementById('pedido');
+    alert("Acceso desde un dispositivo móvil no permitido");
+    form.style.display = 'none';
+    errorMessage.style.display = 'block';
+}
+
+
 //escucho cuando se refresca la página
 window.addEventListener("beforeunload", function (event) {
     event.preventDefault();
