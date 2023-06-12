@@ -19,6 +19,10 @@
 <body>
 
     <main id="mainInventario">
+        <!-- INGRESO USUARIOS -->
+        <button type="button" class="btn btn-light" data-bs-toggle="modal"
+            data-bs-target="#loginModal">Ingresar</button>
+
         <!-- Imagen Logo -->
         <img src="assets/images/logo_gba_footer_blanco.svg">
 
@@ -39,15 +43,41 @@
 
         <h1 class="mb-5 text-center"> Items que componen al inventario del MT </h1>
 
+        <!-- LOG MODAL START -->
+
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="loginModal">Ingreso al sistema</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <label for="mail">Correo electrónico:</label>
+                        <input type="email" id="mail" name="mail" required><br><br>
+                        <label for="password">Contraseña:</label>
+                        <input type="password" id="password" name="password" required><br><br>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-success">Ingresar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LOG MODAL END -->
+
+
         <!-- TABLE START -->
         <div class="table-responsive">
 
             <!-- CHECKBOX START -->
             <div class="filtros">
-            <div id="checkboxesContainer">
-                <!-- Aquí se agregarán los checkboxes dinámicamente -->
+                <div id="checkboxesContainer">
+                    <!-- Aquí se agregarán los checkboxes dinámicamente -->
+                </div>
             </div>
-        </div>
 
             <!-- CHECKBOX END -->
 
