@@ -1,4 +1,4 @@
-const url = "https://script.google.com/macros/s/AKfycbzHKFcq4arld-xZHPksUqSXN-T1WtlriqgWAtULIHP0adFUM6w9YnltVD9wD5UP9jpD/exec";
+const url = "https://script.google.com/macros/s/AKfycbwdr3fNA2nURk185HK_8g0xcujU5kgdrBALWKEXv8obH3SN-xKPtUU1pv5TkZR4x8Xs/exec";
 
 let inventarioData = [];
 let tamanioPagina = '10';
