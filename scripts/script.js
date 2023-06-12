@@ -63,6 +63,7 @@ document.addEventListener("visibilitychange", function () {
         if (tengoMt && !envieForm) {
             // this.alert("tenes mt!");
             resetPage();
+            document.getElementById("pedido").reset();
         }
     }
 });
