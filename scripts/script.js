@@ -46,7 +46,6 @@ console.log("tengo mt: ", tengoMt);
 
 //escucho cuando se refresca la página
 window.addEventListener("beforeunload", function (event) {
-
     event.preventDefault();
     //here do something
     if (tengoMt && !envieForm) {
@@ -57,9 +56,19 @@ window.addEventListener("beforeunload", function (event) {
 
 });
 
-function resetPage() {
-    console.log("do something when reset occurs");
+document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState === "hidden") {
+        // Aquí puedes ejecutar el código que deseas cuando la ventana se minimiza o se cierra
+        console.log("La ventana se minimizó o se cerró");
+        if (tengoMt && !envieForm) {
+            // this.alert("tenes mt!");
+            resetPage();
+        }
+    }
+});
 
+function resetPage() {
+    // console.log("do something when reset occurs");
     if (cambieMt || tengoMt) {
         var dataToSent = {
             equipoAnterior: equipoActual.toLowerCase(),
@@ -68,7 +77,6 @@ function resetPage() {
         console.log("cambie!");
         sendDataToWebApp(dataToSent);
     }
-
 }
 
 
