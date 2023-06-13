@@ -55,7 +55,7 @@ function isMobileDevice() {
 // Mostrar un mensaje de error si se accede desde un dispositivo móvil
 if (isMobileDevice()) {
     let form = document.getElementById('pedido');
-    alert("Acceso desde un dispositivo móvil no permitido");
+    alert("Acceso desde un dispositivo móvil no permitido por el momento debido a problemas de comunicacion con el servidor desde equipos móviles!");
     form.style.display = 'none';
     errorMessage.style.display = 'block';
 }
