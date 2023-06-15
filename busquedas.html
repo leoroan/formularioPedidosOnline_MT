@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta name="description" content="Pedidos de numeros de mts para control de inventario">
+    <meta name="keywords" content="">
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/images/favicon_pba.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Busqueda MT</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <main id="mainInventario">
+        <!-- INGRESO USUARIOS -->
+        <button type="button" class="btn btn-light" data-bs-toggle="modal"
+            data-bs-target="#loginModal">Ingresar</button>
+
+        <!-- Imagen Logo -->
+        <img src="assets/images/logo_gba_footer_blanco.svg">
+
+        <!-- NAV START -->
+        <header class="text-center my-2 py-2">
+            <nav class="border-bottom mb-5">
+                <ul class="nav nav-tabs justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Inventario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pedidos.html">Crear un MT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="busquedas.html">Buscar un MT</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- NAV END -->
+
+        <h1 class="mb-5 text-center"> Busqueda de un MT en el inventario gral y su informacion. </h1>
+        <p> La busqueda, actualmente, permite buscar elementos por numero de MT (recordar anteponer el "0" si corresponde)</p>
+
+        <!-- IFRAME LOOKER START -->
+        <div class="ratio ratio-4x3">
+            <iframe width="1024" height="768"
+                src="https://lookerstudio.google.com/embed/reporting/22f7f258-b377-4b7e-96dd-feecd04a095d/page/rRPUD"
+                title="tabla de looker studio"
+                allowfullscreen></iframe>
+        </div>
+
+        <!-- IFRAME LOOKER END   -->
+
+
+    </main>
+
+    <footer class="text-center mt-5">
+        Inventario MT02023 - Todos Los Derechos Y Torcidos RESERVADOS
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
