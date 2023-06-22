@@ -5,7 +5,7 @@ let ministerioEstructura = data;
 
 const equipos = {
     "Desktop": {
-        "EXO": ["H7-V5488P", "PC READY D1 RTX", "PC READY H7", "AIO"],
+        "EXO": ["H7-V5488P", "H2-P5685P", "PC READY D1 RTX", "PC READY H7", "AIO"],
         "Letos": ["Sin modelo"],
         "CX": ["5835", "9217"],
         "Coradir": ["AMD A"],
