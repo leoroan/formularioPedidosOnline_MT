@@ -1,480 +1,447 @@
 var data = {
-  'SUBSECRETARIAS': {
-    'UNIDADMONITOREO': {
-      'NOMBRE': 'UNIDAD DE MONITOREO Y REGISTRO GENERAL DE DATOS DEL TRANSPORTE',
-      'DIRECTOR': 'RUBIO, LISANDRO',
-      'OFICINAPRIVADA': {
-        'NOMBRE': 'OFICINA PRIVADA DE UNIDAD DE MONITOREO Y REGISTRO GENERAL DE DATOS DEL TRANSPORTE'
+  'subsecretarias': {
+    'unidadmonitoreo': {
+      'nombre': 'UNIDAD DE MONITOREO Y REGISTRO GENERAL DE DATOS DEL TRANSPORTE',
+      'director': 'RUBIO, LISANDRO',
+      'oficinaprivada': {
+        'nombre': 'OFICINA PRIVADA DE UNIDAD DE MONITOREO Y REGISTRO GENERAL DE DATOS DEL TRANSPORTE'
       }
     },
-    'DIRECCIONCOMUNICACION': {
-      'NOMBRE': 'DIRECCIÓN DE COMUNICACIÓN Y RELACIÓN INSTITUCIONALES',
-      'DIRECTOR': 'CAMETHO, MARÍA VIOLETA',
-      'OFICINAPRIVADA': {
-        'NOMBRE': 'OFICINA PRIVADA DE DIRECCIÓN DE COMUNICACIÓN Y RELACIÓN INSTITUCIONALES'
+    'direccioncomunicacion': {
+      'nombre': 'DIRECCIÓN DE COMUNICACIÓN Y RELACIÓN INSTITUCIONALES',
+      'director': 'CAMETHO, MARÍA VIOLETA',
+      'oficinaprivada': {
+        'nombre': 'OFICINA PRIVADA DE DIRECCIÓN DE COMUNICACIÓN Y RELACIÓN INSTITUCIONALES'
       }
     },
-    'SUBSECRETARIATRANSPORTETERRESTRE': {
-      'NOMBRE': 'SUBSECRETARÍA DE TRANSPORTE TERRESTRE',
-      'DIRECTOR': 'PERDIGUERO, JULIO RAFAEL',
-      'DIRECCIONES': {
-        'OFICINAPRIVADA': {
-          'NOMBRE': 'OFICINA PRIVADA DE LA SUBSECRETARÍA DE TRANSPORTE TERRESTRE'
+    'subsecretariatransporteterrestre': {
+      'nombre': 'SUBSECRETARÍA DE TRANSPORTE TERRESTRE',
+      'director': 'PERDIGUERO, JULIO RAFAEL',
+      'direcciones': {
+        'oficinaprivada': {
+          'nombre': 'OFICINA PRIVADA DE LA SUBSECRETARÍA DE TRANSPORTE TERRESTRE'
         },
-        'DIRECCIONFISCALIZACIONTRANSPORTE': {
-          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE FISCALIZACIÓN DEL TRANSPORTE',
-          'DIRECTOR': 'ANELLO, HORACIO OSCAR',
-          'DIRECCIONES': {
-            'DIRECCIONFISCALIZACIONTRANSPORTE': {
-              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCION'
+        'direccionfiscalizaciontransporte': {
+          'nombre': 'DIRECCIÓN PROVINCIAL DE FISCALIZACIÓN DEL TRANSPORTE',
+          'director': 'ANELLO, HORACIO OSCAR',
+          'direcciones': {
+            'direccionfiscalizaciontransporte': {
+              'nombre': 'OFICINA PRIVADA DE LA MISMA DIRECCION'
             },
-            'DIRECCIÓNCONTROLTECNICO': {
-              'NOMBRE': 'DIRECCIÓN DE CONTROL TÉCNICO',
-              'DIRECTOR': 'ABELANDO, NÉSTOR ARIEL'
+            'direccióncontroltecnico': {
+              'nombre': 'DIRECCIÓN DE CONTROL TÉCNICO',
+              'director': 'ABELANDO, NÉSTOR ARIEL'
             },
-            'DIRECCIÓNRECLAMOSSOLICITUDES': {
-              'NOMBRE': 'DIRECCIÓN DE RECLAMOS Y SOLICITUDES',
-              'DIRECTOR': 'VARVASINO, GUILLERMO DANIEL'
+            'direcciónreclamossolicitudes': {
+              'nombre': 'DIRECCIÓN DE RECLAMOS Y SOLICITUDES',
+              'director': 'VARVASINO, GUILLERMO DANIEL'
             }
-          },
-
+          }
         },
-        'DIRECCIONTRANSPORTEPASAJEROS': {
-          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE TRANSPORTE DE PASAJEROS',
-          'DIRECTOR': 'MALDONADO, GONZALO EZEQUIEL',
-          'DIRECCIONES': {
-            'DIRECCIONTRANSPORTEPASAJEROS': {
-              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN'
+        'direcciontransportepasajeros': {
+          'nombre': 'DIRECCIÓN PROVINCIAL DE TRANSPORTE DE PASAJEROS',
+          'director': 'MALDONADO, GONZALO EZEQUIEL',
+          'direcciones': {
+            'direcciontransportepasajeros': {
+              'nombre': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN'
             },
-            'DIRECCIÓNTRANSPORTEAUTOMOTORPASAJEROS': {
-              'NOMBRE': 'DIRECCIÓN DE TRANSPORTE AUTOMOTOR DE PASAJEROS',
-              'DIRECTOR': ''
+            'direccióntransporteautomotorpasajeros': {
+              'nombre': 'DIRECCIÓN DE TRANSPORTE AUTOMOTOR DE PASAJEROS',
+              'director': ''
             },
-            'DIRECCIONPERMISOSHABILITACIONESPASAJEROS': {
-              'NOMBRE': 'DIRECCIÓN DE PERMISOS Y HABILITACIONES DE TRANSPORTE DE PASAJEROS',
-              'DIRECTOR': 'RUIZ LAMÓN, GERMÁN'
+            'direccionpermisoshabilitacionespasajeros': {
+              'nombre': 'DIRECCIÓN DE PERMISOS Y HABILITACIONES DE TRANSPORTE DE PASAJEROS',
+              'director': 'RUIZ LAMÓN, GERMÁN'
             },
-            'DIRECCIONTRANSPORTEFERROVIARIOPASAJEROS': {
-              'NOMBRE': 'DIRECCIÓN DE TRANSPORTE FERROVIARIO DE PASAJEROS',
-              'DIRECTOR': 'HUERGO, GUILLERMO JORGE FEDERICO'
+            'direcciontransporteferroviariopasajeros': {
+              'nombre': 'DIRECCIÓN DE TRANSPORTE FERROVIARIO DE PASAJEROS',
+              'director': 'HUERGO, GUILLERMO JORGE FEDERICO'
             }
-          },
-
+          }
         },
-        'DIRECCIONTRANSPORTECARGAS': {
-          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE TRANSPORTE DE CARGAS',
-          'DIRECTOR': 'BETTILI, MIGUEL ÁNGEL',
-          'DIRECCIONES': {
-            'DIRECCIONTRANSPORTECARGAS': {
-              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN'
+        'direcciontransportecargas': {
+          'nombre': 'DIRECCIÓN PROVINCIAL DE TRANSPORTE DE CARGAS',
+          'director': 'BETTILI, MIGUEL ÁNGEL',
+          'direcciones': {
+            'direcciontransportecargas': {
+              'nombre': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN'
             },
-            'DIRECCIONPERMISOSHABILITACIONESCARGAS': {
-              'NOMBRE': 'DIRECCIÓN DE PERMISOS Y HABILITACIONES DE TRANSPORTE DE CARGAS',
-              'DIRECTOR': 'ORTIZ, PABLO JORGE'
+            'direccionpermisoshabilitacionescargas': {
+              'nombre': 'DIRECCIÓN DE PERMISOS Y HABILITACIONES DE TRANSPORTE DE CARGAS',
+              'director': 'ORTIZ, PABLO JORGE'
             },
-            'DIRECCIONTRANSPORTEAUTOMOTORCARGAS': {
-              'NOMBRE': 'DIRECCIÓN DE TRANSPORTE AUTOMOTOR DE CARGAS',
-              'DIRECTOR': 'ZARBO, JORGE ALBERTO'
+            'direcciontransporteautomotorcargas': {
+              'nombre': 'DIRECCIÓN DE TRANSPORTE AUTOMOTOR DE CARGAS',
+              'director': 'ZARBO, JORGE ALBERTO'
             },
-            'DIRECCIONTRANSPORTEFERROVIARIOCARGAS': {
-              'NOMBRE': 'DIRECCIÓN DE TRANSPORTE FERROVIARIO DE CARGAS',
-              'DIRECTOR': ''
+            'direcciontransporteferroviariocargas': {
+              'nombre': 'DIRECCIÓN DE TRANSPORTE FERROVIARIO DE CARGAS',
+              'director': ''
             }
-          },
-
+          }
         },
-        'DIRECCIONAPTITUDCONDUCTORES': {
-          'NOMBRE': 'DIRECCION PROVINCIAL DE APTITUD PSICOFISICA PARA CONDUCTORES DEL TRANSPORTE PUBLICO',
-          'DIRECTOR': 'LABONIA, ROBERTO EDUARDO',
-          'DIRECCIONES': {
-            'DIRECCIONAPTITUDCONDUCTORES': {
-              'NOMBRE': 'OFICINA PRIVADA DE DIRECCION PROVINCIAL DE APTITUD PSICOFISICA PARA CONDUCTORES DEL TRANSPORTE PUBLICO',
+        'direccionaptitudconductores': {
+          'nombre': 'DIRECCION PROVINCIAL DE APTITUD PSICOFISICA PARA CONDUCTORES DEL TRANSPORTE PUBLICO',
+          'director': 'LABONIA, ROBERTO EDUARDO',
+          'direcciones': {
+            'direccionaptitudconductores': {
+              'nombre': 'OFICINA PRIVADA DE DIRECCION PROVINCIAL DE APTITUD PSICOFISICA PARA CONDUCTORES DEL TRANSPORTE PUBLICO'
             },
-            'DIRECCIONCOORDINACIONSERVICIOEVALUACIONPSICOFISICA': {
-              'NOMBRE': 'DIRECCIÓN DE COORDINACIÓN DEL SERVICIO DE EVALUACIÓN PSICOFÍSICA',
-              'DIRECTOR': ''
+            'direccioncoordinacionservicioevaluacionpsicofisica': {
+              'nombre': 'DIRECCIÓN DE COORDINACIÓN DEL SERVICIO DE EVALUACIÓN PSICOFÍSICA',
+              'director': ''
             },
-            'DIRECCIONCONTRALORMONITOREOEVALUACIONPSICOFISICA': {
-              'NOMBRE': 'DIRECCIÓN DE CONTRALOR Y MONITOREO DE EVALUACIÓN PSICOFÍSICA',
-              'DIRECTOR': 'LUFRANO, MARIANO NICOLÁS'
-            },
-          },
-
-        },
-        'DIRECCIONPOLITICASTRANSPORTESOSTENIBLE': {
-          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE POLÍTICAS DE TRANSPORTE SOSTENIBLE',
-          'DIRECTOR': 'CURE, MIRTHA GLORIA',
-          'DIRECCIONES': {
-            'DIRECCIONPOLITICASTRANSPORTESOSTENIBLE': {
-              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN'
-            },
-            'DIRECCIONDESARROLLOSOSTENIBLETRANSPORTE': {
-              'NOMBRE': 'DIRECCIÓN DE DESARROLLO SOSTENIBLE DEL TRANSPORTE',
-              'DIRECTOR': 'GARCIA, MARIO RAFAEL'
-            },
-            'DIRECCIONPROYECTOSESTRATEGICOS': {
-              'NOMBRE': 'DIRECCIÓN DE PROYECTOS ESTRATÉGICOS',
-              'DIRECTOR': 'CUPERTINO, VÍCTOR MANUEL'
+            'direccioncontralormonitoreoevaluacionpsicofisica': {
+              'nombre': 'DIRECCIÓN DE CONTRALOR Y MONITOREO DE EVALUACIÓN PSICOFÍSICA',
+              'director': 'LUFRANO, MARIANO NICOLÁS'
             }
-          },
-          'DIRECTOR': ''
+          }
         },
-        'DIRECCIONVERIFICACIONTECNICAVEHICULAR': {
-          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE VERIFICACIÓN TÉCNICA VEHICULAR',
-          'DIRECTOR': 'LUFRANO TAMASI, HÉCTOR LUCIANO',
-          'DIRECCIONES': {
-            'DIRECCIONVERIFICACIONTECNICAVEHICULAR': {
-              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN'
+        'direccionpoliticastransportesostenible': {
+          'nombre': 'DIRECCIÓN PROVINCIAL DE POLÍTICAS DE TRANSPORTE SOSTENIBLE',
+          'director': '',
+          'direcciones': {
+            'direccionpoliticastransportesostenible': {
+              'nombre': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN'
             },
-            'DIRECCIONAPOYOLEGALTECNICOADMIN': {
-              'NOMBRE': 'DIRECCIÓN DE APOYO LEGAL Y TÉCNICO ADMINISTRATIVO',
-              'DIRECTOR': 'CLUA, MARTÍN'
+            'direcciondesarrollosostenibletransporte': {
+              'nombre': 'DIRECCIÓN DE DESARROLLO SOSTENIBLE DEL TRANSPORTE',
+              'director': 'GARCIA, MARIO RAFAEL'
             },
-            'DIRECCIONPLANIFICACIONCOORDSERVICIO': {
-              'NOMBRE': 'DIRECCIÓN DE PLANIFICACIÓN Y COORDINACIÓN DEL SERVICIO',
-              'DIRECTOR': 'ALBERTI, MARÍA ESTEFANÍA'
+            'direccionproyectosestrategicos': {
+              'nombre': 'DIRECCIÓN DE PROYECTOS ESTRATÉGICOS',
+              'director': 'CUPERTINO, VÍCTOR MANUEL'
+            }
+          }
+        },
+        'direccionverificaciontecnicavehicular': {
+          'nombre': 'DIRECCIÓN PROVINCIAL DE VERIFICACIÓN TÉCNICA VEHICULAR',
+          'director': 'LUFRANO TAMASI, HÉCTOR LUCIANO',
+          'direcciones': {
+            'direccionverificaciontecnicavehicular': {
+              'nombre': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN'
             },
-            'DIRECCIONFISCALIZACIONCONTROL': {
-              'NOMBRE': 'DIRECCIÓN DE FISCALIZACIÓN Y CONTROL',
-              'DIRECTOR': 'ASENSIO, FACUNDO'
+            'direccionapoyolegaltecnicoadmin': {
+              'nombre': 'DIRECCIÓN DE APOYO LEGAL Y TÉCNICO ADMINISTRATIVO',
+              'director': 'CLUA, MARTÍN'
+            },
+            'direccionplanificacioncoordservicio': {
+              'nombre': 'DIRECCIÓN DE PLANIFICACIÓN Y COORDINACIÓN DEL SERVICIO',
+              'director': 'ALBERTI, MARÍA ESTEFANÍA'
+            },
+            'direccionfiscalizacioncontrol': {
+              'nombre': 'DIRECCIÓN DE FISCALIZACIÓN Y CONTROL',
+              'director': 'ASENSIO, FACUNDO'
             }
           }
         }
-      },
-
+      }
     },
-    'SUBSECRETARIAPOLITICASEGURIDADVIAL': {
-      'NOMBRE': 'SUBSECRETARÍA DE POLÍTICA Y SEGURIDAD VIAL',
-      'DIRECTOR': '',
-      'DIRECCIONES': {
-        'OFICINAPRIVADA': {
-          'NOMBRE': 'OFICINA PRIVADA DE SUBSECRETARÍA DE POLÍTICA Y SEGURIDAD VIAL'
+    'subsecretariapoliticaseguridadvial': {
+      'nombre': 'SUBSECRETARÍA DE POLÍTICA Y SEGURIDAD VIAL',
+      'director': '',
+      'direcciones': {
+        'oficinaprivada': {
+          'nombre': 'OFICINA PRIVADA DE SUBSECRETARÍA DE POLÍTICA Y SEGURIDAD VIAL'
         },
-        'DIRECCIONLICENCIASCONDUCIRANTECEDENTESTRANSITO': {
-          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE LICENCIAS DE CONDUCIR Y ANTECEDENTES DE TRÁNSITO',
-          'DIRECTOR': 'MIGLIAVACCA, LUCAS ROBERTO',
-          'DIRECCIONES': {
-            'DIRECCIONLICENCIASCONDUCIRANTECEDENTESTRANSITO': {
-              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN'
+        'direccionlicenciasconducirantecedentestransito': {
+          'nombre': 'DIRECCIÓN PROVINCIAL DE LICENCIAS DE CONDUCIR Y ANTECEDENTES DE TRÁNSITO',
+          'director': 'MIGLIAVACCA, LUCAS ROBERTO',
+          'direcciones': {
+            'direccionlicenciasconducirantecedentestransito': {
+              'nombre': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN'
             },
-            'DIRECCIONLICENCIASCONDUCIR': {
-              'NOMBRE': 'DIRECCIÓN DE LICENCIAS DE CONDUCIR',
-              'DIRECTOR': ''
+            'direccionlicenciasconducir': {
+              'nombre': 'DIRECCIÓN DE LICENCIAS DE CONDUCIR',
+              'director': ''
             },
-            'DIRECCIONANTECEDENTESINHABILITADOS': {
-              'NOMBRE': 'DIRECCIÓN DE ANTECEDENTES E INHABILITADOS',
-              'DIRECTOR': ''
+            'direccionantecedentesinhabilitados': {
+              'nombre': 'DIRECCIÓN DE ANTECEDENTES E INHABILITADOS',
+              'director': ''
             }
-          },
-
+          }
         },
-        'DIRECCIONOBSERVATORIOVIAL': {
-          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE OBSERVATORIO VIAL',
-          'DIRECTOR': 'COUDANNES, CARLOS FACUNDO',
-          'DIRECCIONES': {
-            'DIRECCIONOBSERVATORIOVIAL': {
-              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN'
+        'direccionobservatoriovial': {
+          'nombre': 'DIRECCIÓN PROVINCIAL DE OBSERVATORIO VIAL',
+          'director': 'COUDANNES, CARLOS FACUNDO',
+          'direcciones': {
+            'direccionobservatoriovial': {
+              'nombre': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN'
             },
-            'DIRECCIONESTADISTICAVIAL': {
-              'NOMBRE': 'DIRECCIÓN DE ESTADÍSTICA VIAL',
-              'DIRECTOR': ''
+            'direccionestadisticavial': {
+              'nombre': 'DIRECCIÓN DE ESTADÍSTICA VIAL',
+              'director': ''
             },
-            'DIRECCIONCAPACITACIONENLACECOMUNITARIO': {
-              'NOMBRE': 'DIRECCIÓN DE CAPACITACIÓN Y ENLACE COMUNITARIO',
-              'DIRECTOR': 'DÍAZ, MARÍA GUILLERMINA'
+            'direccioncapacitacionenlacecomunitario': {
+              'nombre': 'DIRECCIÓN DE CAPACITACIÓN Y ENLACE COMUNITARIO',
+              'director': 'DÍAZ, MARÍA GUILLERMINA'
             }
-          },
-
+          }
         },
-        'DIRECCIONFISCALIZACIONCONTROLTRANSITOSEGURIDADVIAL': {
-          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE FISCALIZACIÓN Y CONTROL DEL TRÁNSITO Y LA SEGURIDAD VIAL',
-          'DIRECTOR': 'BLANCO, ALEJANDRO OSVALDO',
-          'DIRECCIONES': {
-            'DIRECCIONFISCALIZACIONCONTROLTRANSITOSEGURIDADVIAL': {
-              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN',
-
+        'direccionfiscalizacioncontroltransitoseguridadvial': {
+          'nombre': 'DIRECCIÓN PROVINCIAL DE FISCALIZACIÓN Y CONTROL DEL TRÁNSITO Y LA SEGURIDAD VIAL',
+          'director': 'BLANCO, ALEJANDRO OSVALDO',
+          'direcciones': {
+            'direccionfiscalizacioncontroltransitoseguridadvial': {
+              'nombre': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN'
             },
-            'DIRECCIONFISCALIZACIONCONTROLTRANSITOYSEGURIDADVIAL': {
-              'NOMBRE': 'DIRECCIÓN DE FISCALIZACIÓN Y CONTROL DEL TRÁNSITO  Y LA SEGURIDAD VIAL',
-              'DIRECTOR': 'GOLDFAB, FEDERICO ARIEL'
+            'direccionfiscalizacioncontroltransitoyseguridadvial': {
+              'nombre': 'DIRECCIÓN DE FISCALIZACIÓN Y CONTROL DEL TRÁNSITO  Y LA SEGURIDAD VIAL',
+              'director': 'GOLDFAB, FEDERICO ARIEL'
             }
-          },
-
+          }
         },
-        'DIRECCIONAPOYOCOORDTECNICOADMINISTRATIVA': {
-          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE APOYO Y COORDINACIÓN TÉCNICO ADMINISTRATIVA',
-          'DIRECTOR': 'MEIJIDE, MARCELA',
-          'DIRECCIONES': {
-            'JUZGADOSADMINISTRATIVOS': {
-              'NOMBRE': 'JUZGADOS ADMINISTRATIVOS DE INFRACCIONES DE TRÁNSITO PROVINCIAL (I A XIII)',
-
+        'direccionapoyocoordtecnicoadministrativa': {
+          'nombre': 'DIRECCIÓN PROVINCIAL DE APOYO Y COORDINACIÓN TÉCNICO ADMINISTRATIVA',
+          'director': 'MEIJIDE, MARCELA',
+          'direcciones': {
+            'juzgadosadministrativos': {
+              'nombre': 'JUZGADOS ADMINISTRATIVOS DE INFRACCIONES DE TRÁNSITO PROVINCIAL (I A XIII)'
             },
-            'DIRECCIONAPOYOADMINISTRATIVO': {
-              'NOMBRE': 'DIRECCIÓN DE APOYO ADMINISTRATIVO',
-              'DIRECTOR': 'MURIAS, JORGELINA PAOLA'
+            'direccionapoyoadministrativo': {
+              'nombre': 'DIRECCIÓN DE APOYO ADMINISTRATIVO',
+              'director': 'MURIAS, JORGELINA PAOLA'
             },
-            'DIRECCIONCOORDINACIONJUSTICIAADMINISTRATIVA': {
-              'NOMBRE': 'DIRECCIÓN DE COORDINACIÓN Y ORGANIZACIÓN DE LA JUSTICIA ADMINISTRATIVA DE INFRACCIONES DE TRÁNSITO PROVINCIAL',
-              'DIRECTOR': 'ANGELETTI ALVAREZ, MARÍA LAURA'
+            'direccioncoordinacionjusticiaadministrativa': {
+              'nombre': 'DIRECCIÓN DE COORDINACIÓN Y ORGANIZACIÓN DE LA JUSTICIA ADMINISTRATIVA DE INFRACCIONES DE TRÁNSITO PROVINCIAL',
+              'director': 'ANGELETTI ALVAREZ, MARÍA LAURA'
             },
-            'DIRECCIONINFORMATICATECNOLOGIA': {
-              'NOMBRE': 'DIRECCIÓN DE INFORMÁTICA Y TECNOLOGÍA',
-              'DIRECTOR': 'FONTANARI, ANDREA LORENA'
+            'direccioninformaticatecnologia': {
+              'nombre': 'DIRECCIÓN DE INFORMÁTICA Y TECNOLOGÍA',
+              'director': 'FONTANARI, ANDREA LORENA'
             }
           }
         }
-      },
-
+      }
     },
-    'SUBSECRETARIATECNICAADMINISTRATIVALEGAL': {
-      'NOMBRE': 'SUBSECRETARÍA TÉCNICA ADMINISTRATIVA Y LEGAL',
-      'DIRECTOR': 'CINGOLANI, IGNACIO MARTÍN',
-      'DIRECCIONES': {
-        'OFICINAPRIVADA': {
-          'NOMBRE': 'OFICINA PRIVADA DE SUBSECRETARÍA TÉCNICA ADMINISTRATIVA Y LEGAL'
+    'subsecretariatecnicaadministrativalegal': {
+      'nombre': 'SUBSECRETARÍA TÉCNICA ADMINISTRATIVA Y LEGAL',
+      'director': 'CINGOLANI, IGNACIO MARTÍN',
+      'direcciones': {
+        'oficinaprivada': {
+          'nombre': 'OFICINA PRIVADA DE SUBSECRETARÍA TÉCNICA ADMINISTRATIVA Y LEGAL'
         },
-        'DIRECCIONGENERALADMINISTRACION': {
-          'NOMBRE': 'DIRECCIÓN GENERAL DE ADMINISTRACIÓN',
-          'DIRECTOR': 'GIMÉNEZ, MARÍA DE LOURDES',
-          'DIRECCIONES': {
-            'DIRECCIONGENERALADMINISTRACION': {
-              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN',
-
+        'direcciongeneraladministracion': {
+          'nombre': 'DIRECCIÓN GENERAL DE ADMINISTRACIÓN',
+          'director': 'GIMÉNEZ, MARÍA DE LOURDES',
+          'direcciones': {
+            'direcciongeneraladministracion': {
+              'nombre': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN'
             },
-            'DIRECCIONCONTABILIDAD': {
-              'NOMBRE': 'DIRECCIÓN DE CONTABILIDAD',
-              'DIRECTOR': 'KLEICH, SOLANGE'
+            'direccioncontabilidad': {
+              'nombre': 'DIRECCIÓN DE CONTABILIDAD',
+              'director': 'KLEICH, SOLANGE'
             },
-            'DIRECCIONPRESUPUESTO': {
-              'NOMBRE': 'DIRECCIÓN DE PRESUPUESTO',
-              'DIRECTOR': 'ROMERO, AILÍN ISABEL'
+            'direccionpresupuesto': {
+              'nombre': 'DIRECCIÓN DE PRESUPUESTO',
+              'director': 'ROMERO, AILÍN ISABEL'
             },
-            'DIRECCIONCOMPRASCONTRATACIONESSUMINISTROS': {
-              'NOMBRE': 'DIRECCIÓN DE COMPRAS, CONTRATACIONES Y SUMINISTROS',
-              'DIRECTOR': 'PEDERNERA, GONZALO HERNÁN'
+            'direccioncomprascontratacionessuministros': {
+              'nombre': 'DIRECCIÓN DE COMPRAS, CONTRATACIONES Y SUMINISTROS',
+              'director': 'PEDERNERA, GONZALO HERNÁN'
             },
-            'DIRECCIONTESORERIA': {
-              'NOMBRE': 'DIRECCIÓN DE TESORERÍA',
-              'DIRECTOR': 'ARIBE PERUZZO, MARGARITA'
+            'direcciontesoreria': {
+              'nombre': 'DIRECCIÓN DE TESORERÍA',
+              'director': 'ARIBE PERUZZO, MARGARITA'
             },
-            'DIRECCIONDELEGADAPERSONAL': {
-              'NOMBRE': 'DIRECCIÓN DELEGADA DE LA DIRECCIÓN PROVINCIAL DE PERSONAL',
-              'DIRECTOR': 'SCHMITZ, JULIETA LORELEY'
+            'direcciondelegadapersonal': {
+              'nombre': 'DIRECCIÓN DELEGADA DE LA DIRECCIÓN PROVINCIAL DE PERSONAL',
+              'director': 'SCHMITZ, JULIETA LORELEY'
             },
-            'DIRECCIONTECNOLOGIAINFORMACION': {
-              'NOMBRE': 'DIRECCIÓN DE TECNOLOGÍA DE LA INFORMACIÓN',
-              'DIRECTOR': 'PRETTI, GABRIEL ALEJANDRO'
+            'direcciontecnologiainformacion': {
+              'nombre': 'DIRECCIÓN DE TECNOLOGÍA DE LA INFORMACIÓN',
+              'director': 'PRETTI, GABRIEL ALEJANDRO'
             },
-            'DIRECCIONSERVICIOSAUXILIARES': {
-              'NOMBRE': 'DIRECCIÓN DE SERVICIOS AUXILIARES',
-              'DIRECTOR': 'SABAT, SABRINA INÉS'
+            'direccionserviciosauxiliares': {
+              'nombre': 'DIRECCIÓN DE SERVICIOS AUXILIARES',
+              'director': 'SABAT, SABRINA INÉS'
             },
-            'DIRECCIONSERVICIOSTECNICOS': {
-              'NOMBRE': 'DIRECCIÓN DE SERVICIOS TÉCNICOS',
-              'DIRECTOR': 'SIMIONI, MARÍA VICTORIA'
+            'direccionserviciostecnicos': {
+              'nombre': 'DIRECCIÓN DE SERVICIOS TÉCNICOS',
+              'director': 'SIMIONI, MARÍA VICTORIA'
             }
-          },
-
+          }
         },
-        'DIRECCIONGENERALTECNICALEGAL': {
-          'NOMBRE': 'DIRECCIÓN GENERAL TÉCNICA Y LEGAL',
-          'DIRECTOR': 'TABOLARO, CRISTINA ELSA',
-          'DIRECCIONES': {
-            'DIRECCIONGENERALTECNICALEGAL': {
-              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN',
-
+        'direcciongeneraltecnicalegal': {
+          'nombre': 'DIRECCIÓN GENERAL TÉCNICA Y LEGAL',
+          'director': 'TABOLARO, CRISTINA ELSA',
+          'direcciones': {
+            'direcciongeneraltecnicalegal': {
+              'nombre': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN'
             },
-            'DIRECCIONTECNICOADMINISTRATIVA': {
-              'NOMBRE': 'DIRECCIÓN TÉCNICO ADMINISTRATIVA',
-              'DIRECTOR': 'CANAVESSI, EDUARDO FABIÁN'
+            'direcciontecnicoadministrativa': {
+              'nombre': 'DIRECCIÓN TÉCNICO ADMINISTRATIVA',
+              'director': 'CANAVESSI, EDUARDO FABIÁN'
             },
-            'DIRECCIONCOORDINACIONJURIDICA': {
-              'NOMBRE': 'DIRECCIÓN DE COORDINACIÓN JURÍDICA',
-              'DIRECTOR': 'ESTREBOU, MARÍA CECILIA'
+            'direccioncoordinacionjuridica': {
+              'nombre': 'DIRECCIÓN DE COORDINACIÓN JURÍDICA',
+              'director': 'ESTREBOU, MARÍA CECILIA'
             },
-            'DIRECCIONGESTIONMULTAS': {
-              'NOMBRE': 'DIRECCIÓN DE GESTIÓN DE MULTAS POR INFRACCIONES DE TRÁNSITO Y TRANSPORTE',
-              'DIRECTOR': 'MAYOL, SONIA ANGÉLICA'
+            'direcciongestionmultas': {
+              'nombre': 'DIRECCIÓN DE GESTIÓN DE MULTAS POR INFRACCIONES DE TRÁNSITO Y TRANSPORTE',
+              'director': 'MAYOL, SONIA ANGÉLICA'
             }
           }
         }
-      },
-
+      }
     },
-    'SUBSECRETARIATRANSPORTEAEREOFLUVIAL': {
-      'NOMBRE': 'SUBSECRETARÍA DE TRANSPORTE AÉREO Y FLUVIAL',
-      'DIRECTOR': 'RICCIARDELLI, MAIRA ROCÍO',
-      'DIRECCIONES': {
-        'OFICINAPRIVADA': {
-          'NOMBRE': 'OFICINA PRIVADA DE SUBSECRETARÍA DE TRANSPORTE AÉREO Y FLUVIAL'
+    'subsecretariatransporteaereofluvial': {
+      'nombre': 'SUBSECRETARÍA DE TRANSPORTE AÉREO Y FLUVIAL',
+      'director': 'RICCIARDELLI, MAIRA ROCÍO',
+      'direcciones': {
+        'oficinaprivada': {
+          'nombre': 'OFICINA PRIVADA DE SUBSECRETARÍA DE TRANSPORTE AÉREO Y FLUVIAL'
         },
-        'DIRECCIONCONTRALORTRANSPORTEFLUVIAL': {
-          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE CONTRALOR DEL TRANSPORTE FLUVIAL DE PASAJEROS',
-          'DIRECTOR': 'CAPRIOLI, SILVIO MAXIMILIANO',
-          'DIRECCIONES': {
-            'DIRECCIONCONTRALORTRANSPORTEFLUVIAL': {
-              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN',
-
+        'direccioncontralortransportefluvial': {
+          'nombre': 'DIRECCIÓN PROVINCIAL DE CONTRALOR DEL TRANSPORTE FLUVIAL DE PASAJEROS',
+          'director': 'CAPRIOLI, SILVIO MAXIMILIANO',
+          'direcciones': {
+            'direccioncontralortransportefluvial': {
+              'nombre': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN'
             },
-            'DIRECCIONOPERACIONESTRANSPORTEFLUVIAL': {
-              'NOMBRE': 'DIRECCIÓN DE OPERACIONES DE TRANSPORTE FLUVIAL DE PASAJEROS',
-              'DIRECTOR': 'MOULES, ANDRÉS GUILLERMO'
+            'direccionoperacionestransportefluvial': {
+              'nombre': 'DIRECCIÓN DE OPERACIONES DE TRANSPORTE FLUVIAL DE PASAJEROS',
+              'director': 'MOULES, ANDRÉS GUILLERMO'
             },
-            'DIRECCIONFISCALIZACIONTRANSPORTEFLUVIAL': {
-              'NOMBRE': 'DIRECCIÓN DE FISCALIZACIÓN DEL TRANSPORTE FLUVIAL DE PASAJEROS',
-              'DIRECTOR': ''
+            'direccionfiscalizaciontransportefluvial': {
+              'nombre': 'DIRECCIÓN DE FISCALIZACIÓN DEL TRANSPORTE FLUVIAL DE PASAJEROS',
+              'director': ''
             }
-          },
-
+          }
         },
-        'DIRECCIONCONTRALORTRANSPORTEAEREO': {
-          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE CONTRALOR DEL TRANSPORTE AÉREO',
-          'DIRECTOR': 'CARBALLO, FABIÁN JULIÁN',
-          'DIRECCIONES': {
-            'DIRECCIONCONTRALORTRANSPORTEAEREO': {
-              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN',
-
+        'direccioncontralortransporteaereo': {
+          'nombre': 'DIRECCIÓN PROVINCIAL DE CONTRALOR DEL TRANSPORTE AÉREO',
+          'director': 'CARBALLO, FABIÁN JULIÁN',
+          'direcciones': {
+            'direccioncontralortransporteaereo': {
+              'nombre': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN'
             },
-            'DIRECCIONOPERACIONESTRANSPORTEAEREO': {
-              'NOMBRE': 'DIRECCIÓN DE OPERACIONES DEL TRANSPORTE AÉREO',
-              'DIRECTOR': 'PARDI, NICOLÁS ALEJANDRO'
+            'direccionoperacionestransporteaereo': {
+              'nombre': 'DIRECCIÓN DE OPERACIONES DEL TRANSPORTE AÉREO',
+              'director': 'PARDI, NICOLÁS ALEJANDRO'
             },
-            'DIRECCIONFISCALIZACIONAEROPORTUARIA': {
-              'NOMBRE': 'DIRECCIÓN DE FISCALIZACIÓN AEROPORTUARIA',
-              'DIRECTOR': 'ALTAMIRANO, KARINA ALEJANDRA'
+            'direccionfiscalizacionaeroportuaria': {
+              'nombre': 'DIRECCIÓN DE FISCALIZACIÓN AEROPORTUARIA',
+              'director': 'ALTAMIRANO, KARINA ALEJANDRA'
             }
-          },
-
+          }
         },
-        'DIRECCIONPROMOCIONCOORDINACIONTRANSPORTEAEREOFLUVIAL': {
-          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE PROMOCIÓN Y COORDINACIÓN DEL TRANSPORTE AÉREO Y FLUVIAL',
-          'DIRECTOR': 'LARROUDE, MARÍA DE LOS ÁNGELES',
-          'DIRECCIONES': {
-            'DIRECCIONPROMOCIONCOORDINACIONTRANSPORTEAEREOFLUVIAL': {
-              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN',
-
+        'direccionpromocioncoordinaciontransporteaereofluvial': {
+          'nombre': 'DIRECCIÓN PROVINCIAL DE PROMOCIÓN Y COORDINACIÓN DEL TRANSPORTE AÉREO Y FLUVIAL',
+          'director': 'LARROUDE, MARÍA DE LOS ÁNGELES',
+          'direcciones': {
+            'direccionpromocioncoordinaciontransporteaereofluvial': {
+              'nombre': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN'
             },
-            'DIRECCIONESTRATEGIASPORTUARIASAEROPORTUARIAS': {
-              'NOMBRE': 'DIRECCIÓN DE ESTRATEGIAS PORTUARIAS Y AEROPORTUARIAS',
-              'DIRECTOR': 'SUSINO, FABIÁN RODOLFO'
+            'direccionestrategiasportuariasaeroportuarias': {
+              'nombre': 'DIRECCIÓN DE ESTRATEGIAS PORTUARIAS Y AEROPORTUARIAS',
+              'director': 'SUSINO, FABIÁN RODOLFO'
             },
-            'DIRECCIONPROMOCIONDESARROLLOTRANSPORTEFLUVIAL': {
-              'NOMBRE': 'DIRECCIÓN DE PROMOCIÓN Y DESARROLLO DE TRANSPORTE FLUVIAL DE PASAJEROS',
-              'DIRECTOR': ''
+            'direccionpromociondesarrollotransportefluvial': {
+              'nombre': 'DIRECCIÓN DE PROMOCIÓN Y DESARROLLO DE TRANSPORTE FLUVIAL DE PASAJEROS',
+              'director': ''
             }
           }
         }
-      },
-
+      }
     },
-    'SUBSECRETARIAARTICULACIONINTERJURISDICCIONAL': {
-      'NOMBRE': 'SUBSECRETARÍA DE ARTICULACIÓN INTERJURISDICCIONAL DEL TRANSPORTE',
-      'DIRECTOR': '',
-      'DIRECCIONES': {
-        'OFICINAPRIVADA': {
-          'NOMBRE': 'OFICINA PRIVADA DE SUBSECRETARÍA DE ARTICULACIÓN INTERJURISDICCIONAL',
-
+    'subsecretariaarticulacioninterjurisdiccional': {
+      'nombre': 'SUBSECRETARÍA DE ARTICULACIÓN INTERJURISDICCIONAL DEL TRANSPORTE',
+      'director': '',
+      'direcciones': {
+        'oficinaprivada': {
+          'nombre': 'OFICINA PRIVADA DE SUBSECRETARÍA DE ARTICULACIÓN INTERJURISDICCIONAL'
         },
-        'DIRECCIONCOMPENSACIONESTRANSPORTE': {
-          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE COMPENSACIONES AL TRANSPORTE',
-          'DIRECTOR': 'BRITOS, GASTÓN LEANDRO',
-          'DIRECCIONES': {
-            'DIRECCIONCOMPENSACIONESTRANSPORTE': {
-              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN',
-
+        'direccioncompensacionestransporte': {
+          'nombre': 'DIRECCIÓN PROVINCIAL DE COMPENSACIONES AL TRANSPORTE',
+          'director': 'BRITOS, GASTÓN LEANDRO',
+          'direcciones': {
+            'direccioncompensacionestransporte': {
+              'nombre': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN'
             },
-            'DIRECCIONLIQUIDACIONPAGO': {
-              'NOMBRE': 'DIRECCIÓN DE LIQUIDACIÓN Y PAGO',
-              'DIRECTOR': 'VEIRAS, LAILA LUDMILA ELISA'
+            'direccionliquidacionpago': {
+              'nombre': 'DIRECCIÓN DE LIQUIDACIÓN Y PAGO',
+              'director': 'VEIRAS, LAILA LUDMILA ELISA'
             },
-            'DIRECCIONCONTROLVERIFICACION': {
-              'NOMBRE': 'DIRECCIÓN DE CONTROL Y VERIFICACIÓN',
-              'DIRECTOR': ''
+            'direccioncontrolverificacion': {
+              'nombre': 'DIRECCIÓN DE CONTROL Y VERIFICACIÓN',
+              'director': ''
             }
-          },
-
+          }
         },
-        'DIRECCIONCOORDINACIONTRANSPORTE': {
-          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE COORDINACIÓN DEL TRANSPORTE',
-          'DIRECTOR': 'MARTINEZ NOVARA, MARÍA ERCILIA',
-          'DIRECCIONES': {
-            'DIRECCIONCOORDINACIONTRANSPORTE': {
-              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN',
-
+        'direccioncoordinaciontransporte': {
+          'nombre': 'DIRECCIÓN PROVINCIAL DE COORDINACIÓN DEL TRANSPORTE',
+          'director': 'MARTINEZ NOVARA, MARÍA ERCILIA',
+          'direcciones': {
+            'direccioncoordinaciontransporte': {
+              'nombre': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN'
             },
-            'DIRECCIONCOORDINACIONPUBLICO': {
-              'NOMBRE': 'DIRECCIÓN DE COORDINACIÓN DEL TRANSPORTE CON EL SECTOR PÚBLICO',
-              'DIRECTOR': 'URRUTIA, MARÍA LUJÁN'
+            'direccioncoordinacionpublico': {
+              'nombre': 'DIRECCIÓN DE COORDINACIÓN DEL TRANSPORTE CON EL SECTOR PÚBLICO',
+              'director': 'URRUTIA, MARÍA LUJÁN'
             },
-            'DIRECCIONCOORDINACIONPRIVADO': {
-              'NOMBRE': 'DIRECCIÓN DE COORDINACIÓN DEL TRANSPORTE CON EL SECTOR PRIVADO',
-              'DIRECTOR': 'GOMEZ CORREA, MARÍA NOELIA'
+            'direccioncoordinacionprivado': {
+              'nombre': 'DIRECCIÓN DE COORDINACIÓN DEL TRANSPORTE CON EL SECTOR PRIVADO',
+              'director': 'GOMEZ CORREA, MARÍA NOELIA'
             }
-          },
-
+          }
         },
-        'DIRECCIONPLANIFICACIONPOLITICAECONOMICA': {
-          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE PLANIFICACIÓN Y POLÍTICA ECONÓMICA DEL TRANSPORTE',
-          'DIRECTOR': 'GALLARDO, JONATAN EZEQUIEL',
-          'DIRECCIONES': {
-            'DIRECCIONPLANIFICACIONPOLITICAECONOMICA': {
-              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN',
-
+        'direccionplanificacionpoliticaeconomica': {
+          'nombre': 'DIRECCIÓN PROVINCIAL DE PLANIFICACIÓN Y POLÍTICA ECONÓMICA DEL TRANSPORTE',
+          'director': 'GALLARDO, JONATAN EZEQUIEL',
+          'direcciones': {
+            'direccionplanificacionpoliticaeconomica': {
+              'nombre': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN'
             },
-            'DIRECCIONPLANIFICACIONTRANSPORTE': {
-              'NOMBRE': 'DIRECCIÓN DE PLANIFICACIÓN DEL TRANSPORTE',
-              'DIRECTOR': 'MARTINI, MAYRA ELISABETH'
+            'direccionplanificaciontransporte': {
+              'nombre': 'DIRECCIÓN DE PLANIFICACIÓN DEL TRANSPORTE',
+              'director': 'MARTINI, MAYRA ELISABETH'
             },
-            'DIRECCIONANALISISTRANSPORTE': {
-              'NOMBRE': 'DIRECCIÓN DE ANÁLISIS EFICIENTE DEL TRANSPORTE',
-              'DIRECTOR': 'ECHAVE, FACUNDO JAVIER'
+            'direccionanalisistransporte': {
+              'nombre': 'DIRECCIÓN DE ANÁLISIS EFICIENTE DEL TRANSPORTE',
+              'director': 'ECHAVE, FACUNDO JAVIER'
             },
-            'DIRECCIONGESTIONSUBSIDIOS': {
-              'NOMBRE': 'DIRECCIÓN DE GESTIÓN DE SUBSIDIOS AL TRANSPORTE',
-              'DIRECTOR': 'ARROYO, FEDERICO GUSTAVO'
+            'direcciongestionsubsidios': {
+              'nombre': 'DIRECCIÓN DE GESTIÓN DE SUBSIDIOS AL TRANSPORTE',
+              'director': 'ARROYO, FEDERICO GUSTAVO'
             }
-          },
-
+          }
         },
-        'DIRECCIONPOLITICASGENEROINCLUSIVAS': {
-          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE POLÍTICAS DE GÉNERO Y ESTRATEGIAS INCLUSIVAS',
-          'DIRECTOR': 'BEDOURET, ANGELA',
-          'DIRECCIONES': {
-            'DIRECCIONPOLITICASGENEROINCLUSIVAS': {
-              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN',
-
+        'direccionpoliticasgeneroinclusivas': {
+          'nombre': 'DIRECCIÓN PROVINCIAL DE POLÍTICAS DE GÉNERO Y ESTRATEGIAS INCLUSIVAS',
+          'director': 'BEDOURET, ANGELA',
+          'direcciones': {
+            'direccionpoliticasgeneroinclusivas': {
+              'nombre': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN'
             },
-            'DIRECCIONACCESIBILIDADTRANSPORTE': {
-              'NOMBRE': 'DIRECCIÓN DE ACCESIBILIDAD DEL TRANSPORTE',
-              'DIRECTOR': 'DI YORIO, SILVINA CLAUDIA'
+            'direccionaccesibilidadtransporte': {
+              'nombre': 'DIRECCIÓN DE ACCESIBILIDAD DEL TRANSPORTE',
+              'director': 'DI YORIO, SILVINA CLAUDIA'
             },
-            'DIRECCIONINCLUSIONDIVERSIDAD': {
-              'NOMBRE': 'DIRECCIÓN DE INCLUSIÓN Y DIVERSIDAD',
-              'DIRECTOR': 'BOCCALERI, MARÍA ROSA'
+            'direccioninclusiondiversidad': {
+              'nombre': 'DIRECCIÓN DE INCLUSIÓN Y DIVERSIDAD',
+              'director': 'BOCCALERI, MARÍA ROSA'
             }
-          },
-
+          }
         },
-        'DIRECCIONPOLITICASEDUCATIVASPREVENCION': {
-          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE POLÍTICAS EDUCATIVAS DE PREVENCIÓN',
-          'DIRECTOR': 'SANTANDREA, DANIELA CECILIA',
-          'DIRECCIONES': {
-            'DIRECCIONPOLITICASEDUCATIVASPREVENCION': {
-              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN',
-
+        'direccionpoliticaseducativasprevencion': {
+          'nombre': 'DIRECCIÓN PROVINCIAL DE POLÍTICAS EDUCATIVAS DE PREVENCIÓN',
+          'director': 'SANTANDREA, DANIELA CECILIA',
+          'direcciones': {
+            'direccionpoliticaseducativasprevencion': {
+              'nombre': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN'
             },
-            'DIRECCIONPROMOCIONNORMASCONVIVENCIA': {
-              'NOMBRE': 'DIRECCIÓN DE PROMOCIÓN DE NORMAS DE CONVIVENCIA CIUDADANA',
-              'DIRECTOR': 'JAIME, MARÍA EUGENIA'
+            'direccionpromocionnormasconvivencia': {
+              'nombre': 'DIRECCIÓN DE PROMOCIÓN DE NORMAS DE CONVIVENCIA CIUDADANA',
+              'director': 'JAIME, MARÍA EUGENIA'
             },
-            'DIRECCIONGESTIONINTERMINISTERIAL': {
-              'NOMBRE': 'DIRECCIÓN DE GESTIÓN INTERMINISTERIAL DE PREVENCIÓN Y CONCIENTIZACIÓN EN EL TRANSPORTE',
-              'DIRECTOR': 'TETTAMANTI, MILAGROS'
+            'direcciongestioninterministerial': {
+              'nombre': 'DIRECCIÓN DE GESTIÓN INTERMINISTERIAL DE PREVENCIÓN Y CONCIENTIZACIÓN EN EL TRANSPORTE',
+              'director': 'TETTAMANTI, MILAGROS'
             }
           }
         }
-      },
-
+      }
     }
   }
 }
