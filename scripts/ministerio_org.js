@@ -1,364 +1,468 @@
 var data = {
-  "subsecretarias": {
-    "unidadMonitoreo": {
-      "nombre": "Unidad de monitoreo y registro general de datos del transporte",
-      "oficinaPrivada": {
-        "nombre": "Oficina Privada de Unidad de monitoreo y registro general de datos del transporte"
+  'SUBSECRETARIAS': {
+    'UNIDADMONITOREO': {
+      'NOMBRE': 'UNIDAD DE MONITOREO Y REGISTRO GENERAL DE DATOS DEL TRANSPORTE',
+      'DIRECTOR': '',
+      'OFICINAPRIVADA': {
+        'NOMBRE': 'OFICINA PRIVADA DE UNIDAD DE MONITOREO Y REGISTRO GENERAL DE DATOS DEL TRANSPORTE',
+        'DIRECTOR': ''
       }
     },
-    "direccionComunicacion": {
-      "nombre": "Dirección de comunicación y relación institucionales",
-      "oficinaPrivada": {
-        "nombre": "Oficina Privada de Dirección de comunicación y relación institucionales"
+    'DIRECCIONCOMUNICACION': {
+      'NOMBRE': 'DIRECCIÓN DE COMUNICACIÓN Y RELACIÓN INSTITUCIONALES',
+      'DIRECTOR': '',
+      'OFICINAPRIVADA': {
+        'NOMBRE': 'OFICINA PRIVADA DE DIRECCIÓN DE COMUNICACIÓN Y RELACIÓN INSTITUCIONALES',
+        'DIRECTOR': ''
       }
     },
-    "subsecretariaTransporteTerrestre": {
-      "nombre": "Subsecretaría de transporte terrestre",
-      "direcciones": {
-        "oficinaPrivada": {
-          "nombre": "Oficina Privada de la Subsecretaría de transporte terrestre"
+    'SUBSECRETARIATRANSPORTETERRESTRE': {
+      'NOMBRE': 'SUBSECRETARÍA DE TRANSPORTE TERRESTRE',
+      'DIRECCIONES': {
+        'OFICINAPRIVADA': {
+          'NOMBRE': 'OFICINA PRIVADA DE LA SUBSECRETARÍA DE TRANSPORTE TERRESTRE',
+          'DIRECTOR': ''
         },
-        "direccionFiscalizacionTransporte": {
-          "nombre": "Dirección Provincial de fiscalización del transporte",
-          "direcciones": {
-            "direccionFiscalizacionTransporte": {
-              "nombre": "Oficina privada de la misma direccion"
+        'DIRECCIONFISCALIZACIONTRANSPORTE': {
+          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE FISCALIZACIÓN DEL TRANSPORTE',
+          'DIRECCIONES': {
+            'DIRECCIONFISCALIZACIONTRANSPORTE': {
+              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCION',
+              'DIRECTOR': ''
             },
-            "DirecciónControltecnico": {
-              "nombre": "Dirección de control técnico"
+            'DIRECCIÓNCONTROLTECNICO': {
+              'NOMBRE': 'DIRECCIÓN DE CONTROL TÉCNICO',
+              'DIRECTOR': ''
             },
-            "DirecciónReclamosSolicitudes": {
-              "nombre": "Dirección de reclamos y solicitudes"
+            'DIRECCIÓNRECLAMOSSOLICITUDES': {
+              'NOMBRE': 'DIRECCIÓN DE RECLAMOS Y SOLICITUDES',
+              'DIRECTOR': ''
             }
-          }
+          },
+          'DIRECTOR': ''
         },
-        "direccionTransportePasajeros": {
-          "nombre": "Dirección provincial de transporte de pasajeros",
-          "direcciones": {
-            "direccionTransportePasajeros": {
-              "nombre": "Oficina privada de la misma dirección"
+        'DIRECCIONTRANSPORTEPASAJEROS': {
+          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE TRANSPORTE DE PASAJEROS',
+          'DIRECCIONES': {
+            'DIRECCIONTRANSPORTEPASAJEROS': {
+              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN',
+              'DIRECTOR': ''
             },
-            "DirecciónTransporteAutomotorPasajeros": {
-              "nombre": "Dirección de Transporte Automotor de Pasajeros"
+            'DIRECCIÓNTRANSPORTEAUTOMOTORPASAJEROS': {
+              'NOMBRE': 'DIRECCIÓN DE TRANSPORTE AUTOMOTOR DE PASAJEROS',
+              'DIRECTOR': ''
             },
-            "direccionPermisosHabilitacionesPasajeros": {
-              "nombre": "Dirección de Permisos y Habilitaciones de Transporte de Pasajeros"
+            'DIRECCIONPERMISOSHABILITACIONESPASAJEROS': {
+              'NOMBRE': 'DIRECCIÓN DE PERMISOS Y HABILITACIONES DE TRANSPORTE DE PASAJEROS',
+              'DIRECTOR': ''
             },
-            "direccionTransporteFerroviarioPasajeros": {
-              "nombre": "Dirección de transporte ferroviario de pasajeros"
+            'DIRECCIONTRANSPORTEFERROVIARIOPASAJEROS': {
+              'NOMBRE': 'DIRECCIÓN DE TRANSPORTE FERROVIARIO DE PASAJEROS',
+              'DIRECTOR': ''
             }
-          }
+          },
+          'DIRECTOR': ''
         },
-        "direccionTransporteCargas": {
-          "nombre": "Dirección provincial de transporte de cargas",
-          "direcciones": {
-            "direccionTransporteCargas": {
-              "nombre": "Oficina privada de la misma dirección"
+        'DIRECCIONTRANSPORTECARGAS': {
+          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE TRANSPORTE DE CARGAS',
+          'DIRECCIONES': {
+            'DIRECCIONTRANSPORTECARGAS': {
+              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN',
+              'DIRECTOR': ''
             },
-            "direccionPermisosHabilitacionesCargas": {
-              "nombre": "Dirección de permisos y habilitaciones de transporte de cargas"
+            'DIRECCIONPERMISOSHABILITACIONESCARGAS': {
+              'NOMBRE': 'DIRECCIÓN DE PERMISOS Y HABILITACIONES DE TRANSPORTE DE CARGAS',
+              'DIRECTOR': ''
             },
-            "direccionTransporteAutomotorCargas": {
-              "nombre": "Dirección de transporte automotor de cargas"
+            'DIRECCIONTRANSPORTEAUTOMOTORCARGAS': {
+              'NOMBRE': 'DIRECCIÓN DE TRANSPORTE AUTOMOTOR DE CARGAS',
+              'DIRECTOR': ''
             },
-            "direccionTransporteFerroviarioCargas": {
-              "nombre": "Dirección de transporte ferroviario de cargas"
+            'DIRECCIONTRANSPORTEFERROVIARIOCARGAS': {
+              'NOMBRE': 'DIRECCIÓN DE TRANSPORTE FERROVIARIO DE CARGAS',
+              'DIRECTOR': ''
             }
-          }
+          },
+          'DIRECTOR': ''
         },
-        "direccionAptitudConductores": {
-          "nombre": "Direccion provincial de aptitud psicofisica para conductores del transporte publico",
-          "oficinaPrivada": {
-            "nombre": "Oficina Privada de Direccion provincial de aptitud psicofisica para conductores del transporte publico"
-          }
+        'DIRECCIONAPTITUDCONDUCTORES': {
+          'NOMBRE': 'DIRECCION PROVINCIAL DE APTITUD PSICOFISICA PARA CONDUCTORES DEL TRANSPORTE PUBLICO',
+          'OFICINAPRIVADA': {
+            'NOMBRE': 'OFICINA PRIVADA DE DIRECCION PROVINCIAL DE APTITUD PSICOFISICA PARA CONDUCTORES DEL TRANSPORTE PUBLICO',
+            'DIRECTOR': ''
+          },
+          'DIRECTOR': ''
         },
-        "direccionPoliticasTransporteSostenible": {
-          "nombre": "Dirección provincial de políticas de transporte sostenible",
-          "direcciones": {
-            "direccionPoliticasTransporteSostenible": {
-              "nombre": "Oficina privada de la misma dirección"
+        'DIRECCIONPOLITICASTRANSPORTESOSTENIBLE': {
+          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE POLÍTICAS DE TRANSPORTE SOSTENIBLE',
+          'DIRECCIONES': {
+            'DIRECCIONPOLITICASTRANSPORTESOSTENIBLE': {
+              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN',
+              'DIRECTOR': ''
             },
-            "direccionDesarrolloSostenibleTransporte": {
-              "nombre": "Dirección de desarrollo sostenible del transporte"
+            'DIRECCIONDESARROLLOSOSTENIBLETRANSPORTE': {
+              'NOMBRE': 'DIRECCIÓN DE DESARROLLO SOSTENIBLE DEL TRANSPORTE',
+              'DIRECTOR': ''
             },
-            "direccionProyectosEstrategicos": {
-              "nombre": "Dirección de proyectos estratégicos"
+            'DIRECCIONPROYECTOSESTRATEGICOS': {
+              'NOMBRE': 'DIRECCIÓN DE PROYECTOS ESTRATÉGICOS',
+              'DIRECTOR': ''
             }
-          }
+          },
+          'DIRECTOR': ''
         },
-        "direccionVerificacionTecnicaVehicular": {
-          "nombre": "Dirección provincial de verificación técnica vehicular",
-          "direcciones": {
-            "direccionVerificacionTecnicaVehicular": {
-              "nombre": "Oficina privada de la misma dirección"
+        'DIRECCIONVERIFICACIONTECNICAVEHICULAR': {
+          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE VERIFICACIÓN TÉCNICA VEHICULAR',
+          'DIRECCIONES': {
+            'DIRECCIONVERIFICACIONTECNICAVEHICULAR': {
+              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN',
+              'DIRECTOR': ''
             },
-            "direccionApoyoLegalTecnicoAdmin": {
-              "nombre": "Dirección de apoyo legal y técnico administrativo"
+            'DIRECCIONAPOYOLEGALTECNICOADMIN': {
+              'NOMBRE': 'DIRECCIÓN DE APOYO LEGAL Y TÉCNICO ADMINISTRATIVO',
+              'DIRECTOR': ''
             },
-            "direccionPlanificacionCoordServicio": {
-              "nombre": "Dirección de planificación y coordinación del servicio"
+            'DIRECCIONPLANIFICACIONCOORDSERVICIO': {
+              'NOMBRE': 'DIRECCIÓN DE PLANIFICACIÓN Y COORDINACIÓN DEL SERVICIO',
+              'DIRECTOR': ''
             },
-            "direccionFiscalizacionControl": {
-              "nombre": "Dirección de fiscalización y control"
+            'DIRECCIONFISCALIZACIONCONTROL': {
+              'NOMBRE': 'DIRECCIÓN DE FISCALIZACIÓN Y CONTROL',
+              'DIRECTOR': ''
             }
-          }
+          },
+          'DIRECTOR': ''
         }
-      }
+      },
+      'DIRECTOR': ''
     },
-    "subsecretariaPoliticaSeguridadVial": {
-      "nombre": "Subsecretaría de política y seguridad vial",
-      "direcciones": {
-        "oficinaPrivada": {
-          "nombre": "Oficina Privada de Subsecretaría de política y seguridad vial"
+    'SUBSECRETARIAPOLITICASEGURIDADVIAL': {
+      'NOMBRE': 'SUBSECRETARÍA DE POLÍTICA Y SEGURIDAD VIAL',
+      'DIRECCIONES': {
+        'OFICINAPRIVADA': {
+          'NOMBRE': 'OFICINA PRIVADA DE SUBSECRETARÍA DE POLÍTICA Y SEGURIDAD VIAL',
+          'DIRECTOR': ''
         },
-        "direccionLicenciasConducirAntecedentesTransito": {
-          "nombre": "Dirección provincial de licencias de conducir y antecedentes de tránsito",
-          "direcciones": {
-            "direccionLicenciasConducirAntecedentesTransito": {
-              "nombre": "Oficina privada de la misma dirección"
+        'DIRECCIONLICENCIASCONDUCIRANTECEDENTESTRANSITO': {
+          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE LICENCIAS DE CONDUCIR Y ANTECEDENTES DE TRÁNSITO',
+          'DIRECCIONES': {
+            'DIRECCIONLICENCIASCONDUCIRANTECEDENTESTRANSITO': {
+              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN',
+              'DIRECTOR': ''
             },
-            "direccionLicenciasConducir": {
-              "nombre": "Dirección de licencias de conducir"
+            'DIRECCIONLICENCIASCONDUCIR': {
+              'NOMBRE': 'DIRECCIÓN DE LICENCIAS DE CONDUCIR',
+              'DIRECTOR': ''
             },
-            "direccionAntecedentesInhabilitados": {
-              "nombre": "Dirección de antecedentes e inhabilitados"
+            'DIRECCIONANTECEDENTESINHABILITADOS': {
+              'NOMBRE': 'DIRECCIÓN DE ANTECEDENTES E INHABILITADOS',
+              'DIRECTOR': ''
             }
-          }
+          },
+          'DIRECTOR': ''
         },
-        "direccionObservatorioVial": {
-          "nombre": "Dirección provincial de observatorio vial",
-          "direcciones": {
-            "direccionObservatorioVial": {
-              "nombre": "Oficina privada de la misma dirección"
+        'DIRECCIONOBSERVATORIOVIAL': {
+          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE OBSERVATORIO VIAL',
+          'DIRECCIONES': {
+            'DIRECCIONOBSERVATORIOVIAL': {
+              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN',
+              'DIRECTOR': ''
             },
-            "direccionEstadisticaVial": {
-              "nombre": "Dirección de estadística vial"
+            'DIRECCIONESTADISTICAVIAL': {
+              'NOMBRE': 'DIRECCIÓN DE ESTADÍSTICA VIAL',
+              'DIRECTOR': ''
             },
-            "direccionCapacitacionEnlaceComunitario": {
-              "nombre": "Dirección de capacitación y enlace comunitario"
+            'DIRECCIONCAPACITACIONENLACECOMUNITARIO': {
+              'NOMBRE': 'DIRECCIÓN DE CAPACITACIÓN Y ENLACE COMUNITARIO',
+              'DIRECTOR': ''
             }
-          }
+          },
+          'DIRECTOR': ''
         },
-        "direccionFiscalizacionControlTransitoSeguridadVial": {
-          "nombre": "Dirección provincial de fiscalización y control del tránsito y la seguridad vial",
-          "direcciones": {
-            "direccionFiscalizacionControlTransitoSeguridadVial": {
-              "nombre": "Oficina privada de la misma dirección"
+        'DIRECCIONFISCALIZACIONCONTROLTRANSITOSEGURIDADVIAL': {
+          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE FISCALIZACIÓN Y CONTROL DEL TRÁNSITO Y LA SEGURIDAD VIAL',
+          'DIRECCIONES': {
+            'DIRECCIONFISCALIZACIONCONTROLTRANSITOSEGURIDADVIAL': {
+              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN',
+              'DIRECTOR': ''
             },
-            "direccionFiscalizacionControlTransito": {
-              "nombre": "Dirección de fiscalización y control del tránsito"
+            'DIRECCIONFISCALIZACIONCONTROLTRANSITO': {
+              'NOMBRE': 'DIRECCIÓN DE FISCALIZACIÓN Y CONTROL DEL TRÁNSITO',
+              'DIRECTOR': ''
             },
-            "direccionSeguridadVial": {
-              "nombre": "Dirección de seguridad vial"
+            'DIRECCIONSEGURIDADVIAL': {
+              'NOMBRE': 'DIRECCIÓN DE SEGURIDAD VIAL',
+              'DIRECTOR': ''
             }
-          }
+          },
+          'DIRECTOR': ''
         },
-        "direccionApoyoCoordTecnicoAdministrativa": {
-          "nombre": "Dirección provincial de apoyo y coordinación técnico administrativa",
-          "direcciones": {
-            "juzgadosAdministrativos": {
-              "nombre": "Juzgados administrativos de infracciones de tránsito provincial (I a XIII)"
+        'DIRECCIONAPOYOCOORDTECNICOADMINISTRATIVA': {
+          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE APOYO Y COORDINACIÓN TÉCNICO ADMINISTRATIVA',
+          'DIRECCIONES': {
+            'JUZGADOSADMINISTRATIVOS': {
+              'NOMBRE': 'JUZGADOS ADMINISTRATIVOS DE INFRACCIONES DE TRÁNSITO PROVINCIAL (I A XIII)',
+              'DIRECTOR': ''
             },
-            "direccionApoyoAdministrativo": {
-              "nombre": "Dirección de apoyo administrativo"
+            'DIRECCIONAPOYOADMINISTRATIVO': {
+              'NOMBRE': 'DIRECCIÓN DE APOYO ADMINISTRATIVO',
+              'DIRECTOR': ''
             },
-            "direccionCoordinacionJusticiaAdministrativa": {
-              "nombre": "Dirección de coordinación y organización de la justicia administrativa de infracciones de tránsito provincial"
+            'DIRECCIONCOORDINACIONJUSTICIAADMINISTRATIVA': {
+              'NOMBRE': 'DIRECCIÓN DE COORDINACIÓN Y ORGANIZACIÓN DE LA JUSTICIA ADMINISTRATIVA DE INFRACCIONES DE TRÁNSITO PROVINCIAL',
+              'DIRECTOR': ''
             },
-            "direccionInformaticaTecnologia": {
-              "nombre": "Dirección de Informática y tecnología"
+            'DIRECCIONINFORMATICATECNOLOGIA': {
+              'NOMBRE': 'DIRECCIÓN DE INFORMÁTICA Y TECNOLOGÍA',
+              'DIRECTOR': ''
             }
-          }
+          },
+          'DIRECTOR': ''
         }
-      }
+      },
+      'DIRECTOR': ''
     },
-    "subsecretariaTecnicaAdministrativaLegal": {
-      "nombre": "Subsecretaría técnica administrativa y legal",
-      "direcciones": {
-        "oficinaPrivada": {
-          "nombre": "Oficina Privada de Subsecretaría técnica administrativa y legal"
+    'SUBSECRETARIATECNICAADMINISTRATIVALEGAL': {
+      'NOMBRE': 'SUBSECRETARÍA TÉCNICA ADMINISTRATIVA Y LEGAL',
+      'DIRECCIONES': {
+        'OFICINAPRIVADA': {
+          'NOMBRE': 'OFICINA PRIVADA DE SUBSECRETARÍA TÉCNICA ADMINISTRATIVA Y LEGAL',
+          'DIRECTOR': ''
         },
-        "direccionGeneralAdministracion": {
-          "nombre": "Dirección general de administración",
-          "direcciones": {
-            "direccionGeneralAdministracion": {
-              "nombre": "Oficina privada de la misma dirección"
+        'DIRECCIONGENERALADMINISTRACION': {
+          'NOMBRE': 'DIRECCIÓN GENERAL DE ADMINISTRACIÓN',
+          'DIRECCIONES': {
+            'DIRECCIONGENERALADMINISTRACION': {
+              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN',
+              'DIRECTOR': ''
             },
-            "direccionContabilidad": {
-              "nombre": "Dirección de contabilidad"
+            'DIRECCIONCONTABILIDAD': {
+              'NOMBRE': 'DIRECCIÓN DE CONTABILIDAD',
+              'DIRECTOR': ''
             },
-            "direccionPresupuesto": {
-              "nombre": "Dirección de presupuesto"
+            'DIRECCIONPRESUPUESTO': {
+              'NOMBRE': 'DIRECCIÓN DE PRESUPUESTO',
+              'DIRECTOR': ''
             },
-            "direccionComprasContratacionesSuministros": {
-              "nombre": "Dirección de compras, contrataciones y suministros"
+            'DIRECCIONCOMPRASCONTRATACIONESSUMINISTROS': {
+              'NOMBRE': 'DIRECCIÓN DE COMPRAS, CONTRATACIONES Y SUMINISTROS',
+              'DIRECTOR': ''
             },
-            "direccionTesoreria": {
-              "nombre": "Dirección de tesorería"
+            'DIRECCIONTESORERIA': {
+              'NOMBRE': 'DIRECCIÓN DE TESORERÍA',
+              'DIRECTOR': ''
             },
-            "direccionDelegadaPersonal": {
-              "nombre": "Dirección delegada de la dirección provincial de personal"
+            'DIRECCIONDELEGADAPERSONAL': {
+              'NOMBRE': 'DIRECCIÓN DELEGADA DE LA DIRECCIÓN PROVINCIAL DE PERSONAL',
+              'DIRECTOR': ''
             },
-            "direccionTecnologiaInformacion": {
-              "nombre": "Dirección de tecnología de la información",
+            'DIRECCIONTECNOLOGIAINFORMACION': {
+              'NOMBRE': 'DIRECCIÓN DE TECNOLOGÍA DE LA INFORMACIÓN',
+              'DIRECTOR': ''
             },
-            "direccionServiciosAuxiliares": {
-              "nombre": "Dirección de servicios auxiliares"
+            'DIRECCIONSERVICIOSAUXILIARES': {
+              'NOMBRE': 'DIRECCIÓN DE SERVICIOS AUXILIARES',
+              'DIRECTOR': ''
             },
-            "direccionServiciosTecnicos": {
-              "nombre": "Dirección de servicios técnicos"
+            'DIRECCIONSERVICIOSTECNICOS': {
+              'NOMBRE': 'DIRECCIÓN DE SERVICIOS TÉCNICOS',
+              'DIRECTOR': ''
             }
-          }
+          },
+          'DIRECTOR': ''
         },
-        "direccionGeneralTecnicaLegal": {
-          "nombre": "Dirección general Técnica y legal",
-          "direcciones": {
-            "direccionGeneralTecnicaLegal": {
-              "nombre": "Oficina privada de la misma dirección"
+        'DIRECCIONGENERALTECNICALEGAL': {
+          'NOMBRE': 'DIRECCIÓN GENERAL TÉCNICA Y LEGAL',
+          'DIRECCIONES': {
+            'DIRECCIONGENERALTECNICALEGAL': {
+              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN',
+              'DIRECTOR': ''
             },
-            "direccionTecnicoAdministrativa": {
-              "nombre": "Dirección técnico administrativa"
+            'DIRECCIONTECNICOADMINISTRATIVA': {
+              'NOMBRE': 'DIRECCIÓN TÉCNICO ADMINISTRATIVA',
+              'DIRECTOR': ''
             },
-            "direccionCoordinacionJuridica": {
-              "nombre": "Dirección de coordinación jurídica"
+            'DIRECCIONCOORDINACIONJURIDICA': {
+              'NOMBRE': 'DIRECCIÓN DE COORDINACIÓN JURÍDICA',
+              'DIRECTOR': ''
             },
-            "direccionGestionMultas": {
-              "nombre": "Dirección de gestión de multas por infracciones de tránsito y transporte"
+            'DIRECCIONGESTIONMULTAS': {
+              'NOMBRE': 'DIRECCIÓN DE GESTIÓN DE MULTAS POR INFRACCIONES DE TRÁNSITO Y TRANSPORTE',
+              'DIRECTOR': ''
             }
-          }
+          },
+          'DIRECTOR': ''
         }
-      }
+      },
+      'DIRECTOR': ''
     },
-    "subsecretariaTransporteAereoFluvial": {
-      "nombre": "Subsecretaría de transporte aéreo y fluvial",
-      "direcciones": {
-        "oficinaPrivada": {
-          "nombre": "Oficina Privada de Subsecretaría de transporte aéreo y fluvial"
+    'SUBSECRETARIATRANSPORTEAEREOFLUVIAL': {
+      'NOMBRE': 'SUBSECRETARÍA DE TRANSPORTE AÉREO Y FLUVIAL',
+      'DIRECCIONES': {
+        'OFICINAPRIVADA': {
+          'NOMBRE': 'OFICINA PRIVADA DE SUBSECRETARÍA DE TRANSPORTE AÉREO Y FLUVIAL',
+          'DIRECTOR': ''
         },
-        "direccionContralorTransporteFluvial": {
-          "nombre": "Dirección provincial de contralor del transporte fluvial de pasajeros",
-          "direcciones": {
-            "direccionContralorTransporteFluvial": {
-              "nombre": "Oficina privada de la misma dirección"
+        'DIRECCIONCONTRALORTRANSPORTEFLUVIAL': {
+          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE CONTRALOR DEL TRANSPORTE FLUVIAL DE PASAJEROS',
+          'DIRECCIONES': {
+            'DIRECCIONCONTRALORTRANSPORTEFLUVIAL': {
+              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN',
+              'DIRECTOR': ''
             },
-            "direccionOperacionesTransporteFluvial": {
-              "nombre": "Dirección de operaciones de transporte fluvial de pasajeros"
+            'DIRECCIONOPERACIONESTRANSPORTEFLUVIAL': {
+              'NOMBRE': 'DIRECCIÓN DE OPERACIONES DE TRANSPORTE FLUVIAL DE PASAJEROS',
+              'DIRECTOR': ''
             },
-            "direccionFiscalizacionTransporteFluvial": {
-              "nombre": "Dirección de fiscalización del transporte fluvial de pasajeros"
+            'DIRECCIONFISCALIZACIONTRANSPORTEFLUVIAL': {
+              'NOMBRE': 'DIRECCIÓN DE FISCALIZACIÓN DEL TRANSPORTE FLUVIAL DE PASAJEROS',
+              'DIRECTOR': ''
             }
-          }
+          },
+          'DIRECTOR': ''
         },
-        "direccionContralorTransporteAereo": {
-          "nombre": "Dirección provincial de contralor del transporte aéreo",
-          "direcciones": {
-            "direccionContralorTransporteAereo": {
-              "nombre": "Oficina privada de la misma dirección"
+        'DIRECCIONCONTRALORTRANSPORTEAEREO': {
+          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE CONTRALOR DEL TRANSPORTE AÉREO',
+          'DIRECCIONES': {
+            'DIRECCIONCONTRALORTRANSPORTEAEREO': {
+              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN',
+              'DIRECTOR': ''
             },
-            "direccionOperacionesTransporteAereo": {
-              "nombre": "Dirección de operaciones del transporte aéreo"
+            'DIRECCIONOPERACIONESTRANSPORTEAEREO': {
+              'NOMBRE': 'DIRECCIÓN DE OPERACIONES DEL TRANSPORTE AÉREO',
+              'DIRECTOR': ''
             },
-            "direccionFiscalizacionAeroportuaria": {
-              "nombre": "Dirección de fiscalización aeroportuaria"
+            'DIRECCIONFISCALIZACIONAEROPORTUARIA': {
+              'NOMBRE': 'DIRECCIÓN DE FISCALIZACIÓN AEROPORTUARIA',
+              'DIRECTOR': ''
             }
-          }
+          },
+          'DIRECTOR': ''
         },
-        "direccionPromocionCoordinacionTransporteAereoFluvial": {
-          "nombre": "Dirección provincial de promoción y coordinación del transporte aéreo y fluvial",
-          "direcciones": {
-            "direccionPromocionCoordinacionTransporteAereoFluvial": {
-              "nombre": "Oficina privada de la misma dirección"
+        'DIRECCIONPROMOCIONCOORDINACIONTRANSPORTEAEREOFLUVIAL': {
+          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE PROMOCIÓN Y COORDINACIÓN DEL TRANSPORTE AÉREO Y FLUVIAL',
+          'DIRECCIONES': {
+            'DIRECCIONPROMOCIONCOORDINACIONTRANSPORTEAEREOFLUVIAL': {
+              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN',
+              'DIRECTOR': ''
             },
-            "direccionEstrategiasPortuariasAeroportuarias": {
-              "nombre": "Dirección de estrategias portuarias y aeroportuarias"
+            'DIRECCIONESTRATEGIASPORTUARIASAEROPORTUARIAS': {
+              'NOMBRE': 'DIRECCIÓN DE ESTRATEGIAS PORTUARIAS Y AEROPORTUARIAS',
+              'DIRECTOR': ''
             },
-            "direccionPromocionDesarrolloTransporteFluvial": {
-              "nombre": "Dirección de promoción y desarrollo de transporte fluvial de pasajeros"
+            'DIRECCIONPROMOCIONDESARROLLOTRANSPORTEFLUVIAL': {
+              'NOMBRE': 'DIRECCIÓN DE PROMOCIÓN Y DESARROLLO DE TRANSPORTE FLUVIAL DE PASAJEROS',
+              'DIRECTOR': ''
             }
-          }
+          },
+          'DIRECTOR': ''
         }
-      }
+      },
+      'DIRECTOR': ''
     },
-    "subsecretariaArticulacionInterjurisdiccional": {
-      "nombre": "Subsecretaría de articulación interjurisdiccional del transporte",
-      "direcciones": {
-        "oficinaPrivada": {
-          "nombre": "Oficina Privada de Subsecretaría de Articulación Interjurisdiccional"
+    'SUBSECRETARIAARTICULACIONINTERJURISDICCIONAL': {
+      'NOMBRE': 'SUBSECRETARÍA DE ARTICULACIÓN INTERJURISDICCIONAL DEL TRANSPORTE',
+      'DIRECCIONES': {
+        'OFICINAPRIVADA': {
+          'NOMBRE': 'OFICINA PRIVADA DE SUBSECRETARÍA DE ARTICULACIÓN INTERJURISDICCIONAL',
+          'DIRECTOR': ''
         },
-        "direccionCompensacionesTransporte": {
-          "nombre": "Dirección provincial de compensaciones al transporte",
-          "direcciones": {
-            "direccionCompensacionesTransporte": {
-              "nombre": "Oficina privada de la misma dirección"
+        'DIRECCIONCOMPENSACIONESTRANSPORTE': {
+          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE COMPENSACIONES AL TRANSPORTE',
+          'DIRECCIONES': {
+            'DIRECCIONCOMPENSACIONESTRANSPORTE': {
+              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN',
+              'DIRECTOR': ''
             },
-            "direccionLiquidacionPago": {
-              "nombre": "Dirección de liquidación y pago"
+            'DIRECCIONLIQUIDACIONPAGO': {
+              'NOMBRE': 'DIRECCIÓN DE LIQUIDACIÓN Y PAGO',
+              'DIRECTOR': ''
             },
-            "direccionControlVerificacion": {
-              "nombre": "Dirección de control y verificación"
+            'DIRECCIONCONTROLVERIFICACION': {
+              'NOMBRE': 'DIRECCIÓN DE CONTROL Y VERIFICACIÓN',
+              'DIRECTOR': ''
             }
-          }
+          },
+          'DIRECTOR': ''
         },
-        "direccionCoordinacionTransporte": {
-          "nombre": "Dirección provincial de coordinación del transporte",
-          "direcciones": {
-            "direccionCoordinacionTransporte": {
-              "nombre": "Oficina privada de la misma dirección"
+        'DIRECCIONCOORDINACIONTRANSPORTE': {
+          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE COORDINACIÓN DEL TRANSPORTE',
+          'DIRECCIONES': {
+            'DIRECCIONCOORDINACIONTRANSPORTE': {
+              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN',
+              'DIRECTOR': ''
             },
-            "direccionCoordinacionPublico": {
-              "nombre": "Dirección de coordinación del transporte con el sector público"
+            'DIRECCIONCOORDINACIONPUBLICO': {
+              'NOMBRE': 'DIRECCIÓN DE COORDINACIÓN DEL TRANSPORTE CON EL SECTOR PÚBLICO',
+              'DIRECTOR': ''
             },
-            "direccionCoordinacionPrivado": {
-              "nombre": "Dirección de coordinación del transporte con el sector privado"
+            'DIRECCIONCOORDINACIONPRIVADO': {
+              'NOMBRE': 'DIRECCIÓN DE COORDINACIÓN DEL TRANSPORTE CON EL SECTOR PRIVADO',
+              'DIRECTOR': ''
             }
-          }
+          },
+          'DIRECTOR': ''
         },
-        "direccionPlanificacionPoliticaEconomica": {
-          "nombre": "Dirección provincial de planificación y política económica del transporte",
-          "direcciones": {
-            "direccionPlanificacionPoliticaEconomica": {
-              "nombre": "Oficina privada de la misma dirección"
+        'DIRECCIONPLANIFICACIONPOLITICAECONOMICA': {
+          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE PLANIFICACIÓN Y POLÍTICA ECONÓMICA DEL TRANSPORTE',
+          'DIRECCIONES': {
+            'DIRECCIONPLANIFICACIONPOLITICAECONOMICA': {
+              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN',
+              'DIRECTOR': ''
             },
-            "direccionPlanificacionTransporte": {
-              "nombre": "Dirección de planificación del transporte"
+            'DIRECCIONPLANIFICACIONTRANSPORTE': {
+              'NOMBRE': 'DIRECCIÓN DE PLANIFICACIÓN DEL TRANSPORTE',
+              'DIRECTOR': ''
             },
-            "direccionAnalisisTransporte": {
-              "nombre": "Dirección de análisis eficiente del transporte"
+            'DIRECCIONANALISISTRANSPORTE': {
+              'NOMBRE': 'DIRECCIÓN DE ANÁLISIS EFICIENTE DEL TRANSPORTE',
+              'DIRECTOR': ''
             },
-            "direccionGestionSubsidios": {
-              "nombre": "Dirección de gestión de subsidios al transporte"
+            'DIRECCIONGESTIONSUBSIDIOS': {
+              'NOMBRE': 'DIRECCIÓN DE GESTIÓN DE SUBSIDIOS AL TRANSPORTE',
+              'DIRECTOR': ''
             }
-          }
+          },
+          'DIRECTOR': ''
         },
-        "direccionPoliticasGeneroInclusivas": {
-          "nombre": "Dirección provincial de políticas de género y estrategias inclusivas",
-          "direcciones": {
-            "direccionPoliticasGeneroInclusivas": {
-              "nombre": "Oficina privada de la misma dirección"
+        'DIRECCIONPOLITICASGENEROINCLUSIVAS': {
+          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE POLÍTICAS DE GÉNERO Y ESTRATEGIAS INCLUSIVAS',
+          'DIRECCIONES': {
+            'DIRECCIONPOLITICASGENEROINCLUSIVAS': {
+              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN',
+              'DIRECTOR': ''
             },
-            "direccionAccesibilidadTransporte": {
-              "nombre": "Dirección de accesibilidad del transporte"
+            'DIRECCIONACCESIBILIDADTRANSPORTE': {
+              'NOMBRE': 'DIRECCIÓN DE ACCESIBILIDAD DEL TRANSPORTE',
+              'DIRECTOR': ''
             },
-            "direccionInclusionDiversidad": {
-              "nombre": "Dirección de inclusión y diversidad"
+            'DIRECCIONINCLUSIONDIVERSIDAD': {
+              'NOMBRE': 'DIRECCIÓN DE INCLUSIÓN Y DIVERSIDAD',
+              'DIRECTOR': ''
             }
-          }
+          },
+          'DIRECTOR': ''
         },
-        "direccionPoliticasEducativasPrevencion": {
-          "nombre": "Dirección provincial de políticas educativas de prevención",
-          "direcciones": {
-            "direccionPoliticasEducativasPrevencion": {
-              "nombre": "Oficina privada de la misma dirección"
+        'DIRECCIONPOLITICASEDUCATIVASPREVENCION': {
+          'NOMBRE': 'DIRECCIÓN PROVINCIAL DE POLÍTICAS EDUCATIVAS DE PREVENCIÓN',
+          'DIRECCIONES': {
+            'DIRECCIONPOLITICASEDUCATIVASPREVENCION': {
+              'NOMBRE': 'OFICINA PRIVADA DE LA MISMA DIRECCIÓN',
+              'DIRECTOR': ''
             },
-            "direccionPromocionNormasConvivencia": {
-              "nombre": "Dirección de promoción de normas de convivencia ciudadana"
+            'DIRECCIONPROMOCIONNORMASCONVIVENCIA': {
+              'NOMBRE': 'DIRECCIÓN DE PROMOCIÓN DE NORMAS DE CONVIVENCIA CIUDADANA',
+              'DIRECTOR': ''
             },
-            "direccionGestionInterministerial": {
-              "nombre": "Dirección de gestión interministerial de prevención y concientización en el transporte"
+            'DIRECCIONGESTIONINTERMINISTERIAL': {
+              'NOMBRE': 'DIRECCIÓN DE GESTIÓN INTERMINISTERIAL DE PREVENCIÓN Y CONCIENTIZACIÓN EN EL TRANSPORTE',
+              'DIRECTOR': ''
             }
-          }
+          },
+          'DIRECTOR': ''
         }
-      }
+      },
+      'DIRECTOR': ''
     }
   }
 }
