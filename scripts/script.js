@@ -4,34 +4,32 @@ let ministerioEstructura = data;
 //APIS THING (DATA)
 
 const equipos = {
-    "Desktop": {
+    "DESKTOP": {
         "EXO": ["H7-V5488P", "H2-P5685P", "PC READY D1 RTX", "PC READY H7", "AIO"],
-        "Letos": ["Sin modelo"],
+        "LETOS": ["SIN MODELO"],
         "CX": ["5835", "9217"],
-        "Coradir": ["AMD A"],
-        "Bangho": ["7168", "4168"],
-        "Lenovo": ["ThinkCentre neo"],
-        "HP": ["Pro 3000 SFF"],
-        "BANGHO": ["CLON"]
+        "CORADIR": ["AMD A"],
+        "BANGHO": ["7168", "4168", "CLON"],
+        "LENOVO": ["THINKCENTRE NEO"],
+        "HP": ["PRO 3000 SFF"]
     },
-    "Notebook": {
-        "Dell": ["Latitude 3510", "Vostro 14 3000"],
-        "HP": ["Elitebook 840 G7", "HP ProBook 450 G4", "HP 14-FQ0013DX"],
-        "Lenovo": ["ThinkBook V14 G2 ARE", "IdeaPad", "Lenovo E41-55", "ThinkBook V15 G2", "IdeaPad 330", "B50-80", "E41-55"],
-        "Banghó": ["Sin modelo"]
+    "NOTEBOOK": {
+        "DELL": ["LATITUDE 3510", "VOSTRO 14 3000"],
+        "HP": ["ELITEBOOK 840 G7", "HP PROBOOK 450 G4", "HP 14-FQ0013DX"],
+        "LENOVO": ["THINKBOOK V14 G2 ARE", "IDEAPAD", "LENOVO E41-55", "THINKBOOK V15 G2", "IDEAPAD 330", "B50-80", "E41-55"],
+        "BANGHÓ": ["SIN MODELO"]
     },
-
-    "Impresora": {
-        "HP": ["LaserJet Pro MFP M428FWD", "LaserJet Pro P2035N", "LaserJet Pro 400 M401DN", "LaserJet P2055DN", "P2015d", "LaserJet P1102w", "LaserJet P1505", "LaserJet P1606DN", "LaserJet 428fdw", "LaserJet Pro M102W", "LaserJet Pro MFP M130FW", "LaserJet P3005D", "LaserJet Pro M201DW", "LaserJet P3015"],
-        "Epson": ["EcoTank L220", "EcoTank L8180", "EcoTank L3250", "EcoTank L380"],
-        "Brother": ["HL-1200"],
-        "Lexmark": ["MX522", "M2880DFW", "MS315dn", "MX317DN"],
-        "Ricoh": ["C 307"],
-        "Samsung": ["ProXpress M4020ND", "ML4050N", "Xpress M2020W", "ML2165W"],
-        "Toshiba": ["e-studio 409p/409s"]
+    "IMPRESORA": {
+        "HP": ["LASERJET PRO MFP M428FWD", "LASERJET PRO P2035N", "LASERJET PRO 400 M401DN", "LASERJET P2055DN", "P2015D", "LASERJET P1102W", "LASERJET P1505", "LASERJET P1606DN", "LASERJET 428FDW", "LASERJET PRO M102W", "LASERJET PRO MFP M130FW", "LASERJET P3005D", "LASERJET PRO M201DW", "LASERJET P3015"],
+        "EPSON": ["ECOTANK L220", "ECOTANK L8180", "ECOTANK L3250", "ECOTANK L380"],
+        "BROTHER": ["HL-1200"],
+        "LEXMARK": ["MX522", "M2880DFW", "MS315DN", "MX317DN"],
+        "RICOH": ["C 307"],
+        "SAMSUNG": ["PROXPRESS M4020ND", "ML4050N", "XPRESS M2020W", "ML2165W"],
+        "TOSHIBA": ["E-STUDIO 409P/409S"]
     },
-    "Escaner": {
-        "Epson": ["DS-530 II", "DS-770 II"]
+    "ESCANER": {
+        "EPSON": ["DS-530 II", "DS-770 II"]
     }
 }
 
