@@ -6,6 +6,7 @@ var data = {
       'oficinaprivada': {
         'nombre': 'OFICINA PRIVADA DE UNIDAD DE MONITOREO Y REGISTRO GENERAL DE DATOS DEL TRANSPORTE'
       }
+      
     },
     'direccioncomunicacion': {
       'nombre': 'DIRECCIÓN DE COMUNICACIÓN Y RELACIÓN INSTITUCIONALES',
