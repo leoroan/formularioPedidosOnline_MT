@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="assets/images/favicon_pba.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>DashBoard MT</title>
@@ -24,23 +24,23 @@
             data-bs-target="#loginModal">Ingresar</button>
 
         <!-- Imagen Logo -->
-        <img src="assets/images/logo_gba_footer_blanco.svg">
+        <img src="../assets/images/logo_gba_footer_blanco.svg">
 
         <!-- NAV START -->
         <header class="text-center my-2 py-2">
             <nav class="border-bottom mb-5">
                 <ul class="nav nav-tabs justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html">Inventario 📦</a>
+                        <a class="nav-link" aria-current="page" href="../index.html">Inventario 📦</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pedidos.html">Crear un MT ✔</a>
+                        <a class="nav-link" href="../pedidos.html">Crear un MT ✔</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="busquedas.html">Buscar un MT 🔍</a>
+                        <a class="nav-link " href="../busquedas.html">Buscar un MT 🔍</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="dashboard.html">Dashboard 📊</a>
+                        <a class="nav-link active" href="../dashboard.html">Dashboard 📊</a>
                     </li>
                 </ul>
             </nav>
@@ -50,12 +50,12 @@
         <h1 class="mb-5 text-center"> Informacion general del inventario. </h1>
 
         <!-- INNER NAV START -->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg ">
             <div class="container-fluid">
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">🟢 RESUMEN</a>
+                            <a class="nav-link " href="../dashboard.html">🔴 RESUMEN</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href="../pages/stock.html">🔴 STOCK_TONERS</a>
@@ -64,7 +64,8 @@
                             <a class="nav-link " href="../pages/stockEquipos.html">🔴 STOCK_EQUIPOS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="../pages/busquedaEquipos.html">🔴 BUSQUEDA_EQUIPOS</a>
+                            <a class="nav-link active" href="../pages/busquedaEquipos.html"
+                                aria-current="page">🟢 BUSQUEDA_EQUIPOS</a>
                         </li>
                     </ul>
                 </div>
@@ -75,7 +76,7 @@
         <!-- IFRAME LOOKER START -->
         <div class="ratio ratio-4x3">
             <iframe
-                src="https://lookerstudio.google.com/embed/reporting/d48543dd-16b9-4238-b648-80a669599b2f/page/KIRUD"
+                src="https://lookerstudio.google.com/embed/reporting/3d586e59-ce21-4336-b4e6-1b80baa125bf/page/MrmWD"
                 title="tabla de looker studio" allowfullscreen></iframe>
         </div>
         <!-- IFRAME LOOKER END   -->
