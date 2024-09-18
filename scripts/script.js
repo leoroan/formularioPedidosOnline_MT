@@ -29,7 +29,8 @@ const equipos = {
         "TOSHIBA": ["E-STUDIO 409P/409S"]
     },
     "Escaner": {
-        "EPSON": ["DS-530 II", "DS-770 II"]
+        "EPSON": ["DS-530 II", "DS-770 II", "DS-1630"],
+        "HP": ["Scanjet 300"]
     }
     
 }
